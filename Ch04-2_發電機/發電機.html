@@ -1,0 +1,82 @@
+<!doctype html><html lang="zh-Hant"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>發電機的電從哪來</title>
+<style>*{box-sizing:border-box}body{margin:0;background:#f7f5f0;color:#202a32;font:22px/1.8 "PingFang TC","Microsoft JhengHei",sans-serif}header,main{max-width:1040px;margin:auto;padding:30px 28px}header{padding-bottom:0}small{color:#9b521e;font-size:16px}h1{font-size:clamp(32px,5vw,52px);line-height:1.4;margin:14px 0}h2{font-size:30px;line-height:1.5;margin:0 0 20px}p{margin:16px 0}section{margin:28px 0 64px}figure{margin:24px 0;background:white;border:1px solid #d5d9da;border-radius:12px;padding:18px;overflow:auto}svg{display:block;width:100%;min-width:650px}svg text{font-family:inherit;fill:#24333b}figcaption{font-size:17px;color:#56646d;line-height:1.6;margin-top:12px}.key{border-left:5px solid #b66a30;padding:12px 20px;background:#eeeae0}.controls{display:flex;gap:10px;flex-wrap:wrap}button{font:inherit;font-size:18px;padding:8px 16px;border-radius:8px;border:1px solid #9aadb3;background:white;cursor:pointer}button[aria-pressed=true]{background:#dceaf1;outline:2px solid #317799}.note{min-height:3.6em;font-size:19px;color:#2c3a43}.foot{font-size:16px;color:#647079}a{color:#286d8c} @media(max-width:650px){body{font-size:19px}header,main{padding:20px 16px}h2{font-size:25px}figure{padding:10px}section{margin-bottom:45px}} </style>
+<header><small>延伸</small><h1>磁鐵沒動、也沒變強，<br>轉動線圈為什麼就有電？</h1><p>發電機裡有固定的磁鐵和一個會轉的線圈。磁鐵的磁場從頭到尾都一樣，可是電磁感應說，要穿過線圈的磁場<b>改變</b>才有感應電流。那麼線圈轉動時，到底是什麼在變？</p></header>
+<main><section><h2>什麼在變：穿過線圈的磁場有多少</h2><p>線圈是一個框，穿過它的磁場多不多，要看這個框<b>對著磁場的方向</b>。框正對著磁場，磁力線整片穿過去；框側過來和磁場平行，磁力線從旁邊滑過，一條也沒穿過。下圖是<b>順著轉軸看過去</b>，線圈只剩一條線（虛線），兩端是線圈兩條邊的截面。</p>
+<figure><svg viewBox="0 0 950 420" role="img" aria-label="沿轉軸看的線圈：磁場向右，線圈轉到不同角度時，穿過線圈的磁力線數量不同">
+<defs><marker id="b" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0 0L8 4L0 8Z" fill="#287fb3"/></marker><marker id="o" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0 0L8 4L0 8Z" fill="#c87720"/></marker></defs>
+<rect x="30" y="60" width="70" height="300" rx="6" fill="#edcccc"/><text x="52" y="222" font-size="34">N</text>
+<rect x="540" y="60" width="70" height="300" rx="6" fill="#cadff0"/><text x="563" y="222" font-size="34">S</text>
+<g id="lines" stroke="#287fb3" stroke-width="3" marker-end="url(#b)"></g>
+<circle cx="320" cy="210" r="6" fill="#56646d"/>
+<path d="M240 78A120 120 0 0 1 400 78" fill="none" stroke="#c87720" stroke-width="3" marker-end="url(#o)"/><text x="410" y="70" font-size="18">外力轉動</text>
+<line id="coil" stroke="#bd6c20" stroke-width="5" stroke-dasharray="10 6"/>
+<circle id="pc" r="13" fill="#bd6c20"/><circle id="qc" r="13" fill="#bd6c20"/>
+<text x="650" y="80" font-size="21">穿過線圈的磁力線</text>
+<text id="flux" x="650" y="125" font-size="30" style="font-weight:bold"></text>
+<text id="fluxside" x="650" y="160" font-size="19" fill="#56646d" style="fill:#56646d"></text>
+<text x="650" y="230" font-size="21">這一刻的變化與感應電壓</text>
+<rect x="650" y="250" width="260" height="26" rx="4" fill="#eef1f2"/><rect x="650" y="250" width="260" height="26" rx="4" fill="#eef0f1"/><rect id="vbar" x="780" y="250" height="26" fill="#24835d"/><path d="M780 242V284" stroke="#24333b" stroke-width="2"/><text x="652" y="300" font-size="15" style="fill:#56646d">負</text><text x="895" y="300" font-size="15" style="fill:#56646d">正</text>
+<text id="vtext" x="650" y="330" font-size="19"></text>
+</svg>
+<div class="controls"><button data-s="0" aria-pressed="true">甲：線圈正對磁場</button><button data-s="1" aria-pressed="false">乙：轉了 45°</button><button data-s="2" aria-pressed="false">丙：轉到和磁場平行</button><button data-s="3" aria-pressed="false">丁：再轉 45°</button><button data-s="4" aria-pressed="false">戊：轉了半圈</button><button data-s="5" aria-pressed="false">己：再轉 45°</button><button data-s="6" aria-pressed="false">庚：又和磁場平行</button></div>
+<figcaption id="note" class="note"></figcaption></figure>
+<p>依序按甲到庚，數一數深藍色、穿過線圈的磁力線。<b>甲</b>線圈正對磁場，穿過最多；轉到<b>乙</b>，線圈斜了，穿過的變少；到<b>丙</b>，線圈和磁場平行，一條也沒有；再到<b>丁</b>，磁力線又穿過線圈，但這次是從線圈的另一面進去。</p><p>所以磁鐵完全沒變，只要線圈在轉，穿過線圈的磁場就一直在變：變少、變成零、反過來變多、再變少……電磁感應要的「改變」就在這裡，線圈因此產生<b>感應電壓</b>，接上電路就有電流。電壓的正負，看的是穿過量正在<b>減少還是增加</b>（都從線圈原來那一面算），不是看磁力線從哪一面穿。從甲轉到戊的半圈裡，穿過量一路在減少：變少、變成零、再變成從另一面穿，從原來那面看都是繼續減少，所以電壓一直同號；從戊轉回甲的半圈，穿過量一路回升，電壓就反過來。所以電壓換號的時刻是甲、戊這種穿過最多的時候，不是丙這種穿過量為零的時候。線圈一直轉，電壓每半圈換一次號，這就是交流電。</p><p>還要注意一件事：電壓大小看的是<b>變得多快</b>，不是穿過多少。甲穿過最多，但線圈正對磁場那一刻，穿過的量剛好停在最多，這一瞬間幾乎不變，電壓是零；丙一條都沒穿過，卻是穿過量從「這面」翻到「那面」變得最快的時候，電壓最大。</p><p class="key">磁鐵不動，是線圈的轉動讓「穿過線圈的磁場」不斷改變；變得越快，感應電壓越大。</p></section>
+
+<section><h2>接上燈泡以後，為什麼比較難轉？</h2><p>用手搖過小型發電機的人會發現：沒接燈泡時很好轉，接上燈泡、燈一亮，就要多出力。為什麼多接一個燈泡，手會覺得有東西在擋？</p>
+<figure><svg viewBox="0 0 950 380" role="img" aria-label="線圈轉到和磁場平行時，接上燈泡後線圈有電流，兩邊受的磁力方向與運動方向相反">
+<defs><marker id="b2" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0 0L8 4L0 8Z" fill="#287fb3"/></marker><marker id="g2" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0 0L8 4L0 8Z" fill="#24835d"/></marker><marker id="v2" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0 0L8 4L0 8Z" fill="#8b6bb0"/></marker></defs>
+<rect x="30" y="40" width="70" height="300" rx="6" fill="#edcccc"/><text x="52" y="202" font-size="34">N</text>
+<rect x="540" y="40" width="70" height="300" rx="6" fill="#cadff0"/><text x="563" y="202" font-size="34">S</text>
+<g stroke="#287fb3" stroke-width="2" opacity=".45" marker-end="url(#b2)"><path d="M110 80H530"/><path d="M110 300H530"/></g>
+<line x1="200" y1="190" x2="440" y2="190" stroke="#bd6c20" stroke-width="5" stroke-dasharray="10 6"/><circle cx="320" cy="190" r="6" fill="#56646d"/>
+<circle cx="200" cy="190" r="22" fill="white" stroke="#bd6c20" stroke-width="3"/><circle cx="440" cy="190" r="22" fill="white" stroke="#bd6c20" stroke-width="3"/>
+<text id="lc" x="200" y="200" font-size="28" text-anchor="middle" style="fill:#bd6c20"></text><text id="rc" x="440" y="200" font-size="28" text-anchor="middle" style="fill:#bd6c20"></text>
+<g stroke="#8b6bb0" stroke-width="4" marker-end="url(#v2)" stroke-dasharray="6 4"><path d="M170 175V105"/><path d="M470 205V275"/></g>
+<g id="drag" stroke="#24835d" stroke-width="5" marker-end="url(#g2)"><path d="M228 215V285"/><path d="M412 165V95"/></g>
+<text x="650" y="70" font-size="20" style="fill:#8b6bb0">紫虛線：這一刻的運動方向</text><text x="650" y="105" font-size="20" style="fill:#24835d">綠箭頭：線圈電流受的磁力</text>
+<text id="dres" x="650" y="180" font-size="23" style="font-weight:bold"></text>
+</svg>
+<div class="controls"><button data-d="0" aria-pressed="true">沒接燈泡</button><button data-d="1" aria-pressed="false">接上燈泡</button></div>
+<figcaption id="dnote" class="note"></figcaption></figure>
+<p>沒接燈泡時，線圈有感應電壓，但電路沒接通，沒有電流流過。接上燈泡，線圈裡就有電流，而<b>有電流的導線在磁場裡會受力</b>，這正是馬達轉動靠的那種力。</p><p>這個力的方向，冷次定律已經決定了：感應電流要阻止造成它的改變。造成改變的是線圈的轉動，所以感應電流受的力剛好擋著轉動：左邊往上走的那一邊被往下推，右邊往下走的那一邊被往上推。手要維持同樣的轉速，就得一直出力把這個阻力頂回去。</p><p>這也回答了能量從哪裡來：<b>燈泡的電能，是手（或水力、風力、蒸汽）推著線圈對抗這個阻力所做的功轉來的。</b>磁鐵只提供磁場，它本身不是能量的來源，用了多年也不會被「用掉」。燈泡越亮、用電越多，電流越大，阻力也越大，要出的力就越多。</p><p class="key">轉動讓穿過線圈的磁場改變而產生電壓；接上用電器後的電流在磁場中受力、擋著轉動，所以要持續出力，電能就是這份功轉來的。</p></section>
+
+<section><h2>回頭想：把線圈停在「穿過最多」的位置不轉了呢？</h2><p>停住以後，穿過線圈的磁場雖然最多，卻不再改變，所以沒有感應電壓，燈泡不亮。發電要的是磁場一直在變，不是磁場很強；而要讓它一直變，就得一直轉，一直出力。</p></section>
+<p class="foot">本篇以均勻磁場中等速轉動的單一線圈為例，圖為原理示意；實際發電機常固定線圈、轉動磁鐵，關鍵同樣是穿過線圈的磁場在改變。依 <a href="https://openstax.org/books/physics/pages/20-2-motors-generators-and-transformers">OpenStax 馬達、發電機與變壓器</a>核對。</p><p class="foot">生活中的電與磁：<a href="../Ch04-2_電磁爐/電磁爐.html">電磁爐</a> · <a href="../Ch04-3_微波爐/微波爐.html">微波爐</a> · <a href="../Ch04-1_馬達/馬達.html">馬達</a> · <a href="../Ch04-2_變壓器/變壓器.html">變壓器</a> · <a href="../Ch04-1_喇叭/喇叭.html">喇叭</a>｜<a href="../Ch04_生活中的電與磁/index.html">系列入口</a></p></main>
+<script>
+// 沿轉軸看，線圈順時針轉。θ：甲邊自正上方起、順時針量的角度。
+// 穿過量 ∝ cosθ（線圈兩端的垂直距離），感應電壓 ∝ sinθ。
+const CX=320,CY=210,R=120,YS=[100,140,180,220,260,300];
+const S=[0,45,90,135,180,225,270];
+const notes=[
+ '甲：線圈正對磁場，穿過最多。但這一刻穿過量停在最多、幾乎不變，所以感應電壓為零。',
+ '乙：線圈斜了，穿過的磁力線變少，而且正在減少，有感應電壓。',
+ '丙：線圈和磁場平行，一條也沒穿過；但穿過量正從「這面」翻到「那面」，變得最快，感應電壓最大。',
+ '丁：磁力線改從線圈的另一面進去，而且這樣穿的量正在變多。從原來那一面算，穿過量還在繼續減少，所以電壓和乙、丙同號。',
+ '戊：轉了半圈，線圈又正對磁場，從另一面穿過最多。穿過量停在這裡、幾乎不變，電壓為零；過了這一刻，從原來那一面算的穿過量開始回升，電壓就要換號。',
+ '己：從原來那一面算，穿過量正在回升，電壓和前半圈反號。',
+ '庚：線圈又和磁場平行，回升得最快，電壓是另一個方向的最大。'];
+const g=document.getElementById('lines');
+YS.forEach(y=>{const p=document.createElementNS('http://www.w3.org/2000/svg','path');p.setAttribute('d',`M110 ${y}H530`);g.appendChild(p)});
+function show(i){const t=S[i]*Math.PI/180;
+ const px=CX+R*Math.sin(t),py=CY-R*Math.cos(t),qx=CX-R*Math.sin(t),qy=CY+R*Math.cos(t);
+ const c=document.getElementById('coil');c.setAttribute('x1',px);c.setAttribute('y1',py);c.setAttribute('x2',qx);c.setAttribute('y2',qy);
+ document.getElementById('pc').setAttribute('cx',px);document.getElementById('pc').setAttribute('cy',py);
+ document.getElementById('qc').setAttribute('cx',qx);document.getElementById('qc').setAttribute('cy',qy);
+ const lo=Math.min(py,qy),hi=Math.max(py,qy);let n=0;
+ [...g.children].forEach((p,k)=>{const y=YS[k],thr=y>lo+1&&y<hi-1;p.setAttribute('opacity',thr?'1':'.18');if(thr)n++});
+ const cs=Math.cos(t);
+ document.getElementById('flux').textContent=n+' 條';
+ document.getElementById('fluxside').textContent=n===0?'線圈和磁場平行':(cs>0?'從線圈的「這面」進入':'改從線圈的「另一面」進入');
+ const sv=Math.sin(t),v=Math.abs(sv),vb=document.getElementById('vbar');vb.setAttribute('width',130*v);vb.setAttribute('x',sv>=0?780:780-130*v);vb.setAttribute('fill',sv>=0?'#24835d':'#7a3db4');
+ document.getElementById('vtext').textContent=v<0.01?'穿過量停住 → 電壓為零':(sv>0?'穿過量在減少 → 電壓為正':'穿過量在回升 → 電壓為負')+(v>0.99?'（最大）':'');
+ document.getElementById('note').textContent=notes[i];
+ document.querySelectorAll('[data-s]').forEach(b=>b.setAttribute('aria-pressed',b.dataset.s==String(i)));}
+document.querySelectorAll('[data-s]').forEach(b=>b.onclick=()=>show(+b.dataset.s));show(0);
+// 第二張圖：線圈水平，左邊向上走、右邊向下走（順時針）。接通時左 ⊗ 受力向下、右 ⊙ 受力向上。
+function drag(on){document.getElementById('drag').style.display=on?'':'none';
+ document.getElementById('lc').textContent=on?'⊗':'';document.getElementById('rc').textContent=on?'⊙':'';
+ document.getElementById('dres').textContent=on?'磁力擋著轉動':'沒有電流，沒有這個力';
+ document.getElementById('dnote').textContent=on?'接上燈泡：線圈有電流（左邊進入紙面、右邊朝我們出來）。磁場向右，左邊受力向下、右邊受力向上，都和運動方向相反。':'沒接燈泡：線圈兩端有電壓，但電路沒接通，線圈裡沒有電流，磁場不會對它施這個力。';
+ document.querySelectorAll('[data-d]').forEach(b=>b.setAttribute('aria-pressed',b.dataset.d===(on?'1':'0')));}
+document.querySelectorAll('[data-d]').forEach(b=>b.onclick=()=>drag(b.dataset.d==='1'));drag(false);
+</script></html>

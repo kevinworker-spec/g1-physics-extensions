@@ -1,0 +1,61 @@
+<!doctype html><html lang="zh-Hant"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>音爆</title>
+<style>*{box-sizing:border-box}body{margin:0;background:#f7f5f0;color:#202a32;font:22px/1.8 "PingFang TC","Microsoft JhengHei",sans-serif}header,main{max-width:1040px;margin:auto;padding:30px 28px}header{padding-bottom:0}small{color:#9b521e;font-size:16px}h1{font-size:clamp(32px,5vw,52px);line-height:1.4;margin:14px 0}h2{font-size:30px;line-height:1.5;margin:0 0 20px}p{margin:16px 0}section{margin:28px 0 64px}figure{margin:24px 0;background:white;border:1px solid #d5d9da;border-radius:12px;padding:18px;overflow:auto}canvas{display:block;width:100%;min-width:650px}figcaption{font-size:17px;color:#56646d;line-height:1.6;margin-top:12px}.key{border-left:5px solid #b66a30;padding:12px 20px;background:#eeeae0}.controls{display:flex;gap:10px;flex-wrap:wrap;align-items:center;margin-top:10px;font-size:18px}.controls span{color:#56646d}button{font:inherit;font-size:18px;padding:8px 16px;border-radius:8px;border:1px solid #9aadb3;background:white;cursor:pointer}button[aria-pressed=true]{background:#dceaf1;outline:2px solid #317799}.eq{text-align:center;font-size:24px;margin:14px 0}.t{font-size:13px;border:1px solid currentColor;border-radius:6px;padding:0 5px;margin:0 3px;white-space:nowrap;vertical-align:2px}.t.ref{color:#1f6fb4}details{margin:14px 0;background:white;border:1px dashed #b9c4c6;border-radius:10px;padding:8px 18px}summary{cursor:pointer;color:#286d8c;font-weight:700}.foot{font-size:16px;color:#647079} @media(max-width:650px){body{font-size:19px}header,main{padding:20px 16px}h2{font-size:25px}figure{padding:10px}section{margin-bottom:45px}} </style>
+<header><small>延伸｜4-5 都卜勒效應｜接在都卜勒圓圈片段之後</small><h1>音爆是飛機「衝破音速」<br>那一下的爆炸聲嗎？</h1><p>超音速戰機飛過，地面的人會聽到「轟」的一聲，叫音爆。常聽到的說法是：飛機加速到超過音速的那一瞬間，「衝破音障」，發出一聲巨響。其實不是這樣。音爆和救護車經過時音調變高變低，是同一件事推到極限的結果。</p></header>
+<main>
+<section><h2>先回到都卜勒圓圈：波源追著自己的波</h2><p>都卜勒圓圈片段裡，天鵝每秒打一次水，每打一次就出現一圈往外擴大的水波；天鵝一邊打水一邊往前游。結果前方的圓圈擠在一起、後方的拉開。</p><p>為什麼前方會擠？每隔一個週期 T，上一圈的波峰往前跑了 vT（v 是水波的速率），天鵝自己也往前追了 v<sub>s</sub>T。新的一圈就從天鵝現在的位置發出，所以前方兩圈之間只剩：</p>
+<div class="eq">前方間距 ＝ (v − v<sub>s</sub>) T　　後方間距 ＝ (v ＋ v<sub>s</sub>) T</div>
+<p>天鵝游得愈快，前方擠得愈緊。下面的動畫用片段的設定：水波每秒走 1 格、天鵝每秒打一次水。先按「½」，再一路加到「1 倍」、「1.5 倍」。</p>
+<figure><canvas id="cv" width="1200" height="480" aria-label="移動的波源發出一圈圈波前；右下有一隻靜止的小鴨在聽"></canvas>
+<div class="controls"><span>天鵝速度＝水波速度的</span><button data-v="0">0</button><button data-v="0.5" aria-pressed="true">½</button><button data-v="0.75">¾</button><button data-v="1">1 倍</button><button data-v="1.5">1.5 倍</button><button id="play">暫停</button></div>
+<figcaption>示意：1 格＝水波 1 秒走的距離。右下的小鴨不動，聽波峰到達；同時有好幾圈到達時，小鴨旁邊會標出來。</figcaption></figure></section>
+
+<section><h2>天鵝和波一樣快：所有波峰疊在一起</h2><p>v<sub>s</sub>＝v 時，前方間距 (v − v)T＝0。按「1 倍」看：天鵝剛好和自己上一圈的波峰一起到達，每一圈的前緣都疊在天鵝所在的位置。</p><p>圓圈圖告訴我們的是：從出發以來發出的波前，前緣全都擠在同一個地方、同時往前走。課本 p.126 說波峰遇到波峰會疊加變大，可以用它粗略想像這裡的空氣被擠得特別密。不過擠到這麼強時，空氣不再像小聲音那樣單純一個加一個，而會形成一層壓力突然升高的薄面，叫<b>震波</b>；它怎麼形成、有多強，細節超出這篇。圓圈圖幫我們看清楚的是：<b>波前在哪裡擠在一起，以及什麼時候掃過聽的人</b>。</p></section>
+
+<section><h2>比波還快：波峰牆變成圓錐，一路拖在後面</h2><p>按「1.5 倍」：天鵝跑到了自己所有波的前面，前方完全沒有波。每一圈都比前一圈晚發出、圓心又更往前，這些圓圈的邊緣剛好連成一個 V 字形；在空氣裡是立體的，就是一個圓錐，尖端在飛機上。</p><p>圓錐的邊上，正是許多圈波前同時到達的地方，也就是震波所在。這個圓錐跟著飛機一起前進，像一張網掃過地面：<b>掃到誰，誰就在那一刻同時收到一大堆波峰，聽到「轟」一聲</b>。看動畫裡的小鴨，圓錐的邊掃過牠的那一刻，旁邊標出好幾圈同時到達。</p><p>所以音爆不是在「衝破音速」那一下響一次，只要飛機維持超音速，就一直拖著這個圓錐，沿途地面上的人一個接一個聽到 <span class="t ref" title="美國空軍飛行測試中心〈June 6, 1966: National Sonic Boom Test Project Begins〉：音爆在超音速飛行期間持續產生，只有被機後圓錐掃到的人聽到">引用</span>。一次飛越，圓錐只掃過每個人一次，所以每個人聽到的是一段很短的音爆；實際的飛機頭部和尾部各拖著一道震波，常常聽成緊接的「轟、轟」兩響 <span class="t ref" title="NASA Quesst〈X-59 explainer: science of sonic booms〉，2026-08-10">引用</span>。</p>
+<p class="key">波源愈快，前方的波前擠得愈緊；和波一樣快時，波前全擠在波源前緣，形成震波；比波還快時，震波成為拖在後面的圓錐，掃到哪裡，哪裡就聽到音爆，不只在衝過音速那一刻。</p></section>
+
+<section><h2>想一想</h2><p>一架超音速戰機從你頭頂正上方飛過。它飛到你頭頂的那一刻，你聽得到音爆嗎？</p>
+<details><summary>想好了再打開</summary><p><b>聽不到，要等一下。</b>圓錐拖在飛機後面，尖端才在飛機上。飛機到你頭頂時，圓錐的邊還沒掃到你；等邊緣掃過你，才同時收到一大堆波峰、聽到「轟」，那時飛機已經飛過去了。所以聽到音爆時抬頭，飛機早就不在聲音傳來的方向。</p></details></section>
+<p class="foot">示意動畫：波源每秒發一圈，實際是連續發出；水面的船跡和空氣中的震波細節不同，這裡只用來看波前在哪裡擠在一起、何時到達，不是震波的強度。式子適用於波源等速直線前進、介質本身不流動，觀察者在正前方或正後方。</p></main>
+<script>
+(function(){
+ const cv=document.getElementById('cv'),c=cv.getContext('2d'),F='"PingFang TC","Microsoft JhengHei",sans-serif';
+ let vs=0.5,t=0,run=true,last=null;
+ const U=46,ox=200,oy=210,TMAX=12;
+ const LX=ox+9*U,LY=oy+4*U;                       // 小鴨：靜止聽者
+ const btns=[...document.querySelectorAll('[data-v]')];
+ function mark(){btns.forEach(b=>b.setAttribute('aria-pressed',+b.dataset.v===vs))}
+ btns.forEach(b=>b.addEventListener('click',()=>{vs=+b.dataset.v;t=0;mark()}));
+ const play=document.getElementById('play');play.addEventListener('click',()=>{run=!run;play.textContent=run?'暫停':'播放'});
+ let flash=0,flashN=0;
+ function frame(ts){
+  if(last===null)last=ts;const dt=(ts-last)/1000;last=ts;
+  if(run){t+=dt*1.2;if(t>TMAX+1.5){t=0}}
+  const tt=Math.min(t,TMAX);
+  c.clearRect(0,0,cv.width,cv.height);c.fillStyle='#eef6fb';c.fillRect(0,0,cv.width,cv.height);
+  c.strokeStyle='#dbe7ef';c.lineWidth=1;
+  for(let x=ox%U;x<cv.width;x+=U){c.beginPath();c.moveTo(x,0);c.lineTo(x,cv.height);c.stroke()}
+  for(let y=oy%U;y<cv.height;y+=U){c.beginPath();c.moveTo(0,y);c.lineTo(cv.width,y);c.stroke()}
+  c.strokeStyle='#2f78b0';c.lineWidth=2.5;let near=0;
+  for(let k=0;k<=Math.floor(tt);k++){const r=(tt-k)*U,cx=ox+vs*k*U;if(r>0){c.beginPath();c.arc(cx,oy,r,0,Math.PI*2);c.stroke();
+    if(Math.abs(Math.hypot(LX-cx,LY-oy)-r)<10)near++}}
+  if(near>=3){flash=0.6;flashN=near}else if(flash>0)flash-=dt*1.2;
+  const sx=ox+vs*tt*U;c.fillStyle='#c87720';c.beginPath();c.arc(sx,oy,11,0,7);c.fill();
+  c.fillStyle='#24333b';c.font='16px '+F;c.fillText('天鵝',sx-16,oy-18);
+  // 小鴨
+  c.fillStyle='#e0b400';c.beginPath();c.arc(LX,LY,10,0,7);c.fill();c.fillStyle='#24333b';c.fillText('小鴨（不動）',LX+16,LY+6);
+  if(flash>0&&vs>=1){c.fillStyle='#c2185b';c.font='bold 26px '+F;c.fillText(`轟！${flashN} 圈同時到達`,LX-60,LY+44)}
+  if(vs>1){const r0=tt*U,d=sx-ox;if(d>r0&&r0>0){const ang=Math.asin(r0/d);c.strokeStyle='#c2185b';c.lineWidth=2;c.setLineDash([8,6]);
+   for(const s of [1,-1]){c.beginPath();c.moveTo(sx,oy);c.lineTo(sx-Math.cos(ang)*d*1.3,oy+s*Math.sin(ang)*d*1.3);c.stroke()}c.setLineDash([])}}
+  c.fillStyle='#24333b';c.font='22px '+F;
+  const vtxt={0:'0',0.5:'½',0.75:'¾',1:'1',1.5:'1.5'}[vs];
+  c.fillText(`天鵝速度＝水波速度的 ${vtxt} 倍　　t＝${tt.toFixed(1)} 秒`,20,34);
+  c.font='20px '+F;
+  if(vs<1){c.fillStyle='#a85f13';c.fillText(`前方間距 ${(1-vs).toFixed(2)} 格　後方間距 ${(1+vs).toFixed(2)} 格`,20,66)}
+  else if(vs===1){c.fillStyle='#c2185b';c.fillText('前方間距 0：每一圈的前緣都疊在天鵝的位置',20,66)}
+  else{c.fillStyle='#c2185b';c.fillText('天鵝跑在所有波的前面：圓圈的邊連成 V 字（虛線）',20,66)}
+  requestAnimationFrame(frame);
+ }
+ mark();requestAnimationFrame(frame);
+})();
+</script></html>

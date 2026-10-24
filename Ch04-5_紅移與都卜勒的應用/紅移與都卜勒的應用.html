@@ -1,0 +1,67 @@
+<!doctype html><html lang="zh-Hant"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>紅移與宇宙膨脹</title>
+<style>*{box-sizing:border-box}body{margin:0;background:#f7f5f0;color:#202a32;font:22px/1.8 "PingFang TC","Microsoft JhengHei",sans-serif}header,main{max-width:1040px;margin:auto;padding:30px 28px}header{padding-bottom:0}small{color:#9b521e;font-size:16px}h1{font-size:clamp(32px,5vw,52px);line-height:1.4;margin:14px 0}h2{font-size:30px;line-height:1.5;margin:0 0 20px}p{margin:16px 0}section{margin:28px 0 64px}figure{margin:24px 0;background:white;border:1px solid #d5d9da;border-radius:12px;padding:18px;overflow:auto}svg{display:block;width:100%;min-width:650px}svg text{font-family:inherit;fill:#24333b}figcaption{font-size:17px;color:#56646d;line-height:1.6;margin-top:12px}.key{border-left:5px solid #b66a30;padding:12px 20px;background:#eeeae0}.controls{display:flex;gap:10px;flex-wrap:wrap;align-items:center;margin-top:10px;font-size:18px}.controls span{color:#56646d}input[type=range]{width:min(460px,70vw);accent-color:#317799}button{font:inherit;font-size:18px;padding:8px 16px;border-radius:8px;border:1px solid #9aadb3;background:white;cursor:pointer}button[aria-pressed=true]{background:#dceaf1;outline:2px solid #317799}.eq{text-align:center;font-size:24px;margin:14px 0}.frac{display:inline-flex;flex-direction:column;vertical-align:middle;text-align:center;margin:0 4px;line-height:1.25}.frac>span:first-child{border-bottom:1.5px solid currentColor;padding:0 4px}.t{font-size:13px;border:1px solid currentColor;border-radius:6px;padding:0 5px;margin:0 3px;white-space:nowrap;vertical-align:2px}.t.ref{color:#1f6fb4}.t.set{color:#7a3db4}.chal{border:1px solid #b4531f;color:#b4531f;border-radius:6px;font-size:14px;padding:0 6px;margin-left:6px;font-weight:700;vertical-align:3px}details{margin:14px 0;background:white;border:1px dashed #b9c4c6;border-radius:10px;padding:8px 18px}summary{cursor:pointer;color:#286d8c;font-weight:700}.foot{font-size:16px;color:#647079} @media(max-width:650px){body{font-size:19px}header,main{padding:20px 16px}h2{font-size:25px}figure{padding:10px}section{margin-bottom:45px}} </style>
+<header><small>延伸｜4-5 光的都卜勒效應</small><h1>星系遠在幾百萬光年外，<br>怎麼知道它正在離開我們？</h1><p>課本說，光源遠離時光的波長變長，叫紅移；天文學家看到遙遠的星系幾乎都紅移，推論宇宙在膨脹（p.134）。可是星系的光本來是什麼顏色，我們又不知道，怎麼看得出它「變紅」了？就算看得出來，為什麼所有星系都離我們而去，我們又不是宇宙的中心？</p></header>
+<main>
+<section><h2>光譜是一把尺：原子發的光像條碼</h2><p>把光用稜鏡或光柵分開，會得到一條由紫到紅的光譜。每一種原子只會發出（或吸收）幾個特定波長的光，在光譜上是一條條細線，排列的樣子固定，像商品的條碼（第 6 章會學為什麼）。例如氫原子有一條紅色的線，在實驗室量到的波長是 656.3 nm <span class="t ref" title="氫原子 Hα 譜線 656.3 nm（教科書常用值）">引用</span>。</p><p>我們不需要知道星系「原本」是什麼顏色。只要在星系的光裡認出氫的那一組條碼，再看這組條碼<b>整排</b>往哪邊、移了多少：往長波長那邊移是紅移，往短波長那邊是藍移。</p>
+<figure><svg id="sp" viewBox="0 0 950 300" role="img" aria-label="上面是實驗室裡氫的譜線，下面是星系光中同一組譜線，隨速度整排移動"></svg>
+<div class="controls"><label for="b">星系的速度</label><input id="b" type="range" min="-20" max="60" value="10"><b id="bv"></b></div>
+<figcaption>示意：深色細線是氫的四條譜線（410.2、434.0、486.1、656.3 nm）。往右拉＝遠離，往左拉＝靠近。條碼的間隔比例不變，整排一起移。</figcaption></figure></section>
+
+<section><h2>移多少，代表多快？</h2><p>和音爆那篇同一個想法：光源每隔一個週期 T 發出一個波峰。光源在遠離我們，這段時間它自己又退後了 v<sub>s</sub>T，所以傳到我們這裡的兩個波峰，間距從原本的 cT 拉長成 cT＋v<sub>s</sub>T。波長多出來的 Δλ＝v<sub>s</sub>T，原本的波長 λ＝cT，兩者相除：</p>
+<div class="eq"><span class="frac"><span>Δλ</span><span>λ</span></span> ＝ <span class="frac"><span>v<sub>s</sub></span><span>c</span></span><span class="chal">挑戰</span></div>
+<p>Δλ 是波長變長了多少，λ 是實驗室量到的波長，v<sub>s</sub> 是星系遠離的速率，c 是光速 3×10<sup>8</sup> m/s。這條式子只在 v<sub>s</sub> 比光速小很多時成立（課本 p.134 那個 0.7c 的例子不能用）。</p>
+<p>代入一次：某星系裡那條氫線出現在 662.9 nm <span class="t set">設定</span>。Δλ＝662.9−656.3＝6.6 nm，Δλ／λ＝6.6÷656.3≈0.01，所以 v<sub>s</sub>≈0.01c＝3×10<sup>6</sup> m/s，每秒 3000 公里。</p>
+<p>波長只差了 1%，速度卻是每秒 3000 公里。反過來說，日常的速度在光上造成的變化小到完全看不出來，課本 p.134「看到這貼紙變藍色，你真的開太快了」只是玩笑。</p></section>
+
+<section><h2>愈遠退得愈快：我們是宇宙中心嗎？</h2><p>先說清楚一件事：上一段的算法，是把星系當成在空間裡跑開的光源。對很遙遠的星系，嚴格的說法是光在路上走的時候，空間本身一直在脹大，把光的波長一起拉長；對比較近的星系，用上一段的算法估速度就夠了。</p><p>1929 年，哈伯把許多星系的距離和紅移放在一起，發現<b>愈遠的星系紅移愈大</b>，也就是遠離得愈快，速度和距離大致成正比 <span class="t ref" title="Hubble 1929；IAU 天文教育辦公室詞彙表〈哈勃圖〉">引用</span>。</p><p>除了附近少數被引力拉在一起的星系，從大尺度看，四面八方的星系都在離開我們，好像我們站在一場爆炸的正中央。可是換到別的星系上看，結果也一樣。想像一團烤箱裡的葡萄乾麵包：麵團均勻脹大，每兩顆葡萄乾之間的距離都變成 1.5 倍。下圖可以選你站在哪一顆葡萄乾上。</p>
+<figure><svg id="rb" viewBox="0 0 950 380" role="img" aria-label="葡萄乾麵包：麵團脹大前後，從選定的葡萄乾看其他葡萄乾的移動"></svg>
+<div class="controls"><span>你站在：</span><button data-r="0" aria-pressed="true">甲</button><button data-r="2" aria-pressed="false">丙</button><button data-r="4" aria-pressed="false">戊</button></div>
+<figcaption>示意：灰點＝脹大前，彩點＝脹大後，都畫成「從你站的那顆看出去」；箭頭是這段時間其他葡萄乾移動了多遠。</figcaption></figure>
+<p>不管站在哪一顆上，看到的都一樣：<b>每一顆都在遠離你，而且原本離你愈遠的，移得愈多</b>。原本相距 1 的，多了 0.5；原本相距 2 的，多了 1。同樣的時間移得多，就是退得快。所以「愈遠退得愈快」不代表我們在中心，而是整個空間一起在脹大的樣子：宇宙沒有中心，每個星系都看到別人在遠離。</p>
+<p class="key">星系光裡的原子條碼整排移動，移多少告訴我們它遠離多快；所有星系都在遠離，而且愈遠退得愈快，正是整個宇宙均勻膨脹時，從任何一個星系看到的樣子。</p></section>
+
+<section><h2>想一想</h2><p>另一個星系裡，同一條氫線出現在 649.7 nm <span class="t set">設定</span>。它在靠近還是遠離我們？速度大約多少？</p>
+<details><summary>想好了再打開</summary><p>波長變短了（656.3 → 649.7 nm），是<b>藍移，正在靠近</b>。波長短了 6.6 nm（Δλ＝649.7−656.3＝−6.6 nm，負號表示變短），Δλ／λ 的大小約 0.01，速度約 0.01c，每秒 3000 公里。少數離我們很近的星系會靠近，例如仙女座星系；它們受彼此的引力拉扯，抵過了宇宙膨脹。</p></details></section>
+<p class="foot">示意圖不按比例。</p></main>
+<script>
+const NS='http://www.w3.org/2000/svg';
+function el(svg,t,a,txt){const e=document.createElementNS(NS,t);for(const k in a)e.setAttribute(k,a[k]);if(txt!=null)e.textContent=txt;svg.appendChild(e);return e}
+// 光譜
+const sp=document.getElementById('sp'),L0=380,L1=720,X0=60,XW=830,X=l=>X0+(l-L0)/(L1-L0)*XW;
+const H=[410.2,434.0,486.1,656.3];
+function spec(){
+ const b=+document.getElementById('b').value/1000;   // v/c
+ sp.innerHTML='<defs><linearGradient id="rainbow" x1="0" x2="1"><stop offset="0" stop-color="#7a2fb5"/><stop offset=".2" stop-color="#3a4fe0"/><stop offset=".34" stop-color="#25a9d8"/><stop offset=".45" stop-color="#3cb44b"/><stop offset=".6" stop-color="#e6d22f"/><stop offset=".72" stop-color="#f08a24"/><stop offset=".88" stop-color="#d6312a"/><stop offset="1" stop-color="#8a1a14"/></linearGradient></defs>';
+ [[40,'實驗室裡的氫',0],[160,'星系的光',b]].forEach(([y,name,bb])=>{
+  el(sp,'rect',{x:X0,y,width:XW,height:60,fill:'url(#rainbow)',rx:4});
+  el(sp,'text',{x:X0,y:y-8,'font-size':18},name);
+  H.forEach(l=>{const x=X(l*(1+bb));if(x>=X0&&x<=X0+XW)el(sp,'rect',{x:x-2.5,y,width:5,height:60,fill:'#111'})});
+ });
+ const x0=X(656.3),x1=X(656.3*(1+b));
+ el(sp,'path',{d:`M${x0} 100V160`,stroke:'#56646d','stroke-width':1.5,'stroke-dasharray':'4 4'});
+ if(Math.abs(x1-x0)>6)el(sp,'path',{d:`M${x0} 232H${x1}`,stroke:b>0?'#c2185b':'#2f5fd0','stroke-width':3});
+ for(const l of [400,500,600,700])el(sp,'text',{x:X(l),y:262,'font-size':15,'text-anchor':'middle',style:'fill:#56646d'},l+' nm');
+ const lam=656.3*(1+b);
+ el(sp,'text',{x:X0,y:292,'font-size':18},`那條紅色氫線：656.3 → ${lam.toFixed(1)} nm，Δλ＝${(lam-656.3).toFixed(1)} nm，Δλ／λ＝${(b*100).toFixed(1)}%`);
+ document.getElementById('bv').textContent=b===0?'不動':`${b>0?'遠離':'靠近'} ${Math.abs(b*300000).toLocaleString()} km/s（${Math.abs(b*100).toFixed(1)}% 光速）`;
+}
+document.getElementById('b').oninput=spec;spec();
+// 葡萄乾麵包
+const rb=document.getElementById('rb'),R=[[-3,0.6],[-1.6,-1.3],[-0.4,0.9],[1.2,-0.6],[2.4,1.1],[3.4,-1.2]],NM='甲乙丙丁戊己';
+let me=0;
+function bread(){
+ rb.innerHTML='<defs><marker id="ar" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0 0L8 4L0 8Z" fill="#a85f13"/></marker></defs>';
+ const S=60,cx=475,cy=190,[mx,my]=R[me];
+ el(rb,'rect',{x:5,y:5,width:940,height:370,rx:40,fill:'#f6e7c8',stroke:'#d7bf8f'});
+ R.forEach(([x,y],i)=>{
+  const rx=x-mx,ry=y-my,ax=cx+rx*S/1.5,ay=cy+ry*S/1.5,bx=cx+rx*S,by=cy+ry*S;  // 脹大前畫成 1/1.5，脹大後原尺寸
+  if(i===me){el(rb,'circle',{cx,cy,r:13,fill:'#c2185b'});el(rb,'text',{x:cx,y:cy-20,'font-size':18,'text-anchor':'middle',style:'fill:#c2185b;font-weight:700'},NM[i]+'（你）');return}
+  el(rb,'circle',{cx:ax,cy:ay,r:9,fill:'#b9b2a5'});
+  el(rb,'path',{d:`M${ax} ${ay}L${bx} ${by}`,stroke:'#a85f13','stroke-width':2.5,'marker-end':'url(#ar)'});
+  el(rb,'circle',{cx:bx,cy:by,r:11,fill:'#6b3d1f'});
+  el(rb,'text',{x:bx+14,y:by+6,'font-size':17},NM[i]);
+ });
+ document.querySelectorAll('[data-r]').forEach(b=>b.setAttribute('aria-pressed',+b.dataset.r===me));
+}
+document.querySelectorAll('[data-r]').forEach(b=>b.onclick=()=>{me=+b.dataset.r;bread()});bread();
+</script></html>

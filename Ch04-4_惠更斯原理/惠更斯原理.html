@@ -1,0 +1,148 @@
+<!doctype html><html lang="zh-Hant"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>惠更斯原理</title>
+<style>*{box-sizing:border-box}body{margin:0;background:#f7f5f0;color:#202a32;font:22px/1.8 "PingFang TC","Microsoft JhengHei",sans-serif}header,main{max-width:1040px;margin:auto;padding:30px 28px}header{padding-bottom:0}small{color:#9b521e;font-size:16px}h1{font-size:clamp(32px,5vw,52px);line-height:1.4;margin:14px 0}h2{font-size:30px;line-height:1.5;margin:0 0 20px}p{margin:16px 0}section{margin:28px 0 64px}figure{margin:24px 0;background:white;border:1px solid #d5d9da;border-radius:12px;padding:18px;overflow:auto}canvas{display:block;width:100%;min-width:650px}figcaption{font-size:17px;color:#56646d;line-height:1.6;margin-top:12px}.key{border-left:5px solid #b66a30;padding:12px 20px;background:#eeeae0}.controls{display:flex;gap:10px;flex-wrap:wrap;align-items:center;margin-top:10px;font-size:18px}.controls span{color:#56646d}button{font:inherit;font-size:18px;padding:8px 16px;border-radius:8px;border:1px solid #9aadb3;background:white;cursor:pointer}button[aria-pressed=true]{background:#dceaf1;outline:2px solid #317799}button:disabled{opacity:.4;cursor:default}#next{background:#b66a30;color:white;border-color:#b66a30}#next:disabled{background:white;color:#202a32;border-color:#9aadb3}details{margin:14px 0;background:white;border:1px dashed #b9c4c6;border-radius:10px;padding:8px 18px}summary{cursor:pointer;color:#286d8c;font-weight:700}.foot{font-size:16px;color:#647079}@media(max-width:650px){body{font-size:19px}header,main{padding:20px 16px}h2{font-size:25px}figure{padding:10px}section{margin-bottom:45px}}</style>
+<header><small>延伸｜4-4 光波的特性｜接在課本 p.124「五、惠更斯原理」</small><h1>知道現在的波前，<br>怎麼找出下一刻的波前？</h1><p>水波、光波往外傳，我們用<b>波前</b>描述它：同一時刻、振動情況相同的點連成的線。直線波的波前是直線，圓形波的波前是圓。可是只知道「現在」波前在哪裡，要怎麼預測「等一下」它會跑到哪裡、變成什麼形狀？惠更斯給了一個作圖的方法。</p></header>
+<main>
+<section><h2>惠更斯的作法：每一點都當成新的波源</h2>
+<p>把現在波前上的每一點都視為一個<b>次波源</b>，它發出的波叫<b>次波</b>（課本稱為「子波」）。在波速相同的介質裡，經過相同的時間 Δt，每個次波都往外傳了<b>相同的距離</b> vΔt（v 是波速），在平面上畫成一個個半徑相同的小圓（在立體空間裡是小球面）。</p>
+<p>接著找一條線，<b>在前進方向貼著這些小圓的外緣</b>，和每個小圓都剛好相切。這條共同的切線（或切著的曲線），叫這些小圓的<b>包絡線</b>，就是 Δt 之後的新波前。</p>
+<p class="key">原波前上每一點視為次波源；波速相同時，經過相同時間，各次波傳播相同距離；這些次波在前進方向上的共同包絡線，就是新的波前。</p></section>
+
+<section><h2>動畫：先自己畫，再按下一步檢查</h2>
+<p>依序看三段：直線波前、圓形波前、連續傳播。每一段在小圓長好之後會停住，<b>先在紙上畫出你認為的新波前</b>，再按「顯示新波前」檢查。</p>
+<figure><canvas id="cv" width="1200" height="560" aria-label="惠更斯原理作圖動畫：波前上取點、長出等半徑小圓、畫出前方包絡線"></canvas>
+<div class="controls"><button data-s="0" aria-pressed="true">① 直線波前</button><button data-s="1">② 圓形波前</button><button data-s="2">③ 連續傳播</button></div>
+<div class="controls"><button id="next">下一步</button><button id="reset">重來</button><button id="dense" aria-pressed="false">多畫一些點</button><span id="hint"></span></div>
+<figcaption>示意，不按比例。藍線＝現在的波前；灰色小點＝取來當次波源的點；淡藍小圓＝經過 Δt 的次波，半徑都是 vΔt；紅線＝前進方向的包絡線＝新波前。也可以按空白鍵代替「下一步」。</figcaption></figure></section>
+
+<section><h2>看圖時要注意的三件事</h2>
+<p><b>圖上只取幾個點，是為了看得清楚。</b>實際上波前上的每一點都要當成次波源，小圓多到數不清。按動畫下方的「多畫一些點」，看看點愈密時，包絡線是不是愈貼合。</p>
+<p><b>小圓不是真的多出一群振動的東西。</b>水面上沒有人在那些點另外拍水；小圓只是「波怎麼往前傳」的作圖模型：波前上每一點的振動，會帶動旁邊的水一起振動，往四面八方傳出去。</p>
+<p><b>新波前只取前進方向那一側。</b>小圓往後也有一半，但那一半不畫成新波前（為什麼不會往回傳，惠更斯的簡單模型沒有交代，高中先只取前方）。</p></section>
+
+<section><h2>看出了什麼</h2>
+<p><b>① 直線波前</b>：每個小圓一樣大，圓心又排在一直線上，所以貼著它們前緣的線也是直線，和原來的波前平行、往前移了 vΔt。直線波前往前走，還是直線波前。</p>
+<p><b>② 圓形波前</b>：小圓的圓心排在一段圓弧上，每個小圓往外多出同樣的 vΔt，所以外側的包絡線是一段更大的同心圓弧，半徑從 r 變成 r＋vΔt。圓形波前往外走，還是圓，只是愈來愈大。</p>
+<p><b>③ 連續傳播</b>：新波前一畫好，它自己又成為下一次作圖的「現在的波前」。一次一次重複，就能從一個時刻的波前一路推出之後每個時刻的波前，這就是惠更斯原理有用的地方。</p>
+<p>動畫裡每個小圓的圓心到它和紅線的切點，連線都垂直於紅線，而且都指向前進方向。這就是課本說的：<b>波傳播的方向恆和波前垂直</b>。</p></section>
+
+<section><h2>想一想：波前斜斜地碰到交界面</h2><p>直線波前斜斜地往右下前進，下方是波速較慢的區域（例如淺水）。A 端<b>先碰到</b>交界面，B 端還在快的區域，要再過一段時間才到交界面。</p>
+<p>在這段時間裡，B 在快區一路直走；A 一進慢區，就以較慢的波速發出次波。AB 中間的點陸續碰到交界面，也陸續在慢區發出次波。慢區各處的波速都相同，但 A 最早開始發出次波，所以它的圓最大；愈晚抵達交界面的點，次波發出得愈晚，圓就愈小。按「下一步」看這段過程，<b>停住時先在紙上畫出 B 到達交界面那一刻的新波前</b>，再按下一步檢查。</p>
+<figure><canvas id="cv2" width="1200" height="620" aria-label="惠更斯原理作圖解釋折射：A 端先進慢區，B 端到達交界面時的新波前"></canvas>
+<div class="controls"><button id="next2">下一步</button><button id="reset2">重來</button><button id="ghost" aria-pressed="true" disabled>沒有變慢的假想波前</button><span id="hint2"></span></div>
+<figcaption>示意，不按比例：下方波速設為上方的一半。藍線＝波前；橘色虛線＝B 走過的路；淡藍半圓＝各點進入慢區後發出的次波（只畫往前的一半）；紅線＝新波前；灰色虛線＝如果下方沒有變慢，同一時刻波前會在的位置。</figcaption></figure>
+<details><summary>想好了再打開</summary><p><b>新波前不和原來平行。</b>同一段時間，B 在快區走得遠，A 在慢區走得近；新波前從 B 到達的點，一路切到 A 的小圓上。和「沒有變慢」的灰色波前比，先進慢區的那一端落後，波前轉了方向。傳播方向垂直於波前，所以也跟著轉，在慢區比原來更靠近法線。這就是課本 p.124 圖 4-17② 用惠更斯原理解釋的<b>折射</b>。</p></details></section>
+<p class="foot">示意動畫：圖上只畫有限個點與小圓；包絡線只取前進方向。直線波前的兩端在實際波中會向外擴散（那是繞射，另外討論），這裡只看中間部分。</p></main>
+<script>
+(function(){
+ const cv=document.getElementById('cv'),c=cv.getContext('2d'),F='"PingFang TC","Microsoft JhengHei",sans-serif';
+ const W=cv.width,H=cv.height,R=70;               // R＝vΔt（px）
+ const O={x:170,y:H/2},A0=42*Math.PI/180;          // 圓形波：波源 O、半張角
+ let scene=0,phase=0,grow=0,dense=false,gen=0,fade=0,last=null;
+ // phase：0 只有波前與點；1 小圓長大中；2 停格等預測；3 顯示包絡；（場景③）4 淡化後換下一代
+ const sb=[...document.querySelectorAll('[data-s]')],next=document.getElementById('next'),hint=document.getElementById('hint'),db=document.getElementById('dense');
+ function n(){return dense?17:7}
+ function sources(){                                // 回傳 [{x,y,nx,ny}]：次波源與前進方向單位向量
+  const k=n(),out=[];
+  if(scene===0){const x=330,y0=110,y1=H-110;for(let i=0;i<k;i++){out.push({x,y:y0+(y1-y0)*i/(k-1),nx:1,ny:0})}}
+  else{const r=rad();for(let i=0;i<k;i++){const a=-A0+2*A0*i/(k-1);out.push({x:O.x+r*Math.cos(a),y:O.y+r*Math.sin(a),nx:Math.cos(a),ny:Math.sin(a)})}}
+  return out}
+ function rad(){return scene===1?200:110+gen*R}       // 現在的圓形波前半徑
+ function front(off,col,lw){c.strokeStyle=col;c.lineWidth=lw;c.beginPath();
+  if(scene===0){const x=330+off;c.moveTo(x,110);c.lineTo(x,H-110)}
+  else c.arc(O.x,O.y,rad()+off,-A0,A0);c.stroke()}
+ function reset(){phase=0;grow=0;gen=0;fade=0;upd()}
+ function upd(){sb.forEach((b,i)=>b.setAttribute('aria-pressed',i===scene));db.setAttribute('aria-pressed',dense);
+  const t=['按「下一步」：每個點同時長出次波','次波長大中…','先在紙上畫出 Δt 後的新波前，再按「下一步」',(scene===2&&gen>=2?'完成三次作圖：波前一直是圓弧、半徑每次多 vΔt':'新波前出現；'+(scene===2?'按「下一步」讓它成為新的次波源':'換下一段看看')),'淡化舊的…'][phase];
+  hint.textContent=t;next.textContent=phase===2?'顯示新波前':'下一步';next.disabled=(phase===1||phase===4||(phase===3&&scene!==2)||(scene===2&&gen>=2&&phase===3))}
+ sb.forEach((b,i)=>b.addEventListener('click',()=>{scene=i;reset()}));
+ db.addEventListener('click',()=>{dense=!dense;upd()});
+ document.getElementById('reset').addEventListener('click',reset);
+ function step(){if(next.disabled)return;
+  if(phase===0)phase=1;else if(phase===2)phase=3;else if(phase===3&&scene===2){phase=4;fade=0}upd()}
+ next.addEventListener('click',step);
+ document.addEventListener('keydown',e=>{if(e.code==='Space'&&e.target.tagName!=='BUTTON'){e.preventDefault();step()}});
+ function arrow(x,y,dx,dy,col){c.strokeStyle=c.fillStyle=col;c.lineWidth=2;c.beginPath();c.moveTo(x,y);c.lineTo(x+dx,y+dy);c.stroke();
+  const a=Math.atan2(dy,dx);c.beginPath();c.moveTo(x+dx,y+dy);c.lineTo(x+dx-10*Math.cos(a-.4),y+dy-10*Math.sin(a-.4));c.lineTo(x+dx-10*Math.cos(a+.4),y+dy-10*Math.sin(a+.4));c.fill()}
+ function frame(ts){if(last===null)last=ts;const dt=Math.min((ts-last)/1000,.1);last=ts;
+  if(phase===1){grow+=dt/1.6;if(grow>=1){grow=1;phase=(scene===2&&gen>0)?3:2;upd()}}
+  if(phase===4){fade+=dt/1.0;if(fade>=1){gen++;phase=1;grow=0;fade=0;upd()}}
+  c.fillStyle='#eef6fb';c.fillRect(0,0,W,H);
+  const S=sources(),r=R*grow,show=phase>=1;
+  c.fillStyle='#24333b';c.font='22px '+F;
+  c.fillText(['① 直線波前','② 圓形波前','③ 連續傳播'][scene]+(scene===2?`　第 ${gen+1} 次作圖`:''),20,36);
+  if(scene>0){c.fillStyle='#24333b';c.beginPath();c.arc(O.x,O.y,6,0,7);c.fill();c.font='16px '+F;c.fillText('波源',O.x-18,O.y+28);
+   if(scene===2){c.strokeStyle='#b8cbd6';c.lineWidth=1.5;for(let g=0;g<gen;g++){c.beginPath();c.arc(O.x,O.y,110+g*R,-A0,A0);c.stroke()}}}
+  const al=1-fade;c.globalAlpha=al;
+  front(0,'#1f5f99',4);
+  if(show){c.strokeStyle='rgba(47,120,176,.55)';c.lineWidth=1.6;for(const p of S){c.beginPath();c.arc(p.x,p.y,r,0,7);c.stroke()}}
+  c.fillStyle='#55626a';for(const p of S){c.beginPath();c.arc(p.x,p.y,5,0,7);c.fill()}
+  c.globalAlpha=1;
+  if(phase>=3){front(R,'#c2185b',5);
+   const mid=S[Math.floor(S.length/2)],ends=[S[0],mid,S[S.length-1]];
+   for(const p of ends){c.setLineDash([5,5]);c.strokeStyle='#c2185b';c.lineWidth=1.5;c.beginPath();c.moveTo(p.x,p.y);c.lineTo(p.x+p.nx*R,p.y+p.ny*R);c.stroke();c.setLineDash([])}
+   for(const p of ends)arrow(p.x+p.nx*(R+12),p.y+p.ny*(R+12),p.nx*45,p.ny*45,'#a85f13');
+   c.font='19px '+F;c.fillStyle='#c2185b';
+   if(scene===0)c.fillText('新波前：仍是直線，往前移 vΔt',430,H-60);
+   else{const L=k=>k===0?'r':k===1?'r＋vΔt':`r＋${k}vΔt`,g=scene===2?gen:0;c.fillText(`新波前：仍是圓弧，半徑 ${L(g)} → ${L(g+1)}`,W-480,H-60)}}
+  c.font='17px '+F;c.fillStyle='#56646d';
+  if(show)c.fillText('小圓半徑都是 vΔt',20,66);
+  requestAnimationFrame(frame)}
+ upd();requestAnimationFrame(frame);
+})();
+</script>
+<script>
+(function(){
+ const cv=document.getElementById('cv2'),c=cv.getContext('2d'),F='"PingFang TC","Microsoft JhengHei",sans-serif';
+ const W=cv.width,H=cv.height,Y0=320,XA=180,L=360,D1=360,D2=180;      // D1、D2：B 走到交界面這段時間，快區、慢區各走多遠（設定：慢區＝快區一半）
+ const TH=Math.PI/4,TH2=Math.asin(Math.sin(TH)*D2/D1);               // 方向由作圖決定；程式用折射定律算精確位置
+ const d1=[Math.sin(TH),Math.cos(TH)],d2=[Math.sin(TH2),Math.cos(TH2)],K=[0,1/6,2/6,3/6,4/6,5/6,1];
+ const A=[XA,Y0],B=[XA+L*Math.cos(TH),Y0-L*Math.sin(TH)];
+ function P(s,t){const f=s,x0=XA+s*L*Math.cos(TH),y0=Y0-s*L*Math.sin(TH);  // s：AB 上的位置 0..1；45° 時 s 處碰到界面的時刻＝s
+  if(t<=f)return[x0+D1*t*d1[0],y0+D1*t*d1[1]];const hx=XA+s*L*Math.SQRT2;return[hx+D2*(t-f)*d2[0],Y0+D2*(t-f)*d2[1]]}
+ const Bp=P(1,1),Ap=P(0,1),Ag=[A[0]+D1*d1[0],A[1]+D1*d1[1]];        // B′、A′、沒變慢時 A 會到的地方
+ let ph=0,t=0,g=0,ghost=true,last=null;   // ph：0 開始；1 播放；2 停格；3 新波前＋假想；4 轉向角；5 箭頭
+ const nx=document.getElementById('next2'),gb=document.getElementById('ghost'),hint=document.getElementById('hint2');
+ const H2=['按「下一步」：A 先進慢區，B 還在快區','A 進入慢區發出次波，B 繼續直走…','先在紙上畫出 B 到達交界面那一刻的新波前','新波前從 B′ 切到 A 的小圓；灰色虛線＝沒有變慢時的波前','先進慢區的一端前進較少，波前轉向','傳播方向垂直波前，因此也改變了'];
+ function upd(){hint.textContent=H2[ph];nx.disabled=ph===1||ph===5;gb.disabled=ph<3;gb.setAttribute('aria-pressed',ghost)}
+ nx.addEventListener('click',()=>{if(nx.disabled)return;ph++;g=0;if(ph===1)t=0;upd()});
+ gb.addEventListener('click',()=>{ghost=!ghost;upd()});
+ document.getElementById('reset2').addEventListener('click',()=>{ph=0;t=0;g=0;ghost=true;upd()});
+ function ln(p,q,col,lw,dash){c.strokeStyle=col;c.lineWidth=lw;c.setLineDash(dash||[]);c.beginPath();c.moveTo(p[0],p[1]);c.lineTo(q[0],q[1]);c.stroke();c.setLineDash([])}
+ function ext(p,q,e){const dx=q[0]-p[0],dy=q[1]-p[1],n=Math.hypot(dx,dy);return[[p[0]-dx/n*e,p[1]-dy/n*e],[q[0]+dx/n*e,q[1]+dy/n*e]]}
+ function arrow(p,dx,dy,col){const q=[p[0]+dx,p[1]+dy];ln(p,q,col,3);const a=Math.atan2(dy,dx);c.fillStyle=col;c.beginPath();c.moveTo(q[0],q[1]);c.lineTo(q[0]-13*Math.cos(a-.4),q[1]-13*Math.sin(a-.4));c.lineTo(q[0]-13*Math.cos(a+.4),q[1]-13*Math.sin(a+.4));c.fill()}
+ function lab(p,s,col,dx,dy){c.fillStyle=col||'#24333b';c.font='bold 22px '+F;c.fillText(s,p[0]+(dx||0),p[1]+(dy||0))}
+ function frame(ts){if(last===null)last=ts;const dt=Math.min((ts-last)/1000,.1);last=ts;
+  if(ph===1){t+=dt/3.2;if(t>=1){t=1;ph=2;upd()}}
+  if(ph>=3)g=Math.min(1,g+dt/1.2);
+  c.fillStyle='#eef6fb';c.fillRect(0,0,W,Y0);c.fillStyle='#d6e4cf';c.fillRect(0,Y0,W,H-Y0);ln([0,Y0],[W,Y0],'#4d6b45',2);
+  c.fillStyle='#24333b';c.font='20px '+F;c.fillText('上方：波速較快',20,34);c.fillText('下方：波速較慢（上方的一半）',20,H-20);
+  const tt=ph===0?0:t;
+  if(tt>0){ln(B,P(1,tt),'#c87720',2.5,[8,6])}
+  // 慢區次波：各點碰到界面後才發出，只畫往前（下方）的一半
+  c.strokeStyle='rgba(47,120,176,.65)';c.lineWidth=1.6;
+  for(const s of K){if(tt>s){const r=D2*(tt-s);c.beginPath();c.arc(XA+s*L*Math.SQRT2,Y0,r,0,Math.PI);c.stroke()}}
+  // 現在的波前（快區直線＋慢區切線）
+  const pts=[];for(let i=0;i<=60;i++){const v=tt+(1-tt)*i/60;pts.push(P(v,tt))}   // 只畫還在快區的那段；慢區的切線留到揭示
+  c.strokeStyle=ph>=3?'#1f5f99':'#1f5f99';c.lineWidth=ph>=3?0:4;
+  if(ph<3){c.beginPath();pts.forEach((p,i)=>i?c.lineTo(p[0],p[1]):c.moveTo(p[0],p[1]));c.stroke()}
+  ln(A,B,'#1f5f99',ph>=1?1.5:4,ph>=1?[4,5]:[]);
+  c.fillStyle='#55626a';for(const s of K){const p=P(s,tt);if(ph<3&&s>=tt){c.beginPath();c.arc(p[0],p[1],5,0,7);c.fill()}}
+  lab(A,'A','#24333b',-30,-6);lab(B,'B','#24333b',10,-6);
+  if(ph>=3){
+   if(ghost){const e=ph>=4?ext(Ag,Bp,140):[Ag,Bp];ln(e[0],e[1],'#7d8a90',2.5,[10,7]);c.fillStyle='#7d8a90';c.font='18px '+F;c.fillText('沒有變慢的假想波前',Ag[0]+14,Ag[1]-4)}
+   const e=ph>=4?ext(Ap,Bp,140):[Ap,Bp];ln(e[0],e[1],'#c2185b',ph>=4?3:5);ln(Ap,Bp,'#c2185b',5);
+   lab(Bp,'B′','#c2185b',8,-10);lab(Ap,'A′','#c2185b',-38,8);
+   c.fillStyle='#c2185b';c.beginPath();c.arc(Ap[0],Ap[1],5,0,7);c.fill();c.beginPath();c.arc(Bp[0],Bp[1],5,0,7);c.fill()}
+  if(ph>=4){const a1=Math.atan2(Ag[1]-Bp[1],Ag[0]-Bp[0]),a2=Math.atan2(Ap[1]-Bp[1],Ap[0]-Bp[0]);
+   c.strokeStyle='#c2185b';c.lineWidth=2.5;c.beginPath();c.arc(Bp[0],Bp[1],70,a1,a2);c.stroke();
+   c.fillStyle='#c2185b';c.font='bold 22px '+F;c.fillText('先進慢區的一端前進較少，',750,390);c.fillText('波前轉向',750,420)}
+  if(ph>=5){const M=[(Ap[0]+Bp[0])/2,(Ap[1]+Bp[1])/2],u=[(Bp[0]-Ap[0]),(Bp[1]-Ap[1])],un=Math.hypot(u[0],u[1]),q=12;const e1=[u[0]/un*q,u[1]/un*q],e2=[d2[0]*q,d2[1]*q];
+   ln([M[0]+e1[0],M[1]+e1[1]],[M[0]+e1[0]+e2[0],M[1]+e1[1]+e2[1]],'#a85f13',2);ln([M[0]+e2[0],M[1]+e2[1]],[M[0]+e1[0]+e2[0],M[1]+e1[1]+e2[1]],'#a85f13',2);
+   const gg=Math.min(1,g*1.6);if(gg>0.05)arrow(M,d2[0]*130*gg,d2[1]*130*gg,'#a85f13');
+   if(g>=0.8){ln([M[0],M[1]-90],[M[0],M[1]+170],'#8a969c',1.5,[6,6]);c.fillStyle='#6b777d';c.font='18px '+F;c.fillText('法線',M[0]+6,M[1]-72);
+    c.globalAlpha=.55;arrow(M,d1[0]*130,d1[1]*130,'#7d8a90');c.globalAlpha=1;c.fillStyle='#6b777d';c.fillText('原來的方向',M[0]+d1[0]*130+6,M[1]+d1[1]*130+4);
+    c.fillStyle='#a85f13';c.font='bold 22px '+F;c.fillText('傳播方向垂直波前，因此也改變了：',750,450);c.fillText('比原來更靠近法線',750,482)}}
+  requestAnimationFrame(frame)}
+ upd();requestAnimationFrame(frame);
+})();
+</script></html>

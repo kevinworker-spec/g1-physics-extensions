@@ -1,0 +1,70 @@
+<!doctype html><html lang="zh-Hant"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>平行導線與一安培</title>
+<style>*{box-sizing:border-box}body{margin:0;background:#f7f5f0;color:#202a32;font:22px/1.8 "PingFang TC","Microsoft JhengHei",sans-serif}header,main{max-width:1040px;margin:auto;padding:30px 28px}header{padding-bottom:0}small{color:#9b521e;font-size:16px}h1{font-size:clamp(32px,5vw,52px);line-height:1.4;margin:14px 0}h2{font-size:30px;line-height:1.5;margin:0 0 20px}p{margin:16px 0}section{margin:28px 0 64px}figure{margin:24px 0;background:white;border:1px solid #d5d9da;border-radius:12px;padding:18px;overflow:auto}svg{display:block;width:100%;min-width:650px}svg text{font-family:inherit;fill:#24333b}figcaption{font-size:17px;color:#56646d;line-height:1.6;margin-top:12px}.key{border-left:5px solid #b66a30;padding:12px 20px;background:#eeeae0}.box{border:1px solid #c9cfd1;background:white;border-radius:10px;padding:10px 20px}.controls{display:flex;gap:10px;flex-wrap:wrap;align-items:center;margin-top:10px}.controls span{font-size:18px;color:#56646d}button{font:inherit;font-size:18px;padding:8px 16px;border-radius:8px;border:1px solid #9aadb3;background:white;cursor:pointer}button[aria-pressed=true]{background:#dceaf1;outline:2px solid #317799}#stateNote{min-height:4em;font-size:19px;color:#2c3a43}.t{font-size:13px;border:1px solid currentColor;border-radius:6px;padding:0 5px;margin:0 3px;white-space:nowrap;vertical-align:2px}.t.ref{color:#1f6fb4}.t.est{color:#8a5a00}.t.set{color:#7a3db4}.chal{border:1px solid #b4531f;color:#b4531f;border-radius:6px;font-size:14px;padding:0 6px;margin-left:6px;font-weight:700;vertical-align:3px}.eq{text-align:center;font-size:24px;margin:14px 0}.frac{display:inline-flex;flex-direction:column;vertical-align:middle;text-align:center;margin:0 4px;line-height:1.25}.frac>span:first-child{border-bottom:1.5px solid currentColor;padding:0 4px}details{margin:14px 0;background:white;border:1px dashed #b9c4c6;border-radius:10px;padding:8px 18px}summary{cursor:pointer;color:#286d8c;font-weight:700}.foot{font-size:16px;color:#647079}a{color:#286d8c} @media(max-width:650px){body{font-size:19px}header,main{padding:20px 16px}h2{font-size:25px}figure{padding:10px}section{margin-bottom:45px}} </style>
+<header><small>延伸｜4-1 電流磁效應</small><h1>兩條平行的電線，電流同方向，<br>會互相吸引還是互相排斥？</h1><p>電線是銅做的，拿磁鐵去靠近，吸不起來；兩條沒通電的電線放在一起，也不會互相吸。可是課本說，<b>電流的周圍有磁場</b>（p.100）。那麼把第二條通電的電線放進第一條的磁場裡，會發生什麼事？</p></header>
+<main>
+<section><h2>先找：甲的磁場，在乙那裡往哪個方向？</h2><p>兩條長直導線甲、乙平行放著，下圖是從導線的一端看過去的截面，導線只剩兩個小圓。⊙ 表示電流從紙面穿出來、朝向你；⊗ 表示穿進紙面。</p>
+<figure><svg id="fig" viewBox="0 0 950 430" role="img" aria-label="截面圖：甲在左、乙在右，畫出其中一條導線的磁力線、它在另一條導線位置的磁場方向，以及另一條導線受的力">
+<defs><marker id="mB" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0 0L8 4L0 8Z" fill="#287fb3"/></marker><marker id="mF" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0 0L8 4L0 8Z" fill="#c4572f"/></marker></defs>
+<g id="field" fill="none" stroke="#287fb3" stroke-width="2.5" opacity=".7"><circle id="c1" r="80"/><circle id="c2" r="160"/><path id="a1" stroke-width="3" marker-end="url(#mB)"/><path id="a2" stroke-width="3" marker-end="url(#mB)"/></g>
+<g id="wires"></g>
+<path id="bArrow" stroke="#287fb3" stroke-width="6" marker-end="url(#mB)"/>
+<text id="bText" font-size="20" style="fill:#287fb3;paint-order:stroke;stroke:white;stroke-width:6px"></text>
+<path id="fArrow" stroke="#c4572f" stroke-width="8" marker-end="url(#mF)"/>
+<text id="fText" font-size="20" style="fill:#a8431f;font-weight:700;paint-order:stroke;stroke:white;stroke-width:6px"></text>
+<text id="cap" x="475" y="415" font-size="18" text-anchor="middle" style="fill:#56646d"></text>
+</svg>
+<div class="controls"><span>乙的電流：</span><button data-i="1" aria-pressed="true">和甲同方向 ⊙</button><button data-i="-1" aria-pressed="false">和甲反方向 ⊗</button></div>
+<div class="controls"><span>看哪一條受力：</span><button data-v="B" aria-pressed="true">乙</button><button data-v="A" aria-pressed="false">甲</button></div>
+<figcaption id="stateNote"></figcaption></figure>
+<p>先只看甲（按「乙」，看乙受的力）。用安培右手定則：右手拇指指向甲的電流，也就是朝你，四指彎曲的方向就是磁力線的方向，從你這邊看是<b>逆時針</b>。乙在甲的右邊，逆時針的圓走到右邊這一點時是往上走的，所以甲的磁場在乙那裡<b>向上</b>。</p></section>
+
+<section><h2>乙在這個磁場裡，被推向哪邊？</h2><p>乙是一段有電流的導線，現在它正處在甲的磁場裡。課本 p.103〈小百科〉說，載流導線放在磁場中會受力，方向用右手開掌來找：<b>拇指指電流、四指指磁場，掌心推的方向就是力</b>。</p>
+<p>對乙：拇指朝你（乙的電流），四指向上（甲在乙那裡的磁場），掌心朝<b>左</b>，乙被推向甲。</p>
+<p>你可能會問：乙自己也有電流，周圍也有一圈一圈的磁場，為什麼不用管？因為乙自己的磁力線把乙圍在正中間，各個方向對稱，推不動乙自己，就像人拉不起自己的頭髮。所以要問「乙整條被往哪邊推」，能推動乙的，只有<b>別人</b>的磁場。</p>
+<p>再按「甲」，換看甲受的力：這次是乙的磁場在甲那裡向下，甲的電流朝你，掌心朝<b>右</b>，甲被拉向乙。兩個力一樣大、方向相反，分別作用在甲、乙身上，正是第 2 章的作用力與反作用力。</p>
+<p>最後按「和甲反方向」：甲在乙那裡的磁場還是向上，可是乙的電流反過來，拇指換方向，掌心也跟著反過來，乙被推<b>離</b>甲。</p>
+<p class="key">每一條導線都處在另一條的磁場裡而受力：電流同方向互相吸引，反方向互相排斥。</p></section>
+
+<section><h2>這個力有多大？</h2><p>沿著同一條推理看大小：甲的電流愈大、乙離甲愈近，甲在乙那裡的磁場就愈強（課本 p.100：磁場和電流成正比、和距離成反比）；乙放在這個磁場裡，自己的電流愈大，被推得也愈用力。所以兩條導線之間的力，和<b>兩條導線的電流相乘</b>成正比，和距離成反比。</p>
+<div class="eq">每公尺導線受力　<span class="frac"><span>F</span><span>L</span></span> ＝ 2×10<sup>−7</sup> × <span class="frac"><span>I<sub>甲</sub> × I<sub>乙</sub></span><span>d</span></span><span class="chal">挑戰</span></div>
+<p>F／L 的單位是 N/m，電流用 A，距離 d 用 m。這個式子只適用於很長、平行的直導線。</p>
+<p>兩條都通 1 A、相距 1 m：每公尺只受 2×10<sup>−7</sup> N。這大約是 0.02 毫克的東西受到的重力 <span class="t est">估算</span>，比一粒細沙還輕。所以家裡的電線從來不會互相吸過去。</p></section>
+
+<section><h2>這麼小的力，被拿來定義「1 安培」</h2><p>這個力只和電流、距離有關，和導線用什麼金屬做、粗細多少都沒關係。所以從 1948 年到 2019 年，國際上就用它來<b>定義</b>電流的單位 <span class="t ref" title="NIST, SI Redefinition: Ampere">引用</span>：</p>
+<div class="box">兩條無限長、相距 1 公尺的平行直導線，通相同的電流；若每公尺導線受力 2×10<sup>−7</sup> 牛頓，這個電流就是 1 安培。</div>
+<p>上面式子裡的 2×10<sup>−7</sup> 就是這樣來的：在舊制裡它不是量出來的數字，而是先規定好的；2019 年改制後，它變成非常接近、但不再是規定的精確值，高中計算照樣用 2×10<sup>−7</sup>。不過「無限長」的導線做不出來，這麼小的力也很難量準，所以 2019 年起改成用電子的電量來定義安培：固定基本電荷 e＝1.602176634×10<sup>−19</sup> C，1 安培就是每秒流過約 6.24×10<sup>18</sup> 個電子的電量 <span class="t ref" title="NIST, SI Redefinition: Ampere；基本電荷 e 為定義值">引用</span>。</p></section>
+
+<section><h2>想一想</h2><p>延長線裡有兩條電線，電流一條去、一條回。這兩條線互相吸引還是排斥？</p>
+<details><summary>想好了再打開</summary><p><b>互相排斥。</b>一去一回就是反方向：甲在乙那裡的磁場方向不變，乙的電流反過來，受力也反過來，乙被推離甲。平常電流只有幾安培、力小到感覺不到；可是短路時電流瞬間大上百倍，兩條電流相乘，力會大上萬倍，電線可能被猛然推開。</p></details></section>
+<p class="foot">截面示意圖，不按比例；只畫出其中一條導線的磁力線。只考慮兩條導線彼此的力，不含地磁或附近的磁鐵。</p></main>
+<script>
+const P={A:300,B:600},Y=215;let iB=1,view='B';
+function wire(x,s,name){return `<circle cx="${x}" cy="${Y}" r="24" fill="white" stroke="#b07d00" stroke-width="3"/>`+(s>0?`<circle cx="${x}" cy="${Y}" r="6" fill="#b07d00"/>`:`<path d="M${x-12} ${Y-12}L${x+12} ${Y+12}M${x+12} ${Y-12}L${x-12} ${Y+12}" stroke="#b07d00" stroke-width="3"/>`)+`<text x="${x}" y="${Y+60}" font-size="26" font-weight="700" text-anchor="middle">${name}</text>`}
+function draw(){
+ const src=view==='B'?'A':'B',tgt=view;           // 畫「另一條」的磁場，看 tgt 受力
+ const sI=src==='A'?1:iB,tI=tgt==='A'?1:iB;
+ const xs=P[src],xt=P[tgt],right=xt>xs?1:-1;
+ const up=sI*right;                                 // 磁場在 tgt 處：+1 向上
+ const fx=-tI*up;                                   // F ∝ I ẑ × B：ẑ×ŷ＝−x̂
+ ['c1','c2'].forEach(id=>{const c=document.getElementById(id);c.setAttribute('cx',xs);c.setAttribute('cy',Y)});
+ // 磁力線上方的小箭頭：⊙ 逆時針（頂端向左），⊗ 順時針（頂端向右）
+ const d=sI>0?-1:1;
+ document.getElementById('a1').setAttribute('d',`M${xs-14*d} ${Y-80}L${xs+14*d} ${Y-80}`);
+ document.getElementById('a2').setAttribute('d',`M${xs-14*d} ${Y-160}L${xs+14*d} ${Y-160}`);
+ document.getElementById('wires').innerHTML=wire(P.A,1,'甲')+wire(P.B,iB,'乙');
+ const side=-fx,bx=xt+side*48;                    // 磁場箭頭畫在受力的另一側，不和力的箭頭疊在一起
+ document.getElementById('bArrow').setAttribute('d',`M${bx} ${Y+45*up}L${bx} ${Y-45*up}`);
+ const bt=document.getElementById('bText');bt.setAttribute('x',bx+side*12);bt.setAttribute('y',Y-60*up+(up>0?0:12));bt.setAttribute('text-anchor',side>0?'start':'end');
+ bt.textContent=`${src==='A'?'甲':'乙'}的磁場在這裡：${up>0?'向上':'向下'}`;
+ document.getElementById('fArrow').setAttribute('d',`M${xt+fx*30} ${Y}L${xt+fx*125} ${Y}`);
+ const ft=document.getElementById('fText');ft.setAttribute('x',xt+fx*80);ft.setAttribute('y',Y-22);ft.setAttribute('text-anchor','middle');
+ ft.textContent=`${tgt==='A'?'甲':'乙'}受力`;
+ document.getElementById('cap').textContent=`藍：${src==='A'?'甲':'乙'}的磁力線（${sI>0?'電流朝你 → 逆時針':'電流進紙面 → 順時針'}）　紅：${tgt==='A'?'甲':'乙'}受的力`;
+ const toward=(fx>0)===(xs>xt);
+ document.getElementById('stateNote').textContent=`${src==='A'?'甲':'乙'}的磁場在${tgt==='A'?'甲':'乙'}那裡${up>0?'向上':'向下'}；${tgt==='A'?'甲':'乙'}的電流${tI>0?'朝你':'進紙面'}，右手開掌：掌心朝${fx<0?'左':'右'}，${tgt==='A'?'甲':'乙'}被${toward?'拉向':'推離'}${src==='A'?'甲':'乙'} → ${iB>0?'同方向，互相吸引':'反方向，互相排斥'}。`;
+ document.querySelectorAll('[data-i]').forEach(b=>b.setAttribute('aria-pressed',+b.dataset.i===iB));
+ document.querySelectorAll('[data-v]').forEach(b=>b.setAttribute('aria-pressed',b.dataset.v===view));
+}
+document.querySelectorAll('[data-i]').forEach(b=>b.onclick=()=>{iB=+b.dataset.i;draw()});
+document.querySelectorAll('[data-v]').forEach(b=>b.onclick=()=>{view=b.dataset.v;draw()});draw();
+</script></html>

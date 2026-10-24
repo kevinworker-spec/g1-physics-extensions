@@ -1,0 +1,69 @@
+<!doctype html><html lang="zh-Hant"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>馬達為什麼一直轉</title>
+<style>*{box-sizing:border-box}body{margin:0;background:#f7f5f0;color:#202a32;font:22px/1.8 "PingFang TC","Microsoft JhengHei",sans-serif}header,main{max-width:1040px;margin:auto;padding:30px 28px}header{padding-bottom:0}small{color:#9b521e;font-size:16px}h1{font-size:clamp(32px,5vw,52px);line-height:1.4;margin:14px 0}h2{font-size:30px;line-height:1.5;margin:0 0 20px}p{margin:16px 0}section{margin:28px 0 64px}figure{margin:24px 0;background:white;border:1px solid #d5d9da;border-radius:12px;padding:18px;overflow:auto}svg{display:block;width:100%;min-width:650px}svg text{font-family:inherit;fill:#24333b}figcaption{font-size:17px;color:#56646d;line-height:1.6;margin-top:12px}.key{border-left:5px solid #b66a30;padding:12px 20px;background:#eeeae0}.controls{display:flex;gap:10px;flex-wrap:wrap}button{font:inherit;font-size:18px;padding:8px 16px;border-radius:8px;border:1px solid #9aadb3;background:white;cursor:pointer}button[aria-pressed=true]{background:#dceaf1;outline:2px solid #317799}.note{min-height:3.6em;font-size:19px;color:#2c3a43}.foot{font-size:16px;color:#647079}a{color:#286d8c} @media(max-width:650px){body{font-size:19px}header,main{padding:20px 16px}h2{font-size:25px}figure{padding:10px}section{margin-bottom:45px}} </style>
+<header><small>延伸</small><h1>通電導線在磁場裡只會被推一下，<br>馬達為什麼能一直轉？</h1><p>課本說通電導線在磁場中會受力。可是一個力把導線推過去就結束了，馬達卻能一圈接一圈轉下去。中間至少有兩件事要想通：線圈為什麼會「轉」，以及轉過頭以後為什麼不會被拉回來。</p></header>
+<main><section><h2>先看清楚：線圈的兩側受什麼力？</h2><p>最簡單的馬達，是一個方形線圈放在兩塊磁鐵之間，可以繞中間的轉軸轉動。線圈沿轉軸方向的兩條邊在磁場裡；下圖是<b>順著轉軸看過去</b>，這兩條邊只剩兩個截面，分別叫甲邊和乙邊。</p>
+<figure><svg viewBox="0 0 950 420" role="img" aria-label="沿轉軸看的線圈截面：磁場向右，甲邊與乙邊電流方向相反，受力一上一下；可切換線圈角度與是否換向">
+<defs><marker id="g" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0 0L8 4L0 8Z" fill="#24835d"/></marker><marker id="b" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0 0L8 4L0 8Z" fill="#287fb3"/></marker><marker id="o" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0 0L8 4L0 8Z" fill="#c87720"/></marker></defs>
+<rect x="30" y="60" width="70" height="300" rx="6" fill="#edcccc"/><text x="52" y="222" font-size="34">N</text>
+<rect x="540" y="60" width="70" height="300" rx="6" fill="#cadff0"/><text x="563" y="222" font-size="34">S</text>
+<g stroke="#287fb3" stroke-width="2" opacity=".5" marker-end="url(#b)"><path d="M110 100H530"/><path d="M110 320H530"/><path d="M110 140H530"/><path d="M110 280H530"/></g>
+<circle cx="320" cy="210" r="7" fill="#56646d"/><text x="300" y="250" font-size="17" fill="#56646d" style="fill:#56646d">轉軸</text>
+<line id="coil" stroke="#b99c74" stroke-width="4" stroke-dasharray="9 6"/>
+<circle id="pc" r="22" fill="white" stroke="#bd6c20" stroke-width="3"/><text id="ps" font-size="30" text-anchor="middle" class="o" style="fill:#bd6c20"></text><text id="pl" font-size="19" text-anchor="middle">甲邊</text>
+<circle id="qc" r="22" fill="white" stroke="#bd6c20" stroke-width="3"/><text id="qs" font-size="30" text-anchor="middle" style="fill:#bd6c20"></text><text id="ql" font-size="19" text-anchor="middle">乙邊</text>
+<path id="pf" stroke="#24835d" stroke-width="5" marker-end="url(#g)"/><path id="qf" stroke="#24835d" stroke-width="5" marker-end="url(#g)"/>
+<path id="rot" fill="none" stroke="#c87720" stroke-width="4" marker-end="url(#o)"/>
+<text x="650" y="90" font-size="21" style="fill:#287fb3">藍線：磁場向右</text><text x="650" y="130" font-size="21">⊙ 電流朝我們出來</text><text x="650" y="170" font-size="21">⊗ 電流進入紙面</text><text x="650" y="210" font-size="21" style="fill:#24835d">綠箭頭：導線受的磁力</text>
+<text id="res" x="650" y="280" font-size="24" style="font-weight:bold"></text>
+</svg>
+<div class="controls"><button data-s="0" aria-pressed="true">甲：線圈水平</button><button data-s="1" aria-pressed="false">乙：轉到豎直</button><button data-s="2" aria-pressed="false">丙：轉過頭、電流不變</button><button data-s="3" aria-pressed="false">丁：轉過頭、電流反向</button></div>
+<figcaption id="note" class="note"></figcaption></figure>
+<p>先看<b>甲</b>。線圈是一圈導線，電流從甲邊流出來，就從乙邊流回去，所以兩邊電流方向相反，受力也相反：甲邊向上、乙邊向下。兩個力大小相同、方向相反，線圈整體不會往上或往下跑；但它們一個在轉軸左邊、一個在右邊，就像兩手一上一下轉方向盤，線圈被<b>轉</b>動，往順時針方向。</p><p class="key">兩側受力相反，不會互相抵消掉轉動；因為它們作用在轉軸的兩邊，合起來讓線圈轉。</p></section>
+
+<section><h2>轉過頭，為什麼會被拉回來？</h2><p>再按<b>乙</b>：線圈轉到豎直。磁場和電流方向都沒變，所以甲邊仍然受向上的力、乙邊仍然受向下的力。可是現在甲邊在轉軸正上方、乙邊在正下方，向上的力只是把甲邊往上拉，向下的力只是把乙邊往下拉，<b>兩個力都對著轉軸，不再讓線圈轉</b>。</p><p>線圈轉動時有慣性，會稍微衝過這個位置。按<b>丙</b>：衝過頭以後，甲邊跑到轉軸右上方，可是它受的力仍然向上，這時向上的力反而讓線圈<b>逆時針</b>轉，把它往回拉。如果電流一直不變，線圈就會在豎直位置附近擺來擺去，最後停下來，轉不成一圈。</p></section>
+
+<section><h2>換向器：每半圈把電流反過來</h2><p>要讓線圈繼續往同一個方向轉，衝過豎直位置的那一刻，就得把線圈裡的電流反過來。按<b>丁</b>：甲邊的電流改成進入紙面，受力改成向下；它在轉軸右邊被往下推，線圈又是順時針轉了。</p>
+<figure><svg viewBox="0 0 950 310" role="img" aria-label="換向器：兩片半環連著線圈兩端，電刷固定；轉半圈後兩片半環交換接觸的電刷">
+<g font-size="20">
+<text x="70" y="35">線圈水平時</text>
+<path d="M200 90A70 70 0 0 0 200 230" fill="none" stroke="#bd6c20" stroke-width="16"/><path d="M220 90A70 70 0 0 1 220 230" fill="none" stroke="#8b9aa2" stroke-width="16"/>
+<rect x="95" y="145" width="30" height="30" fill="#56646d"/><rect x="295" y="145" width="30" height="30" fill="#56646d"/>
+<text x="55" y="252">接電源＋</text><text x="262" y="252">接電源−</text>
+<text x="60" y="290">橙色半環（接甲邊那端）碰到＋</text>
+<text x="545" y="35">轉了半圈後</text>
+<path d="M690 90A70 70 0 0 1 690 230" fill="none" stroke="#bd6c20" stroke-width="16"/><path d="M670 90A70 70 0 0 0 670 230" fill="none" stroke="#8b9aa2" stroke-width="16"/>
+<rect x="565" y="145" width="30" height="30" fill="#56646d"/><rect x="765" y="145" width="30" height="30" fill="#56646d"/>
+<text x="525" y="252">接電源＋</text><text x="732" y="252">接電源−</text>
+<text x="530" y="290">橙色半環轉到右邊，改碰到−</text>
+</g></svg><figcaption>換向器示意：兩片半環跟著線圈轉，電刷固定不動。半環的縫隙在線圈豎直時經過電刷，正好在那一刻換接。</figcaption></figure>
+<p>做法是把線圈的兩端各接到一片<b>半環</b>上，兩片半環跟著線圈一起轉；電源則經由兩個固定的<b>電刷</b>壓在半環上。線圈每轉半圈，兩片半環就交換一次接觸的電刷，線圈裡的電流也就反過來一次。換接的時機剛好在線圈豎直、兩邊力不轉動它的時候，衝過去以後，力就又讓它往原來的方向轉。</p><p>結果是：不管線圈轉到哪裡，<b>此刻在轉軸左邊的那一邊，電流總是朝我們出來、受力向上</b>，右邊那一邊總是受力向下，線圈一直被往順時針轉。</p><p class="key">線圈兩側受力相反、作用在轉軸兩邊，所以會轉；轉過豎直位置後力會把它拉回，所以要靠換向器每半圈讓電流反向，轉動才能一圈接一圈。</p></section>
+
+<section><h2>回頭想：線圈剛好停在豎直位置，接上電會怎樣？</h2><p>停在豎直位置時，兩邊的力都對著轉軸，不會讓線圈轉，所以這種最簡單的單線圈馬達可能接上電卻不動，要用手撥一下才開始轉。實際的馬達用好幾組線圈、錯開不同角度，任何時候總有一組受力能讓它轉，轉起來也比較平順。</p></section>
+<p class="foot">本篇以最簡單的單線圈直流馬達為例，圖為原理示意，省略線圈的端邊與配線；端邊受的力不讓線圈繞轉軸轉，這裡沒有畫。現在很多馬達用電子電路代替電刷換向，原理相同。依 <a href="https://openstax.org/books/physics/pages/20-2-motors-generators-and-transformers">OpenStax 馬達與發電機</a>核對。</p><p class="foot">生活中的電與磁：<a href="../Ch04-2_電磁爐/電磁爐.html">電磁爐</a> · <a href="../Ch04-3_微波爐/微波爐.html">微波爐</a> · <a href="../Ch04-2_發電機/發電機.html">發電機</a> · <a href="../Ch04-2_變壓器/變壓器.html">變壓器</a> · <a href="../Ch04-1_喇叭/喇叭.html">喇叭</a>｜<a href="../Ch04_生活中的電與磁/index.html">系列入口</a></p></main>
+<script>
+// 沿轉軸看：螢幕上順時針為正向轉動。θ 自「甲邊在左」起算、順時針；c=+1 表示甲邊電流 ⊙。
+// 磁場向右：⊙ 受力向上、⊗ 受力向下。轉矩 ∝ −c·cosθ（負＝順時針）。
+const CX=320,CY=210,R=120,F=55;
+const S=[{t:0,c:1},{t:90,c:1},{t:135,c:1},{t:135,c:-1}];
+const notes=[
+ '甲：甲邊在轉軸左邊、受力向上；乙邊在右邊、受力向下。兩力作用在轉軸兩邊，線圈順時針轉。',
+ '乙：轉到豎直。甲邊在正上方、仍受力向上；乙邊在正下方、仍受力向下。兩力都對著轉軸，不讓線圈轉。',
+ '丙：衝過頭，電流不變。甲邊到了轉軸右邊，受力仍向上，反而讓線圈逆時針轉，被拉回去。',
+ '丁：衝過頭，電流反向。甲邊電流改成進入紙面、受力向下；它在轉軸右邊被往下推，線圈又順時針轉。'];
+function arc(cw){return cw?`M${CX-60} ${CY-45}A75 75 0 0 1 ${CX+60} ${CY-45}`:`M${CX+60} ${CY-45}A75 75 0 0 0 ${CX-60} ${CY-45}`}
+function show(i){const {t,c}=S[i],r=t*Math.PI/180;
+ const px=CX-R*Math.cos(r),py=CY-R*Math.sin(r),qx=CX+R*Math.cos(r),qy=CY+R*Math.sin(r);
+ const set=(id,a)=>{const e=document.getElementById(id);for(const k in a)e.setAttribute(k,a[k])};
+ set('coil',{x1:px,y1:py,x2:qx,y2:qy});set('pc',{cx:px,cy:py});set('qc',{cx:qx,cy:qy});
+ set('ps',{x:px,y:py+10});set('qs',{x:qx,y:qy+10});
+ document.getElementById('ps').textContent=c>0?'⊙':'⊗';document.getElementById('qs').textContent=c>0?'⊗':'⊙';
+ const lo=(x,y)=>({x:x+(x<CX-5?-48:x>CX+5?48:52),y:y+(x>CX-5&&x<CX+5?0:-28)});
+ set('pl',lo(px,py));set('ql',lo(qx,qy));
+ const pd=c>0?-1:1;set('pf',{d:`M${px+(c>0?0:0)} ${py+pd*24}V${py+pd*(24+F)}`});set('qf',{d:`M${qx} ${qy-pd*24}V${qy-pd*(24+F)}`});
+ const tau=-c*Math.cos(r);const rot=document.getElementById('rot');
+ if(Math.abs(tau)<0.01){rot.style.display='none';document.getElementById('res').textContent='不轉（兩力對著轉軸）'}
+ else{rot.style.display='';rot.setAttribute('d',arc(tau<0));document.getElementById('res').textContent=tau<0?'線圈順時針轉':'線圈逆時針轉（被拉回）'}
+ document.getElementById('note').textContent=notes[i];
+ document.querySelectorAll('[data-s]').forEach(b=>b.setAttribute('aria-pressed',b.dataset.s==String(i)));}
+document.querySelectorAll('[data-s]').forEach(b=>b.onclick=()=>show(+b.dataset.s));show(0);
+</script></html>

@@ -1,0 +1,100 @@
+<!doctype html><html lang="zh-Hant"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>管子裡的能量</title>
+<style>*{box-sizing:border-box}body{margin:0;background:#f7f5f0;color:#202a32;font:22px/1.8 "PingFang TC","Microsoft JhengHei",sans-serif}header,main{max-width:1040px;margin:auto;padding:30px 28px}header{padding-bottom:0}small{color:#9b521e;font-size:16px}h1{font-size:clamp(32px,5vw,52px);line-height:1.4;margin:14px 0}h2{font-size:30px;line-height:1.5;margin:0 0 20px}p{margin:16px 0}section{margin:28px 0 64px}figure{margin:24px 0;background:white;border:1px solid #d5d9da;border-radius:12px;padding:18px;overflow:auto}svg{display:block;width:100%;min-width:650px}svg text{font-family:inherit;fill:#24333b}figcaption{font-size:17px;color:#56646d;line-height:1.6;margin-top:12px}.key{border-left:5px solid #b66a30;padding:12px 20px;background:#eeeae0}.controls{display:flex;gap:10px;flex-wrap:wrap;align-items:center;margin-top:10px}button{font:inherit;font-size:18px;padding:8px 16px;border-radius:8px;border:1px solid #9aadb3;background:white;cursor:pointer}button[aria-pressed=true]{background:#dceaf1;outline:2px solid #317799}input[type=range]{width:min(420px,70vw);accent-color:#317799}.controls label{font-size:18px}#stateNote{min-height:5.2em;font-size:19px;color:#2c3a43}.t{font-size:13px;border:1px solid currentColor;border-radius:6px;padding:0 5px;margin:0 3px;white-space:nowrap;vertical-align:2px}.t.set{color:#7a3db4}.t.est{color:#8a5a00}.chal{border:1px solid #b4531f;color:#b4531f;border-radius:6px;font-size:14px;padding:0 6px;margin-left:6px;font-weight:700;vertical-align:3px}details{margin:14px 0;background:white;border:1px dashed #b9c4c6;border-radius:10px;padding:8px 18px}summary{cursor:pointer;color:#286d8c;font-weight:700}table{border-collapse:collapse;margin:10px 0;font-size:19px}td,th{border:1px solid #c9cfd1;padding:6px 12px;text-align:left}.foot{font-size:16px;color:#647079}a{color:#286d8c} @media(max-width:650px){body{font-size:19px}header,main{padding:20px 16px}h2{font-size:25px}figure{padding:10px}section{margin-bottom:45px}} </style>
+<header><small>延伸｜4-2 冷次定律</small><h1>磁鐵在鋁管裡慢慢掉，<br>它少掉的能量到哪裡去了？</h1><p>同一顆強力磁鐵，從塑膠管口放手，一眨眼就掉出來；從一樣長的鋁管（或銅管）口放手，要好幾秒才慢慢落出。磁鐵都從同樣的高度掉到底，可是在鋁管裡，它到底時的速度慢得多。能量不會憑空消失，那它到哪裡去了？</p></header>
+<main>
+<section><h2>先回到課堂上的結論：管子把磁鐵往上推、往上拉</h2><p>上課時把鋁管想成很多個疊起來的<b>鋁環</b>，每一個環都是一條閉合的路，電流可以繞一圈。磁鐵 N 極朝下往下掉，看兩個環：</p>
+<figure><svg viewBox="0 0 950 470" role="img" aria-label="側視示意：鋁管中一顆 S 上 N 下的磁鐵往下掉；磁鐵下方的鋁環俯視逆時針，上面是 N，往上推磁鐵；上方的鋁環俯視順時針，下面是 N，往上拉磁鐵；重力向下">
+<defs><marker id="ao" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0 0L8 4L0 8Z" fill="#c87720"/></marker><marker id="ag" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0 0L8 4L0 8Z" fill="#697c88"/></marker><marker id="ac" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto"><path d="M0 0L7 3.5L0 7Z" fill="#c87720"/></marker></defs>
+<rect x="150" y="20" width="170" height="430" fill="#eef2f3" stroke="#9aa7ad" stroke-width="3"/>
+<text x="235" y="44" font-size="17" text-anchor="middle" style="fill:#697c88">鋁管（剖開看）</text>
+<!-- 上方的環：俯視順時針，前緣箭頭向左 -->
+<ellipse cx="235" cy="120" rx="85" ry="17" fill="none" stroke="#c87720" stroke-width="5"/>
+<path d="M262 136L210 136" stroke="#c87720" stroke-width="4" marker-end="url(#ac)"/>
+<!-- 下方的環：俯視逆時針，前緣箭頭向右 -->
+<ellipse cx="235" cy="340" rx="85" ry="17" fill="none" stroke="#c87720" stroke-width="5"/>
+<path d="M208 356L260 356" stroke="#c87720" stroke-width="4" marker-end="url(#ac)"/>
+<!-- 磁鐵 -->
+<rect x="205" y="185" width="60" height="45" fill="#c94b4b"/><rect x="205" y="230" width="60" height="45" fill="#3f63c8"/>
+<text x="235" y="216" font-size="24" text-anchor="middle" style="fill:white">S</text><text x="235" y="261" font-size="24" text-anchor="middle" style="fill:white">N</text>
+<!-- 力：往上的推、拉 -->
+<path d="M290 300V200" stroke="#c87720" stroke-width="6" marker-end="url(#ao)"/>
+<path d="M180 210V155" stroke="#c87720" stroke-width="6" marker-end="url(#ao)"/>
+<!-- 運動方向（磁鐵往下） -->
+<path d="M112 200V300" stroke="#697c88" stroke-width="4" stroke-dasharray="7 6" marker-end="url(#ag)"/>
+<text x="20" y="250" font-size="18" style="fill:#697c88">磁鐵往下</text>
+<!-- 說明 -->
+<text x="350" y="100" font-size="20">上方這一環：磁鐵正在<tspan style="font-weight:700">離開</tspan></text>
+<text x="350" y="128" font-size="18" style="fill:#56646d">電流俯視順時針 → 這環的下面變成 N，</text>
+<text x="350" y="152" font-size="18" style="fill:#56646d">吸住磁鐵上端的 S → <tspan style="fill:#a85f13;font-weight:700">往上拉</tspan></text>
+<text x="350" y="318" font-size="20">下方這一環：磁鐵正在<tspan style="font-weight:700">靠近</tspan></text>
+<text x="350" y="346" font-size="18" style="fill:#56646d">電流俯視逆時針 → 這環的上面變成 N，</text>
+<text x="350" y="370" font-size="18" style="fill:#56646d">和磁鐵下端的 N 相斥 → <tspan style="fill:#a85f13;font-weight:700">往上推</tspan></text>
+<text x="350" y="430" font-size="17" style="fill:#56646d">橘色粗箭頭：管子對磁鐵的力（都向上）；灰色虛線：磁鐵運動的方向</text>
+</svg><figcaption>圖為示意，只畫出兩個環；其實磁鐵上方、下方的每一個環都有電流，電流大小要看穿過那一環的磁力線變化得多快，不一定是正對磁鐵中間那一環最大。環上的小箭頭畫在靠近你的那一側。</figcaption></figure>
+<p>重點只有一個：<b>管子對磁鐵的力是往上的，磁鐵卻是往下走</b>，力和運動方向相反。鋁吸不住磁鐵，這個力完全來自鋁環裡的感應電流。</p></section>
+
+<section><h2>如果感應電流反過來，會怎樣？</h2><p>冷次定律說感應電流一定「抵抗」磁力線數量的變化，表現出來就是上面那樣：管子一定擋著磁鐵。可是為什麼一定是擋？我們假設反過來，看會發生什麼。</p>
+<p>假設下方的環反而把磁鐵<b>往下吸</b>、上方的環把磁鐵<b>往下推</b>：</p>
+<ol><li>磁鐵除了重力，又多了一個往下的力，掉得<b>更快</b>。</li><li>磁鐵更快，穿過每一個環的磁力線數量就變得<b>更快</b>。上一堂做過：磁鐵推進線圈愈快，檢流計指針偏得愈大，所以環裡的電流<b>更大</b>。</li><li>電流更大，往下的吸力、推力也<b>更大</b>，磁鐵又更快……回到第 1 步。</li></ol>
+<p>這個循環一直轉下去，磁鐵會愈掉愈快。問題是：<b>沒有任何東西在供應能量</b>。管子沒接電池，磁鐵的重力位能是固定的一份，用完就沒了，動能卻可以一直增加。更糟的是，電流流過鋁會發熱，熱也是多出來的。這等於能量憑空出現，違反能量守恆。</p>
+<p>所以感應電流只剩一種可能：<b>擋</b>。冷次定律可以看成能量守恆在電磁感應裡的樣子：感應電流不會幫著變化，只會抵抗它。</p></section>
+
+<section><h2>真實的情況：位能去了哪裡？</h2><p>用下面這張圖比較三種情況。先選管子，再拉滑桿讓磁鐵往下掉，看右邊三種能量怎麼變。</p>
+<figure><svg id="eg" viewBox="0 0 950 440" role="img" aria-label="左邊管子和磁鐵的位置，右邊三根長條：重力位能、動能、管子的熱，虛線是磁鐵放手時的總能量">
+<defs><marker id="ag2" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0 0L8 4L0 8Z" fill="#697c88"/></marker></defs>
+<rect id="tube" x="120" y="40" width="110" height="360" stroke-width="3"/>
+<text id="tubeName" x="175" y="428" font-size="18" text-anchor="middle"></text>
+<g id="mag"><rect x="150" y="0" width="50" height="28" fill="#c94b4b"/><rect x="150" y="28" width="50" height="28" fill="#3f63c8"/></g>
+<text x="60" y="56" font-size="16" style="fill:#697c88">放手</text><text x="60" y="400" font-size="16" style="fill:#697c88">管底</text>
+<path d="M440 360H900" stroke="#8b9aa2" stroke-width="2"/>
+<path d="M440 110H900" stroke="#24333b" stroke-width="2" stroke-dasharray="8 6"/>
+<text x="905" y="104" font-size="16" text-anchor="end">放手時的總能量</text>
+<rect id="bPE" x="470" width="90" fill="#317799"/><rect id="bKE" x="620" width="90" fill="#3d8a4d"/><rect id="bQ" x="770" width="90" fill="#c4572f"/>
+<text x="515" y="388" font-size="18" text-anchor="middle">重力位能</text><text x="665" y="388" font-size="18" text-anchor="middle">動能</text><text x="815" y="388" font-size="18" text-anchor="middle">管子的熱</text>
+<text id="over" x="665" y="30" font-size="19" text-anchor="middle" style="fill:#b3261e;font-weight:700"></text>
+<text id="thin" x="665" y="420" font-size="15" text-anchor="middle" style="fill:#56646d"></text>
+</svg>
+<div class="controls"><button data-s="0" aria-pressed="true">塑膠管</button><button data-s="1" aria-pressed="false">鋁管</button><button data-s="2" aria-pressed="false">假如電流反過來（想像）</button></div>
+<div class="controls"><label for="fall">磁鐵掉了多遠</label><input id="fall" type="range" min="0" max="100" value="0"></div>
+<figcaption id="stateNote"></figcaption></figure>
+<p><b>塑膠管</b>不導電，沒有感應電流，磁鐵自由落下：少掉的重力位能全部變成動能。</p>
+<p><b>鋁管</b>裡，磁鐵放手後先加速一小段；速度愈快、往上的推拉力愈大，很快就大到和重力一樣，之後幾乎<b>等速</b>往下。速度不再增加，動能也就停在很小的一份，重力位能卻照樣一路減少。這些能量不在磁鐵身上了。</p>
+<p>它到了鋁環的電流裡。這些電流在鋁裡繞圈，鋁有電阻，電流流過就會發熱，和電熱水壺的電熱絲通電會熱是同一個道理。能量的路線是：<b>重力位能 → 鋁管裡的電流 → 鋁管的熱</b>。</p>
+<p>怎麼確定這份電流的能量是磁鐵給的？想像用手把磁鐵扶在管子中間不動：穿過每一個環的磁力線不變，就沒有感應電流，也不發熱。<b>只有磁鐵一邊往下走、管子一邊往上擋，電流才在</b>。磁鐵每往下走一段，就被往上的力拿走一份能量，交給管裡的電流，最後變成熱。</p>
+<p class="key">磁鐵在鋁管裡等速往下掉時，重力位能沒有變成動能，而是經由感應電流，變成了鋁管的熱。</p>
+<p>差多少？用一組數字感受一下 <span class="t set">設定</span>：強力磁鐵 20 g、管長 1 m，在鋁管裡約 5 秒掉到底，到底時約 0.2 m/s。同一顆磁鐵在塑膠管裡自由落下 1 m，到底時約 4.4 m/s <span class="t est">估算</span>。動能和速率的平方成正比，所以鋁管裡到底的動能只有塑膠管的 (0.2÷4.4)² ≈ <b>1/500</b>，剩下的五百分之四百九十九都變成了熱。</p>
+<p>那為什麼摸不出鋁管變熱？因為這份能量本來就很少：20 g 的磁鐵掉 1 m，重力位能只少了大約 0.2 J <span class="t est">估算</span>，平均分給一根約 150 g 的鋁管，溫度只升高大約 0.002 °C <span class="t est">估算</span>，手當然摸不出來。熱很少，但它確實在那裡。</p>
+<details><summary>0.2 J 和 0.002 °C 怎麼算的<span class="chal">挑戰</span></summary><p>重力位能少了 mgh＝0.020 kg × 9.8 m/s² × 1 m ≈ 0.20 J（第 5 章會學）。鋁的比熱約 0.90 J/(g·°C)，150 g 的鋁升高 1 °C 要 0.90 × 150 ≈ 135 J，所以 0.20 J 只能讓它升高 0.20 ÷ 135 ≈ 0.0015 °C。這裡把熱當成平均分到整根管子；實際上磁鐵經過的那一圈附近先熱，再傳開。</p></details></section>
+
+<section><h2>想一想</h2><p>手拿一根細棒，棒的下端黏著強力磁鐵，在鋁管裡快速上下抽動。手會覺得輕鬆，還是費力？費力的話，你的力氣最後變成了什麼？</p>
+<details><summary>想好了再打開</summary><p><b>費力。</b>往下推時，管子往上擋；往上拉時，磁鐵在離開下面的環、靠近上面的環，管子變成往下擋。不管往哪個方向，管子都抵抗磁鐵的運動，抽得愈快，擋得愈用力。你一直在出力對抗它，你付出的能量經由管裡的感應電流，變成了鋁管的熱。如果管子反過來幫你，你就能不花力氣讓磁鐵愈抽愈快，那又是能量憑空出現了。</p></details></section>
+<p class="foot">圖為原理示意，不按比例。忽略空氣阻力和磁鐵擦到管壁的摩擦；管子是不會被磁鐵吸住的金屬（鋁、銅）。數字為示意設定與估算，實際秒數和磁鐵、管子有關，可換成課堂實測。</p></main>
+<script>
+const T=[{name:'塑膠管',fill:'#f3f0e8',stroke:'#b8ad94'},{name:'鋁管',fill:'#eef2f3',stroke:'#9aa7ad'},{name:'鋁管（想像：電流反過來）',fill:'#fbecea',stroke:'#c98a83'}];
+const Y0=360,S=250,MT=40,MB=344;// 長條：能量 1 ＝ 250 px；磁鐵頂端由 40 移到 344
+// 各情況下，掉了 x（0～1）時的三種能量，以放手時的總能量為 1。鋁管的動能實際約 1/500，畫成至少 3 px 才看得到。反過來的情況只是示意，不是算出來的。
+function E(s,x){
+ if(s===0)return[1-x,x,0];
+ if(s===1){const k=0.002*Math.min(1,x/0.05);return[1-x,k,x-k]}
+ return[1-x,x+1.6*x*x,0.25*x*x];
+}
+const notes=[
+ '塑膠管：沒有感應電流。重力位能少多少，動能就多多少，三根加起來一直等於虛線。',
+ '鋁管：動能只有細細一條，幾乎不增加；重力位能少掉的，幾乎全部變成管子的熱。三根加起來仍等於虛線。',
+ '想像電流反過來：動能長得比重力位能減少得還快，還多了熱，三根加起來超過虛線。多出來的能量沒有來源，所以不可能。'];
+let s=0;
+function draw(){
+ const x=document.getElementById('fall').value/100,e=E(s,x);
+ const tube=document.getElementById('tube');tube.setAttribute('fill',T[s].fill);tube.setAttribute('stroke',T[s].stroke);
+ document.getElementById('tubeName').textContent=T[s].name;
+ document.getElementById('mag').setAttribute('transform',`translate(0 ${MT+(MB-MT)*x})`);
+ ['bPE','bKE','bQ'].forEach((id,i)=>{let h=Math.min(e[i],1.18)*S;if(s===1&&i===1&&x>0)h=Math.max(h,3);const r=document.getElementById(id);r.setAttribute('y',Y0-h);r.setAttribute('height',h)});
+ const tot=e[0]+e[1]+e[2];
+ document.getElementById('over').textContent=tot>1.02?'三根加起來超過原本的總能量！多出來的從哪裡來？':'';
+ document.getElementById('thin').textContent=(s===1&&x>0)?'動能畫粗了，實際約為總能量的 1/500':'';
+ document.getElementById('stateNote').textContent=notes[s];
+ document.querySelectorAll('[data-s]').forEach(b=>b.setAttribute('aria-pressed',b.dataset.s==String(s)));
+}
+document.querySelectorAll('[data-s]').forEach(b=>b.onclick=()=>{s=+b.dataset.s;draw()});
+document.getElementById('fall').oninput=draw;draw();
+</script></html>

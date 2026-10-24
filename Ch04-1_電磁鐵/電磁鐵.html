@@ -1,0 +1,57 @@
+<!doctype html><html lang="zh-Hant"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>電磁鐵</title>
+<style>*{box-sizing:border-box}body{margin:0;background:#f7f5f0;color:#202a32;font:22px/1.8 "PingFang TC","Microsoft JhengHei",sans-serif}header,main{max-width:1040px;margin:auto;padding:30px 28px}header{padding-bottom:0}small{color:#9b521e;font-size:16px}h1{font-size:clamp(32px,5vw,52px);line-height:1.4;margin:14px 0}h2{font-size:30px;line-height:1.5;margin:0 0 20px}p{margin:16px 0}section{margin:28px 0 64px}figure{margin:24px 0;background:white;border:1px solid #d5d9da;border-radius:12px;padding:18px;overflow:auto}svg{display:block;width:100%;min-width:650px}svg text{font-family:inherit;fill:#24333b}figcaption{font-size:17px;color:#56646d;line-height:1.6;margin-top:12px}.key{border-left:5px solid #b66a30;padding:12px 20px;background:#eeeae0}.controls{display:flex;gap:10px;flex-wrap:wrap;align-items:center;margin-top:10px;font-size:18px}.controls span{color:#56646d}button{font:inherit;font-size:18px;padding:8px 16px;border-radius:8px;border:1px solid #9aadb3;background:white;cursor:pointer}button[aria-pressed=true]{background:#dceaf1;outline:2px solid #317799}.note{min-height:3.6em;font-size:19px;color:#2c3a43}.t{font-size:13px;border:1px solid currentColor;border-radius:6px;padding:0 5px;margin:0 3px;white-space:nowrap;vertical-align:2px}.t.ref{color:#1f6fb4}.t.set{color:#7a3db4}.chal{border:1px solid #b4531f;color:#b4531f;border-radius:6px;font-size:14px;padding:0 6px;margin-left:6px;font-weight:700;vertical-align:3px}details{margin:14px 0;background:white;border:1px dashed #b9c4c6;border-radius:10px;padding:8px 18px}summary{cursor:pointer;color:#286d8c;font-weight:700}.foot{font-size:16px;color:#647079}a{color:#286d8c} @media(max-width:650px){body{font-size:19px}header,main{padding:20px 16px}h2{font-size:25px}figure{padding:10px}section{margin-bottom:45px}} </style>
+<header><small>延伸｜4-1 電流磁效應</small><h1>廢鐵場的起重機，<br>為什麼用電磁鐵，不用一塊很強的永久磁鐵？</h1><p>起重機要做的事是：吸起一堆廢鐵、移到卡車上方、放下。用一塊很強的永久磁鐵，吸是吸得起來，可是到了卡車上方，怎麼讓廢鐵掉下去？課本 p.102 說，起重機用的是電磁鐵。電磁鐵的磁性從哪來，又為什麼關得掉？</p></header>
+<main>
+<section><h2>一圈一圈的電流，排成一根磁棒</h2><p>一圈通電的圓形線圈，用安培右手定則可以判斷：線圈中心的磁場和線圈面垂直，像一塊薄薄的小磁鐵。把很多圈排成一長條，就是螺線管：每一圈在管內產生的磁場方向都一樣，<b>疊起來</b>，管內的磁場就強而整齊，管外的樣子和一根棒狀磁鐵很像（p.102）。哪一端是 N，由電流繞的方向決定（安培右手定則）。</p><p>管內的磁場和電流成正比、和每單位長度的圈數成正比（p.102）：電流加倍，每一圈的磁場都加倍；繞得更密，同一段長度裡疊起來的圈更多。<b>電流一斷，每一圈的磁場都沒了</b>，空心的螺線管就不再是磁鐵。</p>
+<details><summary>比例常數是多少？<span class="chal">挑戰</span></summary><p>又長又密的空心螺線管，管內中段的磁場 B＝μ<sub>0</sub>nI。n 是每公尺繞幾圈，I 是電流（A），μ<sub>0</sub>≈1.26×10<sup>−6</sup> T·m/A 是常數 <span class="t ref" title="NIST CODATA：真空磁導率 μ0">引用</span>。每公尺繞 1000 圈、通 1 A <span class="t set">設定</span>：B≈1.3×10<sup>−3</sup> T，大約是地磁的幾十倍。只靠空心線圈，要吸起一整堆廢鐵還差得遠。</p></details></section>
+
+<section><h2>放一根鐵芯，為什麼強那麼多？</h2><p>空心螺線管的磁場其實不大。真正讓電磁鐵變強的，是放進管內的<b>鐵芯</b>。</p><p>鐵裡面有許多自己就帶磁性的小區域，每一區都像一塊極小的磁鐵。平常這些小區域指向四面八方，互相抵消，一根鐵棒整體看起來沒有磁性。放進通電的螺線管裡，線圈的磁場把這些小區域<b>一起扭向同一個方向</b>，它們的磁場和線圈的磁場同向疊加，整根鐵芯變成一塊強磁鐵，磁場可以比空心時強上好幾百倍（看鐵的材料）。用下圖試試。</p>
+<figure><svg id="em" viewBox="0 0 950 420" role="img" aria-label="螺線管側視：可切換電流與鐵芯；鐵芯內的小區域隨磁場排列；下方廢鐵被吸起的數量"></svg>
+<div class="controls"><span>電流：</span><button data-i="0" aria-pressed="false">關</button><button data-i="1" aria-pressed="true">小</button><button data-i="2" aria-pressed="false">大</button></div>
+<div class="controls"><span>管內：</span><button data-c="0" aria-pressed="true">空心</button><button data-c="1" aria-pressed="false">軟鐵芯</button></div>
+<figcaption class="note" id="note"></figcaption></figure>
+<p>電流加大，鐵芯裡排整齊的小區域更多，磁性更強；但所有小區域都排好以後，電流再大，鐵芯也幫不上更多忙，叫作<b>飽和</b>。</p></section>
+
+<section><h2>斷電就放得下：關鍵在「軟鐵」</h2><p>電流一斷，線圈自己的磁場沒了。鐵芯裡那些小區域呢？起重機的鐵芯用的是<b>軟鐵</b>：少了線圈的磁場扭著，小區域很容易又亂掉，整體磁性幾乎消失，廢鐵就掉下去（在上圖按「關」）。</p><p>永久磁鐵正好相反：它的材料讓小區域一旦排好，就很難再亂掉，所以拿開線圈也一直有磁性。這正是做冰箱貼要的，卻是起重機不要的：要讓廢鐵離開永久磁鐵，只能用很大的力硬扯下來。</p>
+<p class="key">通電的線圈本身就是磁鐵，強弱由電流和圈數決定；放進軟鐵芯，線圈的磁場把鐵裡的小磁區排整齊，磁性強上許多倍；斷電後軟鐵的小磁區又亂掉，磁性幾乎消失。所以起重機用電磁鐵：吸得牢，也放得下。</p></section>
+
+<section><h2>想一想</h2><p>把電磁起重機接上家裡的交流電，線圈的 N、S 每秒換 120 次。它還吸得住廢鐵嗎？</p>
+<details><summary>想好了再打開</summary><p><b>還是吸得住。</b>廢鐵本身也是鐵，被線圈磁化時，靠近線圈那一端總是變成和線圈相反的極，所以不管線圈此刻是 N 還是 S，都是異極相吸。只是吸力會隨電流忽大忽小，鐵會嗡嗡振動，鐵芯也容易發熱，所以起重機多半用直流電。</p></details></section>
+<p class="foot">示意圖：鐵芯放大倍數、能吸起的塊數都只是示意。通電線圈怎麼讓馬達轉、讓喇叭發聲，看同系列的<a href="../Ch04-1_馬達/馬達.html">〈馬達〉</a>和<a href="../Ch04-1_喇叭/喇叭.html">〈喇叭〉</a>。</p></main>
+<script>
+(function(){
+ const svg=document.getElementById('em');let I=1,core=0;
+ // 鐵芯小區域：固定的隨機角度（亂）
+ const D=[];let seed=7;const rnd=()=>(seed=(seed*9301+49297)%233280)/233280;
+ for(let r=0;r<2;r++)for(let k=0;k<9;k++)D.push({x:285+k*42,y:172+r*36,a:rnd()*360});
+ function draw(){
+  const B=core?[0,8,10][I]:[0,1,2][I];        // 相對強弱（示意；鐵芯在「大」時已近飽和）
+  const lift=core?[0,4,6][I]:0;
+  let h='';
+  if(core)h+=`<rect x="260" y="150" width="400" height="80" rx="6" fill="#c3c9cf" stroke="#8b9aa2"/>`;
+  // 磁力線（管內）
+  const nL=Math.min(5,Math.round(B/2)+(B>0?1:0));
+  for(let k=0;k<nL;k++){const y=160+k*60/Math.max(nL-1,1);h+=`<path d="M230 ${y}H690" stroke="#287fb3" stroke-width="${core?3:2}" opacity=".8"/><path d="M684 ${y-6}L696 ${y}L684 ${y+6}" fill="#287fb3"/>`}
+  // 小磁區
+  if(core)D.forEach(d=>{const a=I>0?0:d.a;h+=`<g transform="translate(${d.x} ${d.y}) rotate(${a})"><path d="M-12 0H12" stroke="#5b6b80" stroke-width="3"/><path d="M6 -5L13 0L6 5Z" fill="#c94b4b"/></g>`});
+  // 線圈
+  for(let k=0;k<12;k++){const x=250+k*36;h+=`<ellipse cx="${x}" cy="190" rx="12" ry="62" fill="none" stroke="${I>0?'#c87720':'#c9b8a5'}" stroke-width="5"/>`}
+  h+=`<text x="240" y="110" font-size="18">${I>0?'電流通過線圈':'沒有電流'}</text>`;
+  if(B>0){h+=`<text x="700" y="160" font-size="24" font-weight="800" style="fill:#c94b4b">N</text><text x="200" y="160" font-size="24" font-weight="800" style="fill:#3f63c8">S</text>`}
+  // 強弱條
+  h+=`<text x="740" y="60" font-size="17">管內磁場（示意）</text><rect x="740" y="72" width="180" height="20" rx="4" fill="#eef0f1"/><rect x="740" y="72" width="${18*B}" height="20" rx="4" fill="#287fb3"/>`;
+  // 廢鐵
+  h+=`<path d="M560 395H940" stroke="#8b9aa2" stroke-width="2"/>`;
+  for(let k=0;k<6;k++){const up=k<lift,x=up?664+(k%2)*24:600+(k%3)*60,y=up?140+Math.floor(k/2)*30+(k%2)*8:373-Math.floor(k/3)*22;h+=`<rect x="${x}" y="${y}" width="${up?22:50}" height="${up?28:20}" rx="3" fill="#7b6a58" stroke="white" stroke-width="1.5"/>`}
+  h+=`<text x="740" y="130" font-size="17">吸起的廢鐵：${lift} 塊</text>`;
+  svg.innerHTML=h;
+  document.getElementById('note').textContent=core
+   ?(I===0?'軟鐵芯、沒有電流：小磁區又亂成一團，互相抵消，鐵芯幾乎沒有磁性，廢鐵掉下來。':I===1?'軟鐵芯、小電流：線圈的磁場把小磁區扭成同一方向，和線圈的磁場同向疊加，強了很多，吸起廢鐵。':'軟鐵芯、大電流：小磁區幾乎全排好了，再加大電流，鐵芯能幫的有限（飽和）。')
+   :(I===0?'空心、沒有電流：沒有磁場。':'空心螺線管：每一圈的磁場在管內同向疊加，像一根磁棒；電流加倍，磁場加倍。但空心時磁場不大，吸不起廢鐵。');
+  document.querySelectorAll('[data-i]').forEach(b=>b.setAttribute('aria-pressed',+b.dataset.i===I));
+  document.querySelectorAll('[data-c]').forEach(b=>b.setAttribute('aria-pressed',+b.dataset.c===core));
+ }
+ document.querySelectorAll('[data-i]').forEach(b=>b.onclick=()=>{I=+b.dataset.i;draw()});
+ document.querySelectorAll('[data-c]').forEach(b=>b.onclick=()=>{core=+b.dataset.c;draw()});draw();
+})();
+</script></html>

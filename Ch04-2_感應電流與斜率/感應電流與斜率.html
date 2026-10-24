@@ -1,0 +1,57 @@
+<!doctype html><html lang="zh-Hant"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>感應電流與斜率</title>
+<style>*{box-sizing:border-box}body{margin:0;background:#f7f5f0;color:#202a32;font:22px/1.8 "PingFang TC","Microsoft JhengHei",sans-serif}header,main{max-width:1040px;margin:auto;padding:30px 28px}header{padding-bottom:0}small{color:#9b521e;font-size:16px}h1{font-size:clamp(32px,5vw,52px);line-height:1.4;margin:14px 0}h2{font-size:30px;line-height:1.5;margin:0 0 20px}p{margin:16px 0}section{margin:28px 0 64px}figure{margin:24px 0;background:white;border:1px solid #d5d9da;border-radius:12px;padding:18px;overflow:auto}svg{display:block;width:100%;min-width:650px}svg text{font-family:inherit;fill:#24333b}figcaption{font-size:17px;color:#56646d;line-height:1.6;margin-top:12px}.key{border-left:5px solid #b66a30;padding:12px 20px;background:#eeeae0}.controls{display:flex;gap:10px;flex-wrap:wrap;align-items:center;margin-top:10px;font-size:18px}button{font:inherit;font-size:18px;padding:8px 16px;border-radius:8px;border:1px solid #9aadb3;background:white;cursor:pointer}button[aria-pressed=true]{background:#dceaf1;outline:2px solid #317799}table{border-collapse:collapse;margin:12px 0;font-size:19px}td,th{border:1px solid #c9cfd1;padding:6px 12px;text-align:left}th{background:#f1efe9}.t{font-size:13px;border:1px solid currentColor;border-radius:6px;padding:0 5px;margin:0 3px;white-space:nowrap;vertical-align:2px}.t.ref{color:#1f6fb4}.t.set{color:#7a3db4}.chal{border:1px solid #b4531f;color:#b4531f;border-radius:6px;font-size:14px;padding:0 6px;margin-left:6px;font-weight:700;vertical-align:3px}details{margin:14px 0;background:white;border:1px dashed #b9c4c6;border-radius:10px;padding:8px 18px}summary{cursor:pointer;color:#286d8c;font-weight:700}.foot{font-size:16px;color:#647079} @media(max-width:650px){body{font-size:19px}header,main{padding:20px 16px}h2{font-size:25px}figure{padding:10px}section{margin-bottom:45px}} </style>
+<header><small>延伸｜4-2 電磁感應｜要用 2-1 學過的斜率與面積</small><h1>磁鐵在線圈正中間、穿過的磁力線最多，<br>感應電流最大嗎？</h1><p>一顆小磁鐵沿著線圈的軸，等速從上往下穿過去。磁鐵在線圈正中間時，穿過線圈的磁力線最多。這時候感應電流最大嗎？113 學測考過這個情境，全國得分率只有 34% <span class="t ref" title="113 學測全國得分率（第一版所引，出處待補）">引用</span>，多數人以為「最多就最大」。</p></header>
+<main>
+<section><h2>三件事要分開：穿過多少、變得多快、電流多大</h2><p>課本說，穿過線圈的磁力線數量<b>改變</b>，才有感應電流（p.105）。這句話裡藏著三個不同的量：</p>
+<ul><li><b>穿過多少</b>：此刻穿過線圈的磁力線數量。</li><li><b>變得多快</b>：這個數量每一秒變多少，畫成圖就是「數量－時間圖」的<b>斜率</b>。</li><li><b>電流多大</b>：線圈接成的電路裡流多少電流。</li></ul>
+<p>電磁感應直接決定的是：<b>變得多快</b>，線圈兩端的感應電壓就多大。接著，在電阻固定的電路裡，電壓愈大電流愈大，電流就跟著變化率走。本篇的線圈只有一圈、電路是簡單的檢流計迴路，這個「電流跟著變化率」的條件成立；線圈圈數很多、變化很快時，電流會被線圈自己拖慢一點，就不能直接這樣對應（大學再學）。</p></section>
+
+<section><h2>電流圖就是斜率圖</h2>
+<figure><svg id="g" viewBox="0 0 760 430" role="img" aria-label="上：穿過線圈的磁力線數量對時間；下：感應電流對時間；標出 D、A、B、C 四個時刻"></svg>
+<div class="controls"><button id="fast" aria-pressed="false">加上「快一倍」</button></div>
+<figcaption>模型圖：小磁鐵沿單一線圈的軸等速通過 <span class="t set">設定</span>。橫軸的時間以「磁鐵走一個線圈半徑所需的時間」為一格，0 是磁鐵在正中間。上：穿過的磁力線數量；下：感應電流（靠近時取正）。D 還很遠、A 正在靠近、B 在正中間、C 正在離開。</figcaption></figure>
+<table><tr><th>時刻</th><th>穿過多少</th><th>上圖的斜率（變得多快）</th><th>感應電流</th></tr>
+<tr><td>D 很遠</td><td>很少，幾乎不變</td><td>幾乎 0</td><td>幾乎 0</td></tr>
+<tr><td>A 正在靠近</td><td>增加得最快</td><td>正、最陡</td><td>正向最大</td></tr>
+<tr><td>B 正中間</td><td>最多</td><td>0（山頂是平的）</td><td>0</td></tr>
+<tr><td>C 正在離開</td><td>減少得最快</td><td>負、最陡</td><td>反向最大</td></tr></table>
+<p>B 點穿過最多，那一瞬間卻不在變，所以電流是 0。電流最大的是 A、C，穿過的量正在變得最快的時候；C 的電流反向，因為離開時磁力線在減少（冷次定律）。這和第 3 堂探究看到的一致：磁鐵動得快，檢流計偏得大。</p>
+<p>這和第 2 章是同一套工具：x－t 圖的斜率是速度，在折返的最高點速度為 0；磁力線數量－t 圖的斜率決定感應電流，在 B 點電流為 0。</p></section>
+
+<section><h2>快一倍：電流圖變高變窄，每一座山的面積不變</h2><p>按「加上快一倍」。磁鐵用兩倍的速度穿過去：同樣的變化在一半的時間內完成，上圖的山變成一半寬、一樣高，斜率變兩倍。所以下圖的電流峰值 ×2、寬度 ×½。</p><p>再看電流圖的面積。第 2 章 v－t 圖底下的面積是位移，是「位置總共變了多少」；同樣地，電流圖<b>前半那一座山</b>的面積，對應「磁力線從幾乎 0 增加到最多」總共變了多少，和穿得快或慢無關。所以快一倍時，前半那座山變高變窄，面積不變；後半那座反向的山也一樣。</p><p>要小心：這裡說的是<b>每一座山各自</b>的面積大小。如果把正的那座和負的那座加在一起（負的算負），全程合起來是 0，因為磁力線最後又變回幾乎 0，總共沒有變。</p>
+<p class="key">感應電壓跟著的是穿過線圈的磁力線「變得多快」，不是「穿過多少」；在電阻固定、線圈自身影響可以忽略的電路裡，感應電流也跟著變化率走。磁力線最多的那一刻不在變，電流為 0。</p></section>
+
+<section><h2>想一想</h2><p>磁鐵慢慢穿進線圈，在正中間停 2 秒，再慢慢出去。感應電流－時間圖大概長什麼樣子？</p>
+<details><summary>想好了再打開</summary><p>先一座正的小山（進來，磁力線增加）→ 中間 2 秒是 0（停住，磁力線不變，p.105）→ 一座負的小山（出去，磁力線減少）。兩座山的面積大小一樣，正負相反。</p></details>
+<details><summary>挑戰：磁鐵從上方放手、自由落下穿過去<span class="chal">挑戰</span></summary><p>磁鐵愈掉愈快。離開時那座山和進來時那座山比，誰比較高？誰比較窄？面積呢？</p><p>離開時磁鐵比較快，離開那座山比較高、比較窄；兩座山的面積大小一樣，因為磁力線一樣是從幾乎 0 增加到最多、再減少回去。（忽略感應電流對磁鐵的阻力。）</p></details></section>
+<p class="foot">模型：穿過的磁力線數量取 1/(1＋s²)<sup>3/2</sup> 的形狀，s＝（磁鐵離線圈中心的距離）÷（線圈半徑），等速時 s 和時間成正比。實驗量到的形狀會不同，但「B 點電流為 0、靠近和離開方向相反」一樣。課堂用的長螺線管，磁鐵整個在管內時磁力線數量幾乎不變，上圖是「上升、平頂、下降」。</p></main>
+<script>
+(function(){
+ const NS='http://www.w3.org/2000/svg',svg=document.getElementById('g');
+ const Phi=s=>1/Math.pow(1+s*s,1.5),I=s=>-3*s/Math.pow(1+s*s,2.5);   // I ∝ −dΦ/ds，靠近（s<0）為正
+ const X0=70,X1=700,t0=-3,t1=3,sx=(X1-X0)/(t1-t0),PY=170,PS=125,IY=330,IS=50;
+ const X=t=>X0+(t-t0)*sx;
+ const path=(f,Y0,sy)=>{let d='';for(let i=0;i<=300;i++){const t=t0+(t1-t0)*i/300;d+=(i?'L':'M')+X(t).toFixed(1)+' '+(Y0-f(t)*sy).toFixed(1)}return d};
+ const area=(f,Y0,sy,a,b)=>{let d=`M${X(a)} ${Y0}`;for(let i=0;i<=150;i++){const t=a+(b-a)*i/150;d+=`L${X(t).toFixed(1)} ${(Y0-f(t)*sy).toFixed(1)}`}return d+`L${X(b)} ${Y0}Z`};
+ let fast=false;
+ function draw(){
+  let h='';const mu='#8b9aa2',c1='#2f78b0',c2='#c87720';
+  h+=`<path d="M${X0} ${PY}H${X1}M${X0} ${IY}H${X1}M${X0} 30V${PY}M${X0} 230V420" stroke="${mu}"/>`;
+  h+=`<text x="${X0+8}" y="44" font-size="17">穿過的磁力線數量</text><text x="${X0+8}" y="246" font-size="17">感應電流</text>`;
+  h+=`<text x="${X1-36}" y="${PY+22}" font-size="15" style="fill:#56646d">時間</text><text x="${X1-36}" y="${IY+22}" font-size="15" style="fill:#56646d">時間</text>`;
+  h+=`<path d="${area(I,IY,IS,t0,0)}" fill="${c1}" opacity=".15"/><path d="${area(I,IY,IS,0,t1)}" fill="${c1}" opacity=".15"/>`;
+  h+=`<path d="${path(Phi,PY,PS)}" fill="none" stroke="${c1}" stroke-width="3.5"/><path d="${path(I,IY,IS)}" fill="none" stroke="${c1}" stroke-width="3.5"/>`;
+  if(fast){h+=`<path d="${path(t=>Phi(2*t),PY,PS)}" fill="none" stroke="${c2}" stroke-width="2.5" stroke-dasharray="7 5"/><path d="${path(t=>2*I(2*t),IY,IS)}" fill="none" stroke="${c2}" stroke-width="2.5" stroke-dasharray="7 5"/>`;
+   h+=`<text x="520" y="70" font-size="16" style="fill:${c1}">— 原速</text><text x="520" y="94" font-size="16" style="fill:${c2}">- - 快一倍</text>`}
+  for(const [n,t] of [['D',-2.5],['A',-0.5],['B',0],['C',0.5]]){h+=`<path d="M${X(t)} 40V410" stroke="${mu}" stroke-dasharray="2 5"/><text x="${X(t)-6}" y="425" font-size="17" font-weight="700">${n}</text>`}
+  const ta=-0.5,xa=X(ta),ya=PY-Phi(ta)*PS,m=(-3*ta/Math.pow(1+ta*ta,2.5))*PS/sx;
+  h+=`<path d="M${xa-60} ${ya+m*60}L${xa+60} ${ya-m*60}" stroke="#c2185b" stroke-width="2"/><text x="${xa-130}" y="${ya-12}" font-size="14" style="fill:#c2185b">A 點最陡</text>`;
+  h+=`<path d="M${X(0)-50} ${PY-PS}H${X(0)+50}" stroke="#c2185b" stroke-width="2"/><text x="${X(0)+56}" y="${PY-PS+5}" font-size="14" style="fill:#c2185b">B 點斜率 0</text>`;
+  h+=`<text x="${X(-1.3)}" y="${IY-12}" font-size="14" style="fill:${c1}">面積＝增加的總量</text><text x="${X(0.45)}" y="${IY+40}" font-size="14" style="fill:${c1}">面積＝減少的總量</text>`;
+  for(const k of [-2,-1,0,1,2])h+=`<text x="${X(k)-4}" y="${IY+70}" font-size="13" style="fill:#56646d">${k}</text>`;
+  svg.innerHTML=h;
+  const b=document.getElementById('fast');b.setAttribute('aria-pressed',fast);b.textContent=fast?'只看原速':'加上「快一倍」';
+ }
+ document.getElementById('fast').onclick=()=>{fast=!fast;draw()};draw();
+})();
+</script></html>

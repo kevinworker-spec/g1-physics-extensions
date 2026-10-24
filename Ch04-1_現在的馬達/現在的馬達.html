@@ -1,0 +1,106 @@
+<!doctype html><html lang="zh-Hant"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>現在的馬達</title>
+<style>*{box-sizing:border-box}body{margin:0;background:#f7f5f0;color:#202a32;font:22px/1.8 "PingFang TC","Microsoft JhengHei",sans-serif}header,main{max-width:1040px;margin:auto;padding:30px 28px}header{padding-bottom:0}small{color:#9b521e;font-size:16px}h1{font-size:clamp(32px,5vw,52px);line-height:1.4;margin:14px 0}h2{font-size:30px;line-height:1.5;margin:0 0 20px}p{margin:16px 0}section{margin:28px 0 64px}figure{margin:24px 0;background:white;border:1px solid #d5d9da;border-radius:12px;padding:18px;overflow:auto}svg{display:block;width:100%;min-width:650px}svg text{font-family:inherit;fill:#24333b}figcaption{font-size:17px;color:#56646d;line-height:1.6;margin-top:12px}.key{border-left:5px solid #b66a30;padding:12px 20px;background:#eeeae0}.controls{display:flex;gap:10px;flex-wrap:wrap;align-items:center;margin-top:10px}.controls span{font-size:18px;color:#56646d}button{font:inherit;font-size:18px;padding:8px 16px;border-radius:8px;border:1px solid #9aadb3;background:white;cursor:pointer}button[aria-pressed=true]{background:#dceaf1;outline:2px solid #317799}.note{min-height:4em;font-size:19px;color:#2c3a43}.t{font-size:13px;border:1px solid currentColor;border-radius:6px;padding:0 5px;margin:0 3px;white-space:nowrap;vertical-align:2px}.t.ref{color:#1f6fb4}details{margin:14px 0;background:white;border:1px dashed #b9c4c6;border-radius:10px;padding:8px 18px}summary{cursor:pointer;color:#286d8c;font-weight:700}.foot{font-size:16px;color:#647079}a{color:#286d8c} @media(max-width:650px){body{font-size:19px}header,main{padding:20px 16px}h2{font-size:25px}figure{padding:10px}section{margin-bottom:45px}} </style>
+<header><small>延伸｜4-1 電流磁效應｜接在〈馬達〉之後</small><h1>玩具馬達接上交流電只會抖，<br>果汁機的馬達為什麼轉得好好的？</h1><p>〈馬達〉那篇說過：線圈轉過豎直位置後，要靠換向器把電流反過來，才能一直往同一個方向轉。可是家裡插座的電本來就在換方向：台灣的交流電每秒來回 60 次 <span class="t ref" title="台灣電力公司：供電頻率 60 Hz">引用</span>，也就是每秒換方向 120 次。果汁機、吹風機、有線電鑽都是插插座的，裡面的馬達怎麼沒被這樣換來換去弄亂？</p></header>
+<main>
+<section><h2>轉向由什麼決定？</h2><p>下圖和〈馬達〉一樣，順著轉軸看：轉子是一個平躺的線圈，只看得到兩條邊的截面，左邊電流朝你（⊙）、右邊進紙面（⊗），這正是轉得最有力的那一刻。兩旁是不轉的定子。課本 p.103 把通電的線圈看成一個小磁鐵：用右手定則，這個線圈的磁場向上（紫色虛線），等於一個上端 N、下端 S 的小磁鐵。</p><p>線圈的上端 N，被右邊定子的 S 吸過去，下端的 S 被左邊的 N 吸過去，於是順時針轉。這裡要看清楚：<b>轉向不是由電流本身往哪流決定的，而是由轉子的磁極和定子的磁極「誰對誰」決定的。</b>只要這個關係不變，轉向就不變。</p>
+<figure><svg viewBox="0 0 950 400" role="img" aria-label="俯視示意：中間直立的轉子，兩旁定子；依馬達種類與電流方向標出磁極與轉向">
+<defs><marker id="mR" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0 0L8 4L0 8Z" id="mRp"/></marker><marker id="mP" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0 0L8 4L0 8Z" fill="#7a3db4"/></marker></defs>
+<g id="stator"></g>
+<g id="rotor"></g>
+<path id="rot" fill="none" stroke-width="5" marker-end="url(#mR)"/>
+<text id="rotTxt" x="300" y="380" font-size="22" text-anchor="middle" style="font-weight:700"></text>
+<text x="560" y="70" font-size="20" id="t1"></text>
+<text x="560" y="102" font-size="18" style="fill:#56646d" id="t2"></text>
+<text x="560" y="170" font-size="20">轉子（線圈，看成小磁鐵）</text>
+<text x="560" y="202" font-size="18" style="fill:#56646d" id="t3"></text>
+<text x="560" y="280" font-size="20" id="t4"></text>
+<text x="560" y="312" font-size="18" style="fill:#56646d" id="t5"></text>
+</svg>
+<div class="controls"><span>馬達：</span><button data-m="toy" aria-pressed="true">玩具馬達（定子是永久磁鐵）</button><button data-m="uni" aria-pressed="false">果汁機的通用馬達（定子是電磁鐵）</button></div>
+<div class="controls"><span>交流電：</span><button data-c="1" aria-pressed="true">這一瞬間往一邊</button><button data-c="-1" aria-pressed="false">1/120 秒後：反過來</button></div>
+<figcaption class="note" id="note1"></figcaption></figure>
+<p><b>玩具馬達</b>的定子是永久磁鐵，接上交流電後，它的 N、S 不會跟著變；只有轉子的線圈跟著電流每秒換 120 次。按「反過來」：線圈兩邊的電流都反過來（左 ⊗、右 ⊙），線圈的磁場改向下，上端變成 S，改被左邊的 N 吸，轉向變成逆時針。從靜止開始，轉子才剛要動，1/120 秒後推的方向就反了，再 1/120 秒又反回來，所以從靜止接上交流電，它沒辦法靠這樣穩定地往同一個方向轉起來，多半只會在原地抖。</p>
+<p><b>果汁機的通用馬達</b>不一樣：它的定子不是永久磁鐵，而是繞了線圈的電磁鐵，而且定子線圈和轉子線圈<b>接在同一條電路上</b>，流的是同一股電流。電流一反，兩邊的 N、S <b>同時</b>對調：原本「轉子的 N 被右邊的 S 吸」，變成「轉子的 S 被右邊的 N 吸」，還是順時針。誰對誰的關係沒變，轉向就沒變。</p>
+<p>通用馬達仍然有換向器，照樣每半圈幫轉子換一次接法，讓它轉得過豎直位置；交流電造成的換向，則由定子跟著一起換來抵消。它接直流電也能轉，所以叫「通用」。</p></section>
+
+<section><h2>不要電刷：讓磁鐵轉、線圈不動</h2><p>有刷馬達的換向器靠兩塊電刷壓著轉動的半環送電，一直摩擦，會磨損、冒火花、有噪音。電刷為什麼非有不可？因為<b>會轉的是線圈</b>，要把電送進一個一直在轉的東西，最簡單的做法就是用滑動的接點。</p><p>那就把位置對調：讓<b>永久磁鐵當轉子</b>，<b>線圈當定子</b>固定在外圈。不動的線圈可以直接接電線，電刷就不需要了。這就是<b>無刷馬達</b>，空拍機、電腦散熱風扇、DC 變頻電扇裡都是這一類。</p><p>可是換向器也跟著電刷一起沒了，誰來換方向？改由<b>電子電路</b>來換。外圈有好幾組線圈，以有位置感測器的無刷馬達為例，電路用感測器知道轉子的 N 極現在轉到哪裡（有些馬達改用電路自己推算位置，不裝感測器），就讓「前面」那一組線圈通電，把面向轉子 N 極的那一端變成 S，把它往前拉；N 極一轉到，電路就換下一組。</p>
+<figure><svg viewBox="0 0 950 420" role="img" aria-label="俯視示意：中間是會轉的永久磁鐵，外圈六個線圈；電路依轉子位置讓前方的一對線圈通電">
+<defs><marker id="mG" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0 0L8 4L0 8Z" fill="#2b7a3d"/></marker></defs>
+<g id="coils"></g>
+<g id="mag"></g>
+<path d="M349 31A190 190 0 0 1 434 81" fill="none" stroke="#2b7a3d" stroke-width="5" marker-end="url(#mG)"/>
+<text x="446" y="72" font-size="18" style="fill:#2b7a3d">轉向</text>
+<rect x="590" y="40" width="120" height="48" rx="6" fill="#f3f1ec" stroke="#56646d" stroke-width="2"/><text x="650" y="72" font-size="19" text-anchor="middle">電路</text>
+<text x="590" y="120" font-size="17" style="fill:#56646d">感測器告訴電路：</text>
+<text x="590" y="148" font-size="17" style="fill:#56646d">轉子的 N 現在在哪</text>
+<text x="590" y="210" font-size="19" id="bTxt1"></text>
+<text x="590" y="244" font-size="17" style="fill:#56646d" id="bTxt2"></text>
+<text x="590" y="320" font-size="17" style="fill:#56646d">灰：沒通電的線圈</text>
+<text x="590" y="348" font-size="17" style="fill:#56646d">紅、藍：通電後變成 N、S</text>
+</svg>
+<div class="controls"><button data-b="0" aria-pressed="true">第一步</button><button data-b="1" aria-pressed="false">第二步</button><button data-b="2" aria-pressed="false">第三步</button></div>
+<figcaption class="note" id="note2"></figcaption></figure>
+<p>依序按三步：每一步，通電的那一對線圈都在轉子「前方」四分之一圈，把轉子往順時針拉；轉子一到，電路就把電切到下一對。通電的位置一步一步往前走，轉子就被一路拉著轉。這正是換向器做的事，只是從機械零件搬進了電路。電路還可以改變切換的快慢，所以無刷馬達的轉速很好控制。</p>
+<p class="key">每一種馬達都要讓轉子和定子的磁極關係，一直保持「拉著往同一個方向轉」。玩具馬達靠換向器換轉子；通用馬達接交流電時，定子和轉子一起換；無刷馬達讓磁鐵轉、線圈不動，由電路換定子。</p></section>
+
+<section><h2>想一想</h2><p>把一台通用馬達拆開，只把<b>定子</b>線圈的兩條接線對調，轉子的接線不動，再接回插座。馬達會怎麼轉？</p>
+<details><summary>想好了再打開</summary><p><b>反轉。</b>定子線圈的電流方向反過來，定子的 N、S 對調；轉子沒變。轉子和定子「誰對誰」的關係反了，所以轉向反過來，而且接交流電時這個關係一直保持反著，馬達就穩定地往反方向轉。很多可以正反轉的電器就是用這個方法。</p></details></section>
+<p class="foot">俯視示意圖，不按比例；真實馬達的線圈組數、磁極數更多。用「線圈＝小磁鐵、磁極相吸相斥」說明，是課本 p.103 的說法。通用馬達的轉速、無刷馬達的電路細節都省略。</p></main>
+<script>
+const RED='#d64545',BLUE='#2f6fc0';
+let m='toy',c=1,b=0;
+function pole(x,y,w,h,col,txt,coil){return `<rect x="${x}" y="${y}" width="${w}" height="${h}" rx="4" fill="${coil?'#b8c0cb':col}" ${coil?`stroke="${col}" stroke-width="5"`:''}/>`+(coil?[0,1,2,3,4].map(i=>`<path d="M${x-6} ${y+18+i*24}L${x+w+6} ${y+10+i*24}" stroke="#c8843f" stroke-width="4"/>`).join(''):'')+`<text x="${x+w/2}" y="${y-12}" font-size="26" font-weight="800" text-anchor="middle" style="fill:${col}">${txt}</text>`}
+function draw1(){
+ const rTop=c>0?'N':'S';                         // 轉子上端
+ const sRight=(m==='uni'&&c<0)?'N':'S';          // 右邊定子靠內側的極
+ const sLeft=sRight==='S'?'N':'S';
+ const col=p=>p==='N'?RED:BLUE;
+ const coil=m==='uni';
+ document.getElementById('stator').innerHTML=pole(130,110,40,140,col(sLeft),sLeft,coil)+pole(430,110,40,140,col(sRight),sRight,coil);
+ const rBot=rTop==='N'?'S':'N';
+ // 轉子：順著轉軸看，線圈平躺，只看到兩條邊的截面（同〈馬達〉的甲）。左 ⊙ 右 ⊗ → 線圈的磁場向上（上端 N）
+ const dot=(x)=>`<circle cx="${x}" cy="180" r="15" fill="white" stroke="#c8843f" stroke-width="4"/><circle cx="${x}" cy="180" r="4.5" fill="#c8843f"/>`;
+ const crs=(x)=>`<circle cx="${x}" cy="180" r="15" fill="white" stroke="#c8843f" stroke-width="4"/><path d="M${x-8} 172L${x+8} 188M${x+8} 172L${x-8} 188" stroke="#c8843f" stroke-width="3.5"/>`;
+ const up=c>0?1:-1;
+ document.getElementById('rotor').innerHTML=`<path d="M235 180H365" stroke="#c8843f" stroke-width="5"/>`+(c>0?dot(220)+crs(380):crs(220)+dot(380))
+  +`<circle cx="300" cy="180" r="6" fill="#24333b"/><path d="M300 ${180+48*up}L300 ${180-62*up}" stroke="#7a3db4" stroke-width="3" stroke-dasharray="7 5" marker-end="url(#mP)"/>`
+  +`<text x="300" y="${up>0?104:276}" font-size="26" font-weight="800" text-anchor="middle" style="fill:${RED}">N</text><text x="300" y="${up>0?276:104}" font-size="26" font-weight="800" text-anchor="middle" style="fill:${BLUE}">S</text>`
+  +`<text x="318" y="${up>0?150:225}" font-size="15" style="fill:#7a3db4">線圈的磁場</text>`;
+ const cw=(rTop==='N')===(sRight==='S');
+ const colr=cw?'#2b7a3d':'#c2185b';
+ document.getElementById('rot').setAttribute('d',cw?'M255 70A80 80 0 0 1 345 70':'M345 70A80 80 0 0 0 255 70');
+ document.getElementById('rot').setAttribute('stroke',colr);document.getElementById('mRp').setAttribute('fill',colr);
+ const rt=document.getElementById('rotTxt');rt.textContent=cw?'順時針':'逆時針';rt.style.fill=colr;
+ document.getElementById('t1').textContent=m==='toy'?'玩具馬達（有刷直流）':'通用馬達';
+ document.getElementById('t2').textContent=c>0?'交流電：這一瞬間往一邊':'交流電：1/120 秒後，反過來';
+ document.getElementById('t3').textContent=`上端 ${rTop}：被${rTop==='N'?(sRight==='S'?'右':'左'):(sRight==='N'?'右':'左')}邊的 ${rTop==='N'?'S':'N'} 吸`;
+ document.getElementById('t4').textContent=m==='toy'?'定子：永久磁鐵':'定子：電磁鐵（線圈）';
+ document.getElementById('t5').textContent=m==='toy'?'電流換方向，它的極不變':'和轉子同一股電流，一起換極';
+ document.getElementById('note1').textContent=m==='toy'
+  ?(c>0?'玩具馬達：轉子上端 N 被右邊的 S 吸 → 順時針。':'玩具馬達：電流反過來，只有轉子換極；上端 S 改被左邊的 N 吸 → 逆時針。每 1/120 秒換一次，只會抖。')
+  :(c>0?'通用馬達：轉子上端 N 被右邊的 S 吸 → 順時針。':'通用馬達：電流反過來，定子和轉子一起換極；上端 S 被右邊的 N 吸 → 還是順時針。');
+ document.querySelectorAll('[data-m]').forEach(x=>x.setAttribute('aria-pressed',x.dataset.m===m));
+ document.querySelectorAll('[data-c]').forEach(x=>x.setAttribute('aria-pressed',+x.dataset.c===c));
+}
+// 無刷：角度從正上方起算、順時針（SVG rotate 的方向）。轉子 N 在 a；線圈在 30°+60°k；通電：a+90°（S，拉 N）與 a+270°（N，拉轉子的 S）
+const CX=300,CY=215,R=140;
+function draw2(){
+ const a=60*b,on={[(a+90)%360]:'S',[(a+270)%360]:'N'};
+ let h='';
+ for(let k=0;k<6;k++){const ang=30+60*k,p=on[ang];
+  h+=`<g transform="rotate(${ang} ${CX} ${CY})"><rect x="${CX-24}" y="${CY-R-22}" width="48" height="44" rx="6" fill="${p?(p==='N'?RED:BLUE):'#d3d8dc'}" stroke="#c8843f" stroke-width="4"/></g>`;
+  if(p){const rad=(ang-90)*Math.PI/180,tx=CX+(R-50)*Math.cos(rad),ty=CY+(R-50)*Math.sin(rad);h+=`<text x="${tx}" y="${ty+8}" font-size="22" font-weight="800" text-anchor="middle" style="fill:${p==='N'?RED:BLUE}">${p}</text>`}}
+ document.getElementById('coils').innerHTML=h;
+ document.getElementById('mag').innerHTML=`<g transform="rotate(${a} ${CX} ${CY})"><rect x="${CX-17}" y="${CY-70}" width="34" height="70" fill="${RED}"/><rect x="${CX-17}" y="${CY}" width="34" height="70" fill="${BLUE}"/><text x="${CX}" y="${CY-30}" font-size="22" font-weight="800" text-anchor="middle" style="fill:white">N</text><text x="${CX}" y="${CY+45}" font-size="22" font-weight="800" text-anchor="middle" style="fill:white">S</text></g><circle cx="${CX}" cy="${CY}" r="6" fill="#24333b"/>`;
+ document.getElementById('bTxt1').textContent=['第一步','第二步','第三步'][b]+`：轉子的 N 轉到 ${a}°`;
+ document.getElementById('bTxt2').textContent=`電路讓 ${(a+90)%360}° 和 ${(a+270)%360}° 這一對線圈通電`;
+ document.getElementById('note2').textContent=['第一步：N 在正上方，電路讓右邊那一對線圈通電，靠近 N 的一端是 S，把 N 往順時針拉。',
+  '第二步：N 轉到右上方，電路把電切到下一對，通電的位置也往前走了一格，繼續在前方拉。',
+  '第三步：再前進一格。通電的位置一直走在轉子前面，轉子就被一路拉著轉；角度從正上方起順時針算。'][b];
+ document.querySelectorAll('[data-b]').forEach(x=>x.setAttribute('aria-pressed',+x.dataset.b===b));
+}
+document.querySelectorAll('[data-m]').forEach(x=>x.onclick=()=>{m=x.dataset.m;draw1()});
+document.querySelectorAll('[data-c]').forEach(x=>x.onclick=()=>{c=+x.dataset.c;draw1()});
+document.querySelectorAll('[data-b]').forEach(x=>x.onclick=()=>{b=+x.dataset.b;draw2()});
+draw1();draw2();
+</script></html>

@@ -1,0 +1,51 @@
+<!doctype html><html lang="zh-Hant"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>變壓器怎麼變電壓</title>
+<style>*{box-sizing:border-box}body{margin:0;background:#f7f5f0;color:#202a32;font:22px/1.8 "PingFang TC","Microsoft JhengHei",sans-serif}header,main{max-width:1040px;margin:auto;padding:30px 28px}header{padding-bottom:0}small{color:#9b521e;font-size:16px}h1{font-size:clamp(32px,5vw,52px);line-height:1.4;margin:14px 0}h2{font-size:30px;line-height:1.5;margin:0 0 20px}p{margin:16px 0}section{margin:28px 0 64px}figure{margin:24px 0;background:white;border:1px solid #d5d9da;border-radius:12px;padding:18px;overflow:auto}svg{display:block;width:100%;min-width:650px}svg text{font-family:inherit;fill:#24333b}figcaption{font-size:17px;color:#56646d;line-height:1.6;margin-top:12px}.key{border-left:5px solid #b66a30;padding:12px 20px;background:#eeeae0}.controls{display:flex;gap:10px;flex-wrap:wrap}button{font:inherit;font-size:18px;padding:8px 16px;border-radius:8px;border:1px solid #9aadb3;background:white;cursor:pointer}button[aria-pressed=true]{background:#dceaf1;outline:2px solid #317799}.note{min-height:3.6em;font-size:19px;color:#2c3a43}.foot{font-size:16px;color:#647079}a{color:#286d8c} @media(max-width:650px){body{font-size:19px}header,main{padding:20px 16px}h2{font-size:25px}figure{padding:10px}section{margin-bottom:45px}} </style>
+<header><small>延伸</small><h1>兩組線圈沒有接在一起，<br>電怎麼從這邊跑到那邊？</h1><p>變壓器裡有兩組線圈：一組接電源，一組接用電器。兩組線圈之間沒有任何導線相連，可是電源這邊一通交流電，另一邊的燈就亮了，而且電壓還可以變大或變小。這要分成兩個問題：電怎麼過去，以及電壓為什麼會變。</p></header>
+<main><section><h2>兩邊靠什麼連在一起？</h2><p>兩組線圈繞在同一個<b>鐵芯</b>上。接電源的叫<b>一次線圈</b>，接用電器的叫<b>二次線圈</b>。</p>
+<figure><svg viewBox="0 0 950 400" role="img" aria-label="鐵芯框上繞兩組線圈：左邊一次線圈接交流電源，右邊二次線圈接燈泡；兩組線圈沒有導線相連，鐵芯中的磁場繞成一圈穿過兩組線圈">
+<defs><marker id="b" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0 0L8 4L0 8Z" fill="#287fb3"/></marker><marker id="lead" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto"><path d="M0 0L7 3.5L0 7Z" fill="#697c88"/></marker></defs>
+<path d="M300 60H650V340H300ZM360 120V280H590V120Z" fill="#b7c2c8" fill-rule="evenodd"/>
+<path d="M330 90H620V310H330Z" fill="none" stroke="#287fb3" stroke-width="3" stroke-dasharray="10 6"/>
+<path d="M475 90H520" stroke="#287fb3" stroke-width="3" marker-end="url(#b)"/><path d="M475 310H430" stroke="#287fb3" stroke-width="3" marker-end="url(#b)"/>
+<g stroke="#bd6c20" stroke-width="6" fill="none"><path d="M290 140H370M290 165H370M290 190H370M290 215H370M290 240H370M290 265H370"/></g>
+<g stroke="#2f8a63" stroke-width="6" fill="none"><path d="M580 130H660M580 150H660M580 170H660M580 190H660M580 210H660M580 230H660M580 250H660M580 270H660"/></g>
+<path d="M290 140H200V170M290 265H200V235" fill="none" stroke="#bd6c20" stroke-width="3"/>
+<circle cx="200" cy="202" r="32" fill="white" stroke="#bd6c20" stroke-width="3"/><path d="M180 202q10 -18 20 0t20 0" fill="none" stroke="#bd6c20" stroke-width="3"/>
+<text x="110" y="270" font-size="20">交流電源</text>
+<path d="M660 130H760V170M660 270H760V230" fill="none" stroke="#2f8a63" stroke-width="3"/>
+<circle cx="760" cy="200" r="30" fill="#fff6cf" stroke="#2f8a63" stroke-width="3"/><path d="M745 190l15 20 15 -20" fill="none" stroke="#2f8a63" stroke-width="2"/><text x="800" y="208" font-size="20">燈泡</text>
+<text x="230" y="40" font-size="21">一次線圈</text><path d="M280 48L320 128" fill="none" stroke="#697c88" stroke-width="2" marker-end="url(#lead)"/>
+<text x="600" y="40" font-size="21">二次線圈</text><path d="M650 48L625 122" fill="none" stroke="#697c88" stroke-width="2" marker-end="url(#lead)"/>
+<text x="400" y="200" font-size="21">鐵芯</text>
+<text x="350" y="380" font-size="19" style="fill:#287fb3">藍虛線：鐵芯裡的磁場，繞一圈穿過兩組線圈</text></svg>
+<figcaption>示意圖：兩組線圈的導線各自成一個電路，中間沒有接通；線圈圈數、尺寸不按比例。</figcaption></figure>
+<p>一次線圈通電會產生磁場。鐵很容易被磁化，會把這個磁場幾乎全部「導」在鐵芯裡，沿著鐵框繞一圈，所以<b>同一個磁場既穿過一次線圈，也穿過二次線圈</b>。</p><p>電源是交流電，一次線圈的電流一直在變，鐵芯裡的磁場也就一直在變。對二次線圈來說，穿過它的磁場在改變，於是它產生感應電壓，接著燈泡就有電流。兩邊沒有導線相連，<b>連起來的是鐵芯裡那個不停變化的磁場</b>。</p><p class="key">一次線圈的交流電讓鐵芯裡的磁場不停改變；這個磁場也穿過二次線圈，二次線圈因此被感應出電壓。</p></section>
+
+<section><h2>電壓為什麼會變？一匝一匝加起來</h2><p>關鍵在於：鐵芯裡的磁場對每一匝線圈都一樣。二次線圈的每一匝，被穿過的磁場相同、變化也一樣快，所以<b>每一匝感應到的電壓都一樣</b>。二次線圈的各匝一匝接一匝串在一起，像電池串聯，電壓就一匝一匝加上去。</p><p>那每一匝分到多少？一次線圈本身也繞在同一個鐵芯上，它的每一匝也被同一個變化的磁場穿過。在理想的變壓器裡，一次線圈全部匝數加起來的電壓，正好等於電源電壓；所以<b>每一匝的電壓＝電源電壓 ÷ 一次線圈匝數</b>，兩組線圈每一匝都一樣。</p>
+<figure><svg viewBox="0 0 950 330" role="img" aria-label="一次線圈 4 匝接 8 伏特，每匝 2 伏特；二次線圈匝數可選，每匝 2 伏特串起來加總">
+<text x="40" y="40" font-size="21">一次線圈：4 匝，接 8 V</text>
+<g id="prim"></g>
+<text x="40" y="170" font-size="21" id="sectitle">二次線圈</text>
+<g id="sec"></g>
+<text id="sum" x="40" y="300" font-size="26" style="font-weight:bold"></text>
+</svg>
+<div class="controls"><button data-n="2" aria-pressed="false">二次 2 匝</button><button data-n="4" aria-pressed="false">二次 4 匝</button><button data-n="8" aria-pressed="true">二次 8 匝</button></div>
+<figcaption id="nnote" class="note"></figcaption></figure>
+<p>所以二次線圈匝數是一次的幾倍，電壓就是幾倍：匝數多於一次線圈就升壓，少於一次線圈就降壓。圖中的匝數、電壓是方便看的設定，真正的變壓器動輒幾百、幾千匝，但道理相同。</p></section>
+
+<section><h2>電壓變大，能量也變多了嗎？</h2><p>不會。二次線圈的能量全是從一次線圈那邊經由鐵芯裡的磁場送過來的，變壓器自己不產生能量。在理想、沒有損耗的情況下，<b>送出去的電功率等於送進來的電功率</b>。電功率等於電壓乘以電流，所以電壓升成 2 倍時，二次側的電流就只有一次側的一半；降壓時則反過來，電流變大。真實的變壓器會有一點發熱損耗，送出的比送進的略少。</p><p class="key">每一匝感應到的電壓相同，串起來就是匝數比等於電壓比；但能量只能從一次側送過來，電壓變大，電流就變小。</p></section>
+
+<section><h2>回頭想：把一次線圈接到電池上呢？</h2><p>電池給的是穩定的直流。接上去的那一瞬間，電流從零開始增加，鐵芯裡的磁場從無到有，二次線圈的燈泡可能閃一下；之後電流穩定，磁場不再改變，二次線圈就沒有感應電壓，燈泡不亮。所以變壓器一定要接交流電，靠的就是磁場<b>一直在變</b>。（實際上一般變壓器不要接直流，一次線圈可能因電流過大而過熱。）</p></section>
+<p class="foot">本篇以兩組線圈的理想變壓器為例，圖為原理示意，忽略漏磁與損耗。依 <a href="https://openstax.org/books/college-physics-2e/pages/23-7-transformers">OpenStax 變壓器</a>核對。</p><p class="foot">生活中的電與磁：<a href="../Ch04-2_電磁爐/電磁爐.html">電磁爐</a> · <a href="../Ch04-3_微波爐/微波爐.html">微波爐</a> · <a href="../Ch04-1_馬達/馬達.html">馬達</a> · <a href="../Ch04-2_發電機/發電機.html">發電機</a> · <a href="../Ch04-1_喇叭/喇叭.html">喇叭</a>｜<a href="../Ch04_生活中的電與磁/index.html">系列入口</a></p></main>
+<script>
+const NS='http://www.w3.org/2000/svg';
+function box(g,x,y,label,col){const r=document.createElementNS(NS,'rect');r.setAttribute('x',x);r.setAttribute('y',y);r.setAttribute('width',96);r.setAttribute('height',44);r.setAttribute('rx',6);r.setAttribute('fill',col);g.appendChild(r);
+ const t=document.createElementNS(NS,'text');t.setAttribute('x',x+48);t.setAttribute('y',y+30);t.setAttribute('font-size','20');t.setAttribute('text-anchor','middle');t.textContent=label;g.appendChild(t);}
+const P=document.getElementById('prim');for(let i=0;i<4;i++)box(P,40+i*104,60,'2 V','#f3dcc0');
+function show(n){const S=document.getElementById('sec');S.innerHTML='';for(let i=0;i<n;i++)box(S,40+i*104,190,'2 V','#cfe7da');
+ document.getElementById('sectitle').textContent='二次線圈：'+n+' 匝，每匝同樣 2 V';
+ document.getElementById('sum').textContent='二次線圈電壓＝'+n+' × 2 V＝'+(2*n)+' V';
+ document.getElementById('nnote').textContent=n<4?'二次匝數是一次的一半：電壓也是一半，降壓。':n===4?'匝數相同：電壓相同。':'二次匝數是一次的 2 倍：電壓也是 2 倍，升壓。';
+ document.querySelectorAll('[data-n]').forEach(b=>b.setAttribute('aria-pressed',b.dataset.n==String(n)));}
+document.querySelectorAll('[data-n]').forEach(b=>b.onclick=()=>show(+b.dataset.n));show(8);
+</script></html>

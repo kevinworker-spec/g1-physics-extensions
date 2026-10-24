@@ -1,0 +1,71 @@
+<!doctype html><html lang="zh-Hant"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>救生員問題</title>
+<style>*{box-sizing:border-box}body{margin:0;background:#f7f5f0;color:#202a32;font:22px/1.8 "PingFang TC","Microsoft JhengHei",sans-serif}header,main{max-width:1040px;margin:auto;padding:30px 28px}header{padding-bottom:0}small{color:#9b521e;font-size:16px}h1{font-size:clamp(32px,5vw,52px);line-height:1.4;margin:14px 0}h2{font-size:30px;line-height:1.5;margin:0 0 20px}p{margin:16px 0}section{margin:28px 0 64px}figure{margin:24px 0;background:white;border:1px solid #d5d9da;border-radius:12px;padding:18px;overflow:auto}canvas{display:block;width:100%;min-width:650px;touch-action:none}figcaption{font-size:17px;color:#56646d;line-height:1.6;margin-top:12px}.key{border-left:5px solid #b66a30;padding:12px 20px;background:#eeeae0}.controls{display:flex;gap:10px;flex-wrap:wrap;align-items:center;margin-top:10px;font-size:18px}input[type=range]{width:min(420px,70vw);accent-color:#317799}button{font:inherit;font-size:18px;padding:8px 16px;border-radius:8px;border:1px solid #9aadb3;background:white;cursor:pointer}button[aria-pressed=true]{background:#dceaf1;outline:2px solid #317799}table{border-collapse:collapse;margin:12px 0;font-size:19px}td,th{border:1px solid #c9cfd1;padding:6px 12px;text-align:left}th{background:#f1efe9}.t{font-size:13px;border:1px solid currentColor;border-radius:6px;padding:0 5px;margin:0 3px;white-space:nowrap;vertical-align:2px}.t.set{color:#7a3db4}.t.ref{color:#1f6fb4}.chal{border:1px solid #b4531f;color:#b4531f;border-radius:6px;font-size:14px;padding:0 6px;margin-left:6px;font-weight:700;vertical-align:3px}.eq{text-align:center;font-size:24px;margin:14px 0}.frac{display:inline-flex;flex-direction:column;vertical-align:middle;text-align:center;margin:0 4px;line-height:1.25}.frac>span:first-child{border-bottom:1.5px solid currentColor;padding:0 4px}details{margin:14px 0;background:white;border:1px dashed #b9c4c6;border-radius:10px;padding:8px 18px}summary{cursor:pointer;color:#286d8c;font-weight:700}.foot{font-size:16px;color:#647079} @media(max-width:650px){body{font-size:19px}header,main{padding:20px 16px}h2{font-size:25px}figure{padding:10px}section{margin-bottom:45px}} </style>
+<header><small>延伸｜4-4 光的折射</small><h1>救生員要救人：<br>直線最短，為什麼不是最快？</h1><p>課本說，光從空氣斜斜射進水裡，會在水面折一下，水裡那段「偏向法線」（p.122）。光為什麼不直直走過去？先放下光，看一個救生員。</p></header>
+<main>
+<section><h2>從哪裡下水最快？</h2><p>救生員站在沙灘上，離水邊 20 m；溺水的人在海裡，離水邊 30 m，兩人左右相距 60 m。救生員在沙灘上跑 5 m/s，在海裡游 1.5 m/s <span class="t set">設定</span>。他可以在水邊任何一點下水。先猜：直直衝過去，是不是最快？</p>
+<figure><canvas id="cv" width="1200" height="560" aria-label="沙灘與海的俯視圖：拖動下水點，看兩段路程、時間與總時間"></canvas>
+<div class="controls"><label for="sx">下水點</label><input id="sx" type="range" min="0" max="60" step="0.5" value="24"><button data-go="24">直直衝過去</button><button data-go="60">跑到正對面再游</button><button id="bestBtn" aria-pressed="false">顯示最快路線</button></div>
+<figcaption>俯視圖，可以直接在圖上拖動下水點（白點）。右邊的曲線是每個下水點的總時間，按「顯示最快路線」才出現。</figcaption></figure>
+<p>拖一拖會發現：直直衝過去要 37.5 s，在表裡這三種走法中反而最慢（當然也有更慢的，例如在 0 m 處就下水）；最快的是在大約 51 m 處下水，31.8 s。</p>
+<table><tr><th>路線</th><th>下水點</th><th>沙灘</th><th>海裡</th><th>總時間</th></tr>
+<tr><td>直直衝過去</td><td>24 m</td><td>31.2 m → 6.2 s</td><td>46.9 m → 31.2 s</td><td>37.5 s</td></tr>
+<tr><td>跑到正對面再游</td><td>60 m</td><td>63.2 m → 12.6 s</td><td>30.0 m → 20.0 s</td><td>32.6 s</td></tr>
+<tr><td>最快</td><td>約 51 m</td><td>55.0 m → 11.0 s</td><td>31.2 m → 20.8 s</td><td>31.8 s</td></tr></table></section>
+
+<section><h2>為什麼最快的路要在水邊折一下？</h2><p>每一段的時間＝路程÷速率。在沙灘上，每公尺只要 1÷5＝0.2 s；在海裡，每公尺要 1÷1.5≈0.67 s，是沙灘的三倍多。<b>海裡的每一公尺都很「貴」</b>。</p><p>直直衝過去，路程雖然最短，卻有 46.9 m 要用游的。划算的做法是在便宜的沙灘多跑一些，換來在昂貴的海裡少游一些。</p><p>海裡最少要游多少？溺水者離水邊 30 m，要從水邊到他那裡，最短就是垂直水邊直直游出去，正好 30 m，也就是<b>沿著法線</b>游。所以要省海裡的路，海裡那一段就要往法線靠：路線在水邊折一下，水裡那段比沙灘那段更貼近法線。</p><p>那為什麼不乾脆跑到正對面、完全垂直地游？因為在沙灘上多繞那幾公尺也要時間。最後幾公尺稍微斜著游，比在沙灘上繞過去還省。最快的路線停在兩者之間：在沙灘上多跑一點，海裡那段偏向法線，但不完全垂直。</p>
+<p class="key">兩段的速率不同時，最快的路不是直線：在快的地方多走、在慢的地方少走，於是路線在交界處折一下，慢的那一段偏向法線。</p></section>
+
+<section><h2>光也走最快的那條路</h2><p>光在水中比在空氣中慢：水的折射率 n＝c/v≈1.33（課本 p.121），光在水裡的速率只有空氣中的約四分之三，就像救生員在海裡比在沙灘上慢。</p><p>1662 年前後，數學家費馬提出：光從一點到另一點，走的是<b>花時間最少</b>的路線 <span class="t ref" title="費馬原理（Fermat's principle），1662 年前後提出">引用</span>。照救生員的道理，光就該在空氣裡多走一點、在水裡少走一點，在水面折一下，水裡那段偏向法線，正是課本 p.122「由光疏介質進入光密介質，折射光偏向法線」。</p><p>光當然不會「想要」最快。課本 p.124 用惠更斯原理，從波前在兩種介質裡前進的快慢推出折射；推出來的路線，剛好就是時間最少的那一條。</p>
+<details><summary>最快路線滿足什麼規則？<span class="chal">挑戰</span></summary><p>（用到 sin，高一還沒教，看不懂可以跳過。）入射角 θ<sub>1</sub>、折射角 θ<sub>2</sub> 都從法線量起，最快的路線剛好滿足</p><div class="eq"><span class="frac"><span>sin θ<sub>1</sub></span><span>v<sub>1</sub></span></span> ＝ <span class="frac"><span>sin θ<sub>2</sub></span><span>v<sub>2</sub></span></span></div><p>代入最快路線：sin θ<sub>1</sub>＝51.3÷55.0≈0.93，0.93÷5≈0.19；sin θ<sub>2</sub>＝8.7÷31.2≈0.28，0.28÷1.5≈0.19，兩邊相等。把 v＝c/n 代進去，就是折射定律 n<sub>1</sub> sin θ<sub>1</sub>＝n<sub>2</sub> sin θ<sub>2</sub>。要證明最快一定滿足它，需要微積分的「求最小值」。</p></details></section>
+
+<section><h2>想一想</h2><p>救生員穿上蛙鞋，游速從 1.5 m/s 變成 2.5 m/s，跑速不變。最快的下水點會往「跑到正對面」（60 m）那邊移，還是往「直直衝過去」（24 m）那邊移？對應到光，是什麼情況？</p>
+<details><summary>想好了再打開</summary><p><b>往直直衝過去那邊移</b>（約 45 m）。海裡每公尺變便宜了，用沙灘去換海裡的路比較不划算，路線就折得比較少。如果游得和跑得一樣快，最快的就是直線，完全不折。對應到光：兩種物質裡光速差得愈少（折射率愈接近），光偏折得愈少；光速一樣，就不偏折。</p></details></section>
+<p class="foot">示意情境，數字為設定。救生員跑、游都走直線、速率固定，不考慮起跑、浪和水流。費馬原理嚴格的說法是「時間取極值」，多數情況就是最少。</p></main>
+<script>
+(function(){
+ const A=20,B=30,L=60,V1=5,V2=1.5;
+ const cv=document.getElementById('cv'),c=cv.getContext('2d'),sx=document.getElementById('sx'),bb=document.getElementById('bestBtn');
+ const T=x=>Math.hypot(x,A)/V1+Math.hypot(L-x,B)/V2;
+ let best=0,bt=1e9;for(let x=0;x<=L;x+=0.01){const t=T(x);if(t<bt){bt=t;best=x}}
+ const S=8.5,ox=60,oy=40+A*S;const P=(x,y)=>[ox+x*S,oy-y*S];
+ let show=false;const F='"PingFang TC","Microsoft JhengHei",sans-serif';
+ function draw(){
+  const x=+sx.value;c.clearRect(0,0,cv.width,cv.height);
+  c.fillStyle='#f3e6c4';c.fillRect(0,0,700,oy);c.fillStyle='#cfe6f3';c.fillRect(0,oy,700,cv.height-oy);
+  c.strokeStyle='#5aa6cf';c.lineWidth=2;c.beginPath();c.moveTo(0,oy);c.lineTo(700,oy);c.stroke();
+  c.font='24px '+F;c.fillStyle='#8a6a1f';c.fillText('沙灘：跑 5 m/s',480,32);c.fillStyle='#2a6f95';c.fillText('海：游 1.5 m/s',14,cv.height-16);
+  const [ax,ay]=P(0,A),[bx,by]=P(L,-B),[ex,ey]=P(x,0);
+  c.setLineDash([6,6]);c.strokeStyle='#697c88';c.lineWidth=1.5;c.beginPath();c.moveTo(ex,ey-110);c.lineTo(ex,ey+110);c.stroke();c.setLineDash([]);
+  c.fillStyle='#56646d';c.font='18px '+F;c.fillText('法線',ex+6,ey+108);
+  if(show){const [qx,qy]=P(best,0);c.strokeStyle='#2b7a3d';c.lineWidth=3;c.setLineDash([10,6]);c.beginPath();c.moveTo(ax,ay);c.lineTo(qx,qy);c.lineTo(bx,by);c.stroke();c.setLineDash([])}
+  c.strokeStyle='#c87720';c.lineWidth=5;c.beginPath();c.moveTo(ax,ay);c.lineTo(ex,ey);c.lineTo(bx,by);c.stroke();
+  c.fillStyle='#c87720';c.beginPath();c.arc(ax,ay,10,0,7);c.fill();c.fillStyle='#c2185b';c.beginPath();c.arc(bx,by,10,0,7);c.fill();
+  c.fillStyle='white';c.strokeStyle='#24333b';c.lineWidth=2;c.beginPath();c.arc(ex,ey,9,0,7);c.fill();c.stroke();
+  c.font='22px '+F;c.fillStyle='#a85f13';c.fillText('救生員',ax+14,ay+34);c.fillStyle='#c2185b';c.fillText('溺水者',bx-80,by+34);
+  const d1=Math.hypot(x,A),d2=Math.hypot(L-x,B),t1=d1/V1,t2=d2/V2;
+  c.font='22px '+F;c.fillStyle='#24333b';
+  c.fillText(`沙灘 ${d1.toFixed(1)} m ÷ 5 ＝ ${t1.toFixed(1)} s`,740,60);
+  c.fillText(`海裡 ${d2.toFixed(1)} m ÷ 1.5 ＝ ${t2.toFixed(1)} s`,740,94);
+  c.font='bold 34px '+F;c.fillStyle='#a85f13';c.fillText(`總時間 ${(t1+t2).toFixed(1)} s`,740,142);
+  c.font='18px '+F;c.fillStyle='#56646d';c.fillText(`下水點 ${x.toFixed(1)} m`,740,172);
+  const gx=760,gy=210,gw=400,gh=300,tmin=30,tmax=40;
+  c.strokeStyle='#c9cfd1';c.lineWidth=1;c.strokeRect(gx,gy,gw,gh);
+  c.fillStyle='#56646d';c.font='16px '+F;
+  for(const t of [30,35,40]){const yy=gy+gh-(t-tmin)/(tmax-tmin)*gh;c.fillText(t+' s',gx-46,yy+5)}
+  for(const xx of [0,20,40,60]){c.fillText(xx+' m',gx+xx/L*gw-12,gy+gh+22)}
+  c.fillText('總時間（縱軸）－下水點（橫軸）',gx+8,gy+22);
+  if(show){c.strokeStyle='#2b7a3d';c.lineWidth=3;c.beginPath();for(let k=0;k<=L;k+=0.5){const yy=gy+gh-(Math.min(T(k),tmax)-tmin)/(tmax-tmin)*gh;k?c.lineTo(gx+k/L*gw,yy):c.moveTo(gx,yy)}c.stroke();
+   const bxg=gx+best/L*gw,byg=gy+gh-(bt-tmin)/(tmax-tmin)*gh;c.fillStyle='#2b7a3d';c.beginPath();c.arc(bxg,byg,7,0,7);c.fill();c.fillText(`最快 ${best.toFixed(0)} m、${bt.toFixed(1)} s`,bxg-150,byg+28)}
+  const yy=gy+gh-(Math.min(T(x),tmax)-tmin)/(tmax-tmin)*gh;c.fillStyle='#c87720';c.beginPath();c.arc(gx+x/L*gw,yy,8,0,7);c.fill();
+ }
+ sx.addEventListener('input',draw);
+ document.querySelectorAll('[data-go]').forEach(b=>b.addEventListener('click',()=>{sx.value=b.dataset.go;draw()}));
+ bb.addEventListener('click',()=>{show=!show;bb.setAttribute('aria-pressed',show);bb.textContent=show?'藏起最快路線':'顯示最快路線';draw()});
+ let drag=false;
+ const toX=e=>{const r=cv.getBoundingClientRect();const px=(e.clientX-r.left)*cv.width/r.width;return Math.max(0,Math.min(L,(px-ox)/S))};
+ cv.addEventListener('pointerdown',e=>{const r=cv.getBoundingClientRect();if((e.clientX-r.left)*cv.width/r.width>700)return;drag=true;sx.value=toX(e).toFixed(1);draw()});
+ window.addEventListener('pointermove',e=>{if(drag){sx.value=toX(e).toFixed(1);draw()}});
+ window.addEventListener('pointerup',()=>drag=false);
+ draw();
+})();
+</script></html>
