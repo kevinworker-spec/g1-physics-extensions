@@ -1,54 +1,234 @@
 <!doctype html><html lang="zh-Hant"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>喇叭怎麼發聲</title>
-<style>*{box-sizing:border-box}body{margin:0;background:#f7f5f0;color:#202a32;font:22px/1.8 "PingFang TC","Microsoft JhengHei",sans-serif}header,main{max-width:1040px;margin:auto;padding:30px 28px}header{padding-bottom:0}small{color:#9b521e;font-size:16px}h1{font-size:clamp(32px,5vw,52px);line-height:1.4;margin:14px 0}h2{font-size:30px;line-height:1.5;margin:0 0 20px}p{margin:16px 0}section{margin:28px 0 64px}figure{margin:24px 0;background:white;border:1px solid #d5d9da;border-radius:12px;padding:18px;overflow:auto}svg{display:block;width:100%;min-width:650px}svg text{font-family:inherit;fill:#24333b}figcaption{font-size:17px;color:#56646d;line-height:1.6;margin-top:12px}.key{border-left:5px solid #b66a30;padding:12px 20px;background:#eeeae0}.controls{display:flex;gap:10px;flex-wrap:wrap}button{font:inherit;font-size:18px;padding:8px 16px;border-radius:8px;border:1px solid #9aadb3;background:white;cursor:pointer}button[aria-pressed=true]{background:#dceaf1;outline:2px solid #317799}#forceNote{min-height:3.6em}.blue{fill:#287fb3}.orange{fill:#c87720}.green{fill:#24835d}.foot{font-size:16px;color:#647079}a{color:#286d8c}.wavearea{overflow:auto} @media(max-width:650px){body{font-size:19px}header,main{padding:20px 16px}h2{font-size:25px}figure{padding:10px}section{margin-bottom:45px}} </style>
+<style>*{box-sizing:border-box}body{margin:0;background:#fff;color:#202a32;font:22px/1.8 "PingFang TC","Microsoft JhengHei",sans-serif}header,main{max-width:1040px;margin:auto;padding:30px 28px}header{padding-bottom:0}small{color:#9b521e;font-size:16px}h1{font-size:clamp(32px,5vw,52px);line-height:1.4;margin:14px 0}h2{font-size:30px;line-height:1.5;margin:0 0 20px}p{margin:16px 0}section{margin:28px 0 64px}figure{margin:24px 0;background:white;border:1px solid #d5d9da;border-radius:12px;padding:18px;overflow:auto}svg{display:block;width:100%;min-width:650px}svg text{font-family:inherit;fill:#24333b}figcaption{font-size:17px;color:#56646d;line-height:1.6;margin-top:12px}.key{border-left:5px solid #b66a30;padding:12px 20px;background:#eeeae0}.controls{display:flex;gap:10px;flex-wrap:wrap}button{font:inherit;font-size:18px;padding:8px 16px;border-radius:8px;border:1px solid #9aadb3;background:white;cursor:pointer}button[aria-pressed=true]{background:#dceaf1;outline:2px solid #317799}.blue{fill:#287fb3}.orange{fill:#c87720}.green{fill:#24835d}.foot{font-size:16px;color:#647079}a{color:#286d8c} @media(max-width:650px){body{font-size:19px}header,main{padding:20px 16px}h2{font-size:25px}figure{padding:10px}section{margin-bottom:45px}} 
+:root{color-scheme:light}body{background:#fff}html{scroll-behavior:smooth}button:focus-visible,select:focus-visible,a:focus-visible{outline:3px solid #287fb3;outline-offset:4px}button{touch-action:manipulation}button:disabled{cursor:default;opacity:.5}[hidden]{display:none!important}
+.player{padding:24px;overflow:visible;scroll-margin-top:12px;border-color:#d0d9dd;box-shadow:0 8px 32px #25343d08}.player-heading{display:flex;align-items:center;justify-content:space-between;gap:12px}.eyebrow{font-size:15px;color:#8a5b35;letter-spacing:.08em}.player h3{font-size:27px;line-height:1.4;margin:2px 0 16px}.quiet{font-size:16px;white-space:nowrap;color:#355367}.view-tabs{display:flex;gap:6px;border-bottom:1px solid #d9e0e3;padding-bottom:10px}.view-tabs button{flex:1;padding:9px 4px;font-size:17px;border-color:transparent;color:#52636e;background:#f5f7f8}.view-tabs button[aria-selected=true]{color:#1d5d7f;background:#e8f1f5;border-color:#9ab8c8;font-weight:700}.stage{overflow-x:auto;overscroll-behavior-x:contain}.player .scene{width:100%;min-width:650px}.current-symbol{stroke:#b56720;fill:white;stroke-width:2.2}.view-note{font-size:17px;line-height:1.6;color:#536671;margin:5px 0 16px;min-height:3.2em}.readouts{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-bottom:19px}.readouts>div{background:#f6f8f9;border-radius:8px;padding:10px 14px}.readouts span{display:block;font-size:15px;color:#63747d}.readouts strong{display:block;font-size:22px;line-height:1.5;font-variant-numeric:tabular-nums}.readouts>div:nth-child(1) strong{color:#9b521e}.readouts>div:nth-child(2) strong{color:#21704f}.readouts>div:nth-child(3) strong{color:#455663}.meter{height:4px;position:relative;background:#dce2e5;margin-top:8px}.meter:after{content:"";position:absolute;left:50%;top:-3px;width:1px;height:10px;background:#9caeb8}.meter i{display:block;height:4px;position:absolute;left:50%;width:0;background:#bd6c20}.force-meter i{background:#24835d}.motion-meter i{background:#667f8e}.mode-controls{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:16px}.mode-controls button{flex:1;font-size:17px;white-space:nowrap;padding:7px 9px}.mode-controls button[aria-pressed=true]{background:#fbf0e3;border-color:#d09b63;outline:none;color:#8a4d18;font-weight:700}.transport{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px;align-items:center}.primary{background:#276d8f;color:white;border-color:#276d8f;min-width:145px}.speed-label{font-size:16px;color:#536671}.speed-label select{font:inherit;background:white;color:#24333b;border:1px solid #9aadb3;border-radius:6px;padding:8px}.simulation-note{font-size:17px;line-height:1.6;margin:14px 0 0;min-height:3.2em;color:#4c626f}.player figcaption{font-size:15px;border-top:1px solid #e1e6e8;padding-top:12px;margin-top:10px}.keyboard-note{display:block;color:#6a7881;margin-top:5px}.mobile-hint{display:none}.back-to-animation{color:#276d8f;border-color:#8cabbc;font-size:18px}.key{background:#fcf5e9}
+.player:is(:fullscreen,.expanded){background:#fff;border:0;border-radius:0;width:100%;height:100%;margin:0;padding:16px max(24px,calc((100vw - 1250px)/2));overflow:auto;display:flex;flex-direction:column;justify-content:flex-start}.player.expanded{position:fixed;inset:0;z-index:1000;height:100dvh}.player:is(:fullscreen,.expanded) .stage{flex:1;min-height:150px;display:flex}.player:is(:fullscreen,.expanded) [role=tabpanel]{width:100%;height:100%}.player:is(:fullscreen,.expanded) .scene{width:100%;height:100%;max-height:none;min-width:650px}.player:is(:fullscreen,.expanded) .player-heading h3{font-size:24px;margin-bottom:6px}.player:is(:fullscreen,.expanded) .view-note{font-size:15px;min-height:0;margin:3px 0 8px}.player:is(:fullscreen,.expanded) .simulation-note{font-size:15px;min-height:0;margin-top:8px}.player:is(:fullscreen,.expanded) .readouts{margin-bottom:10px}.player:is(:fullscreen,.expanded) .readouts>div{padding:6px 12px}.player:is(:fullscreen,.expanded) .readouts strong{font-size:20px}.player:is(:fullscreen,.expanded) .mode-controls{margin-bottom:10px}.player:is(:fullscreen,.expanded) .mode-controls button,.player:is(:fullscreen,.expanded) .transport button{font-size:16px;padding:6px 12px}.player:is(:fullscreen,.expanded) figcaption{display:none}
+@media(max-width:650px){.player{padding:14px}.player-heading{align-items:flex-start}.player h3{font-size:23px}.eyebrow{font-size:12px}.quiet{padding:6px 8px;font-size:14px}.view-tabs{gap:4px}.view-tabs button{font-size:14px;line-height:1.5;padding:8px 3px}.readouts{gap:6px}.readouts>div{padding:8px}.readouts strong{font-size:17px}.readouts span{font-size:13px}.mode-controls{display:grid;grid-template-columns:1fr 1fr}.mode-controls button{font-size:16px}.transport .controls{gap:6px;width:100%}.transport button{font-size:15px;flex:1;padding:8px 7px}.primary{min-width:0}.mobile-hint{display:block;font-size:13px;color:#647079;margin:0}.player figcaption{font-size:14px}.keyboard-note{display:none}.view-note,.simulation-note{font-size:16px}.player:is(:fullscreen,.expanded){padding:12px}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+@media print{.player .transport,.player .mode-controls,.player .quiet,.keyboard-note,.back-to-animation{display:none}.player{break-inside:avoid;box-shadow:none}.scene{min-width:0!important}.stage{overflow:visible}}
+</style>
 <header><small>延伸</small><h1>一條會變的電流，<br>怎麼變成你聽到的聲音？</h1><p>喇叭前面的振膜會來回動。可是電線接在喇叭後面，電流怎麼讓前面的振膜動起來？先沿著裝置找過去。</p></header>
-<main><section><h2>先找到：誰固定，誰能動？</h2><p>常見的動圈式喇叭裡，有一個固定的永久磁鐵。磁鐵搭配鐵製零件，把磁場集中在中心磁極和前板之間一圈很窄的環形縫隙，叫作<b>磁隙</b>。細導線繞在圓筒上成為<b>音圈</b>，套在中心磁極外面，剛好落在這個縫隙裡。下圖把喇叭沿軸線剖開來看。</p>
-<figure><svg viewBox="0 0 950 430" role="img" aria-label="沿軸線剖開的喇叭：中心磁極 N、前板 S，上下兩個磁隙裡各有音圈截面，音圈連著振膜">
-<defs><marker id="lead" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto"><path d="M0 0L7 3.5L0 7Z" fill="#697c88"/></marker><marker id="bb" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto"><path d="M0 0L7 3.5L0 7Z" fill="#287fb3"/></marker></defs>
+<main><section><h2>先找到：誰固定，誰能動？</h2><p>常見的動圈式喇叭裡，有一個固定的永久磁鐵。磁鐵搭配鐵製零件，把磁場集中在中心磁極和前板之間一圈很窄的環形縫隙，叫作<b>磁隙</b>。細導線繞在圓筒上成為<b>音圈</b>，套在中心磁極外面，剛好落在這個縫隙裡。先看音圈是怎麼繞成的，再切換「剖面與受力」，找它在磁隙裡的位置。</p>
+<figure id="animation" class="player" aria-labelledby="player-title">
+<div class="player-heading"><div><span class="eyebrow">動圈式喇叭 · 慢動作</span><h3 id="player-title">電流變了，哪裡跟著變？</h3></div><button id="fullscreen" class="quiet">放大投影</button></div>
+<div class="view-tabs" role="tablist" aria-label="動畫視圖">
+<button id="tab-shape" role="tab" aria-selected="true" aria-controls="panel-shape" tabindex="0" data-view="shape">① 看音圈與振膜</button>
+<button id="tab-force" role="tab" aria-selected="false" aria-controls="panel-force" tabindex="-1" data-view="force">② 剖面與受力</button>
+<button id="tab-air" role="tab" aria-selected="false" aria-controls="panel-air" tabindex="-1" data-view="air">③ 空氣的疏密</button>
+</div>
+<div class="stage">
+<div id="panel-shape" role="tabpanel" aria-labelledby="tab-shape">
+<svg class="scene" viewBox="0 0 950 430" role="img" aria-label="音圈外形動畫：細導線繞在圓筒上，音圈和相連的錐形振膜一起沿軸線往復">
+<defs><linearGradient id="cone-shade" x1="0" x2="0" y1="0" y2="1"><stop offset="0" stop-color="#f6ecdd"/><stop offset=".6" stop-color="#e5c7a3"/><stop offset="1" stop-color="#f6ecdd"/></linearGradient></defs>
+<path d="M80 210H840" stroke="#aab4ba" stroke-dasharray="8 7"/><text x="820" y="198" font-size="18">軸線</text>
+<path d="M630 42V378" stroke="#b4bfc5" stroke-dasharray="5 6"/><text x="645" y="395" font-size="18" style="fill:#647079">未通電時的位置</text>
+<g id="shape-moving">
+<path d="M332 164L630 62A38 148 0 0 1 630 358L332 256Z" fill="url(#cone-shade)" stroke="#9b7047" stroke-width="3"/>
+<ellipse cx="630" cy="210" rx="38" ry="148" fill="#fbf4ea" stroke="#9b7047" stroke-width="3"/>
+<path d="M630 62L332 164M630 358L332 256" stroke="#9b7047" stroke-width="3" fill="none"/>
+<path d="M258 166H345A18 44 0 0 1 345 254H258Z" fill="#efe0ca" stroke="#b49674" stroke-width="2"/>
+<ellipse cx="345" cy="210" rx="18" ry="44" fill="#f9efdf" stroke="#a5825e" stroke-width="2"/>
+<g id="coil-windings" fill="none" stroke="#bd6c20" stroke-width="3"></g>
+<path d="M244 245Q224 270 191 275M309 250Q289 285 250 292" fill="none" stroke="#bd6c20" stroke-width="2"/>
+</g>
+<text x="130" y="87" font-size="25" style="fill:#a45a1b;font-weight:700">音圈</text><text x="130" y="119" font-size="20">細導線一圈圈繞在圓筒上</text><path d="M275 130L279 160" stroke="#7e8d96" stroke-width="2"/>
+<text x="455" y="335" font-size="25" style="font-weight:700">振膜</text><path d="M476 308L487 286" stroke="#7e8d96" stroke-width="2"/>
+<text x="715" y="126" font-size="22">音圈連著振膜</text><text x="715" y="160" font-size="22">一起前後移動</text>
+<path id="shape-velocity" d="M730 245H810" fill="none" stroke="#b66a30" stroke-width="4"/>
+<text id="shape-motion" x="710" y="290" font-size="22" style="fill:#9b521e">目前靜止</text>
+<text x="70" y="397" font-size="18" style="fill:#647079">外形示意；磁鐵、外框與懸吊暫時隱去，下一個視圖看磁隙。</text>
+</svg></div>
+<div id="panel-force" role="tabpanel" aria-labelledby="tab-force" hidden><svg id="view-force" class="scene" viewBox="0 0 950 430" role="img" aria-label="剖面動畫：磁鐵與藍色磁場固定，橙色音圈與振膜移動；綠箭頭表示磁力">
+<defs><marker id="lead" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto"><path d="M0 0L7 3.5L0 7Z" fill="#697c88"/></marker><marker id="bb" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto"><path d="M0 0L7 3.5L0 7Z" fill="#287fb3"/></marker><marker id="force-head" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto"><path d="M0 0L7 3.5L0 7Z" fill="#24835d"/></marker></defs>
 <!-- 軸線 -->
 <path d="M60 210H880" stroke="#9aa7ad" stroke-width="1.5" stroke-dasharray="10 7"/><text x="845" y="200" font-size="17" fill="#6b7a82" style="fill:#6b7a82">軸線</text>
 <!-- 固定磁路：後板、中心磁極、環形磁鐵、前板（剖面） -->
 <rect x="90" y="70" width="26" height="280" fill="#b7c2c8"/>
-<rect x="116" y="180" width="214" height="60" fill="#b7c2c8"/>
+<rect x="116" y="180" width="244" height="60" fill="#b7c2c8"/>
 <rect x="116" y="80" width="124" height="70" fill="#dbc5ac"/><rect x="116" y="270" width="124" height="70" fill="#dbc5ac"/>
-<rect x="240" y="80" width="90" height="70" fill="#b7c2c8"/><rect x="240" y="270" width="90" height="70" fill="#b7c2c8"/>
+<rect x="240" y="80" width="120" height="70" fill="#b7c2c8"/><rect x="240" y="270" width="120" height="70" fill="#b7c2c8"/>
 <text x="296" y="218" font-size="26">N</text><text x="296" y="140" font-size="24">S</text><text x="296" y="330" font-size="24">S</text>
 <!-- 磁隙中的磁場 -->
 <g stroke="#287fb3" stroke-width="3" marker-end="url(#bb)"><path d="M252 178V154"/><path d="M252 242V266"/></g>
-<!-- 音圈骨架與截面 -->
+<!-- 音圈與振膜是同一個移動組 -->
+<g id="cut-moving">
 <path d="M262 165H372M262 255H372" stroke="#b99c74" stroke-width="3"/>
-<g fill="#bd6c20"><circle cx="272" cy="165" r="7"/><circle cx="290" cy="165" r="7"/><circle cx="308" cy="165" r="7"/><circle cx="272" cy="255" r="7"/><circle cx="290" cy="255" r="7"/><circle cx="308" cy="255" r="7"/></g>
+<g fill="#bd6c20"><circle cx="280" cy="165" r="7"/><circle cx="294" cy="165" r="7"/><circle cx="308" cy="165" r="7"/><circle cx="280" cy="255" r="7"/><circle cx="294" cy="255" r="7"/><circle cx="308" cy="255" r="7"/></g>
 <!-- 振膜 -->
 <path d="M372 165L640 48M372 255L640 372" stroke="#9b7047" stroke-width="5" fill="none"/>
 <path d="M640 48Q665 40 672 60M640 372Q665 380 672 360" stroke="#9b7047" stroke-width="3" fill="none"/>
 <path d="M372 165Q400 210 372 255" stroke="#9b7047" stroke-width="3" fill="#faf2e8"/>
+<g id="cut-upper" transform="translate(294 165)" class="current-symbol"></g>
+<g id="cut-lower" transform="translate(294 255)" class="current-symbol"></g>
+</g>
+<g id="cut-forces" fill="none" stroke="#24835d" stroke-width="4" marker-end="url(#force-head)"><path/><path/></g>
 <!-- 放大範圍 -->
-<rect x="236" y="146" width="104" height="38" rx="6" fill="none" stroke="#317799" stroke-width="2" stroke-dasharray="6 4"/><rect x="236" y="236" width="104" height="38" rx="6" fill="none" stroke="#317799" stroke-width="2" stroke-dasharray="6 4"/>
+<rect x="236" y="146" width="134" height="38" rx="6" fill="none" stroke="#317799" stroke-width="2" stroke-dasharray="6 4"/><rect x="236" y="236" width="134" height="38" rx="6" fill="none" stroke="#317799" stroke-width="2" stroke-dasharray="6 4"/>
 <!-- 標示 -->
 <text x="30" y="40" font-size="20">環形永久磁鐵</text><path d="M110 50L160 95" fill="none" stroke="#697c88" stroke-width="2" marker-end="url(#lead)"/>
 <text x="30" y="395" font-size="20">鐵製中心磁極（前端 N）</text><path d="M150 375L190 245" fill="none" stroke="#697c88" stroke-width="2" marker-end="url(#lead)"/>
 <text x="300" y="40" font-size="20">鐵製前板（內緣 S）</text><path d="M340 50L300 85" fill="none" stroke="#697c88" stroke-width="2" marker-end="url(#lead)"/>
 <text x="380" y="400" font-size="20">音圈（截面）</text><path d="M400 380L316 264" fill="none" stroke="#697c88" stroke-width="2" marker-end="url(#lead)"/>
 <text x="500" y="215" font-size="26">振膜</text>
-<text x="700" y="120" font-size="21">音圈連著振膜</text><text x="700" y="155" font-size="21">一起沿軸線移動</text>
+<text x="700" y="120" font-size="21" style="fill:#287fb3">藍：固定磁場</text><text x="700" y="155" font-size="21" style="fill:#24835d">綠：音圈受磁力</text>
 <path d="M705 250H870M705 250l15 -10M705 250l15 10M870 250l-15 -10M870 250l-15 10" stroke="#b66a30" fill="none" stroke-width="3"/>
-<text x="600" y="420" font-size="19" fill="#317799" style="fill:#317799">虛線框：磁隙，下一張圖放大這裡</text></svg><figcaption>沿軸線剖開的示意：灰色、米色是固定的磁路，整圈是圓形，剖開後在軸線上、下各留一塊截面。音圈是繞在圓筒上的細導線，套在中心磁極外、位在磁隙裡，剖開後每一匝在上、下各留一個截面（橙點）。尺寸不按比例，外框與彈性懸吊未畫。</figcaption></figure>
-<p>音圈連在振膜上。<b>只要音圈受到前後方向的力，振膜就會跟著動。</b>所以接下來只剩一個關鍵：電流流進音圈時，為什麼會產生這個方向的力？</p></section>
-<section><h2>把磁隙放大：整圈的力為什麼沒有抵消？</h2><p>通電導線在磁場裡會受力。但音圈繞成一圈，上、下兩段的電流方向相反，會不會一段往前、一段往後，剛好抵消？</p><p>要一起看<b>電流方向和磁場方向</b>。把上圖的兩個虛線框放大，只取一匝來判方向：中心磁極是 N，前板內緣是 S，磁場從 N 指向 S，因此上方磁隙的磁場朝上，下方的磁場朝下。這一匝在上方的截面和下方的截面是同一圈導線的兩處，電流繞著軸線走，所以一處進紙面、一處出紙面。</p>
-<figure><svg viewBox="0 0 950 350" role="img" aria-label="音圈上段與下段的電流磁場與受力方向">
-<defs><marker id="b" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0 0L8 4L0 8Z" fill="#287fb3"/></marker><marker id="g" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0 0L8 4L0 8Z" fill="#24835d"/></marker></defs>
-<rect x="145" y="130" width="260" height="90" rx="8" fill="#edcccc"/><text x="260" y="185" font-size="30">N</text><rect x="145" y="20" width="260" height="50" rx="8" fill="#cadff0"/><text x="260" y="55" font-size="27">S</text><rect x="145" y="280" width="260" height="50" rx="8" fill="#cadff0"/><text x="260" y="315" font-size="27">S</text>
-<path d="M210 125V77M210 225V273" stroke="#287fb3" stroke-width="4" marker-end="url(#b)"/>
-<text id="upper" x="310" y="115" font-size="40" class="orange">⊗</text><text id="lower" x="310" y="270" font-size="40" class="orange">⊙</text>
-<g id="forces" stroke="#24835d" stroke-width="5" marker-end="url(#g)"><path d="M365 100H465"/><path d="M365 255H465"/></g>
-<text x="535" y="62" font-size="23">藍箭頭：磁鐵提供的磁場</text><text x="535" y="105" font-size="23">⊗ 電流進入紙面</text><text x="535" y="148" font-size="23">⊙ 電流朝我們出來</text><text x="535" y="205" font-size="23">綠箭頭：導線受到的磁力</text><text x="535" y="270" font-size="23" id="result">兩段都受到向右的力</text></svg>
-<div class="controls"><button data-i="0" aria-pressed="true">電流方向甲</button><button data-i="1" aria-pressed="false">電流反過來</button></div><figcaption id="forceNote">上段：電流入紙面，磁場朝上，磁力向右。下段：電流出紙面，磁場朝下，磁力也向右。</figcaption></figure>
-<p>先只看上段，用通電導線受力的定則判斷，力朝右。再看下段：<b>電流反了，磁場也反了，受力仍然朝右。</b>繞著整個音圈看，各段的力都沿著喇叭軸線同向相加，因此能推動整個音圈。</p><p>現在按「電流反過來」。固定磁鐵沒有變，磁場方向也沒有變；只有電流反向，兩段的力就都改成向左。</p><p class="key">不必讓永久磁鐵動，也不必讓它換磁極。改變音圈中的電流，就能改變推動振膜的力。</p></section>
+<text x="550" y="420" font-size="19" style="fill:#317799">虛線框：音圈所在的磁隙</text></svg></div>
+<div id="panel-air" role="tabpanel" aria-labelledby="tab-air" hidden>
+<svg id="view-air" class="scene" viewBox="0 0 950 430" role="img" aria-label="聲波動畫：振膜左右往復，空氣粒子只在原位附近振動，疏密變化向右傳遞">
+<defs><marker id="wave-head" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0 0L8 4L0 8Z" fill="#287fb3"/></marker></defs>
+<path d="M150 48H870" stroke="#287fb3" stroke-width="3" marker-end="url(#wave-head)"/><text x="330" y="34" font-size="22" style="fill:#287fb3">疏密變化向外傳遞 →</text>
+<g id="density-bands"></g><g id="air-particles"></g>
+<path d="M90 96V298" stroke="#b8c2c8" stroke-dasharray="5 5"/><path id="air-membrane" d="M90 96V298" stroke="#b66a30" stroke-width="8"/>
+<text x="40" y="335" font-size="21">振膜</text>
+<path id="particle-origin" d="M0 0" stroke="#b66a30" stroke-dasharray="4 4"/><circle id="tracked-particle" r="7" fill="#b66a30" stroke="white" stroke-width="2"/>
+<text x="200" y="353" font-size="22" style="fill:#9b521e">追蹤橙色粒子：只在原位附近往復</text>
+<text x="200" y="391" font-size="19" style="fill:#647079">點距呈現疏密，淡藍色越深表示越密；粒子位移已放大。</text>
+</svg></div>
+</div>
+<p class="mobile-hint">左右滑動可看完整圖。</p>
+<p id="view-note" class="view-note">先認得繞線的音圈，再切換剖面，看它如何放在磁隙裡。</p>
+<div class="readouts" aria-label="即時狀態">
+<div><span>音圈電流</span><strong id="current-readout">0</strong><div class="meter"><i id="current-meter"></i></div></div>
+<div><span>磁力方向</span><strong id="force-readout">無磁力</strong><div class="meter force-meter"><i id="force-meter"></i></div></div>
+<div><span>振膜狀態／位移</span><strong id="motion-readout">靜止</strong><div class="meter motion-meter"><i id="position-meter"></i></div></div>
+</div>
+<div class="mode-controls" role="group" aria-label="電流種類">
+<button data-mode="ac" aria-pressed="true">交變電流</button><button data-mode="positive" aria-pressed="false">固定電流 ＋</button><button data-mode="negative" aria-pressed="false">固定電流 −</button><button data-mode="off" aria-pressed="false">關閉電流</button>
+</div>
+<div class="transport"><div class="controls"><button id="play" class="primary">▶ 播放動畫</button><button id="step">前進一格</button><button id="restart">重新開始</button></div><label class="speed-label">播放速度 <select id="speed"><option value="0.5">更慢</option><option value="1" selected>慢動作</option></select></label></div>
+<p id="simulation-note" class="simulation-note" role="status">按播放，觀察電流、磁力與振膜的變化。</p>
+<figcaption>同一套模型連動三個視圖。磁鐵固定，音圈與振膜一起移動；圖中只畫磁力，懸吊的回復力與阻尼未畫出。速度、位移、尺寸皆為教學示意，不代表實際喇叭的頻率或行程。<span class="keyboard-note">鍵盤：空白鍵播放／暫停，→ 前進一格，R 重播；Esc 離開放大。</span></figcaption>
+</figure>
+<p>音圈連在振膜上。<b>只要音圈受到前後方向的力，振膜就會跟著動。</b>所以接下來的關鍵是：電流流進音圈時，為什麼會產生這個方向的力？</p></section>
+<section><h2>看磁隙裡：整圈的力為什麼沒有抵消？</h2><p>通電導線在磁場裡會受力。但音圈繞成一圈，上、下兩段的電流方向相反，會不會一段往前、一段往後，剛好抵消？</p><p>要一起看<b>電流方向和磁場方向</b>。在動畫選「剖面與受力」，看兩個虛線框裡的同一匝導線：中心磁極是 N，前板內緣是 S，磁場從 N 指向 S，因此上方磁隙的磁場朝上，下方的磁場朝下。這一匝在上方的截面和下方的截面是同一圈導線的兩處，電流繞著軸線走，所以一處進紙面、一處出紙面。</p>
+<p><button class="back-to-animation" data-view-target="force">↑ 回動畫看剖面與受力</button></p>
+<p>先選「固定電流 ＋」，只看上段，用通電導線受力的定則判斷，力朝右。再看下段：<b>電流反了，磁場也反了，受力仍然朝右。</b>繞著整個音圈看，各段的力都沿著喇叭軸線同向相加，因此能推動整個音圈。</p><p>現在把「固定電流 ＋」切成「固定電流 −」。固定磁鐵沒有變，磁場方向也沒有變；只有電流反向，兩段的力就都改成向左。</p><p class="key">不必讓永久磁鐵動，也不必讓它換磁極。改變音圈中的電流，就能改變推動振膜的力。</p></section>
 <section><h2>有了來回的力，怎麼形成聲音？</h2><p>擴大機送進來的音訊電流不斷變化，音圈受到的磁力跟著變。在這些力與彈性懸吊的共同作用下，音圈帶著振膜來回振動。</p><p>振膜往外推時，前方的空氣被擠得密一些；往回退時，附近空氣可以變得疏一些。這些壓力變化會傳給更前方的空氣，再一層層傳出去。</p>
-<figure><svg viewBox="0 0 950 225" role="img" aria-label="振膜使空氣疏密交替，壓力變化向右傳播">
-<path d="M85 45V185" stroke="#b66a30" stroke-width="8"/><text x="25" y="218" font-size="21">振膜</text>
-<g stroke="#637e8e" stroke-width="3"><path d="M145 65V175"/><path d="M155 65V175"/><path d="M165 65V175"/><path d="M175 65V175"/><path d="M185 65V175"/><path d="M195 65V175"/><path d="M240 65V175"/><path d="M280 65V175"/><path d="M320 65V175"/><path d="M360 65V175"/><path d="M370 65V175"/><path d="M380 65V175"/><path d="M390 65V175"/><path d="M400 65V175"/><path d="M410 65V175"/><path d="M455 65V175"/><path d="M495 65V175"/><path d="M535 65V175"/><path d="M575 65V175"/><path d="M585 65V175"/><path d="M595 65V175"/><path d="M605 65V175"/><path d="M615 65V175"/><path d="M625 65V175"/><path d="M670 65V175"/><path d="M710 65V175"/><path d="M750 65V175"/></g>
-<text x="140" y="200" font-size="20">較密</text><text x="250" y="200" font-size="20">較疏</text><text x="360" y="200" font-size="20">較密</text><path d="M210 30H750l-18 -10M750 30l-18 10" fill="none" stroke="#287fb3" stroke-width="3"/><text x="360" y="18" font-size="20">壓力變化向外傳遞</text><text x="795" y="100" font-size="22">空氣只在</text><text x="795" y="140" font-size="22">附近往復</text></svg><figcaption>某一瞬間的疏密分布示意；線條疏密代表空氣密度，不是空氣分子的運動軌跡。</figcaption></figure>
+<p><button class="back-to-animation" data-view-target="air">↑ 回動畫追蹤空氣粒子</button></p>
 <p>傳到耳朵的是這種壓力的變化，也就是聲波。<b>不是把喇叭前面的那一團空氣，一路送到你的耳朵。</b></p><p>這裡也要分清楚：磁力向右，振膜不一定立刻往右。如果它原本正往左，向右的力可能先讓它減速，再折返。因此前面的綠箭頭只代表力，不代表振膜當下的速度。</p></section>
 <section><h2>回頭想：如果電流一直不變呢？</h2><p>剛接通時，音圈受到力，振膜會動一下，可能聽見「喀」的一聲。但如果電流從此保持不變，磁力也不變，暫態振動逐漸消退後，振膜會停在一個偏移的位置，由懸吊的回復力平衡磁力。</p><p>振膜不再持續往復，就不會持續產生某個音高。播放聲音需要讓驅動力隨時間變化；一般音訊讓電流大小與方向變化，振膜才會持續振動。</p><p class="key">電流先讓音圈受力，音圈帶動振膜，振膜讓空氣產生向外傳遞的疏密變化。這才是電訊號變成聲音的過程。</p></section>
 <p class="foot">本篇以常見動圈式喇叭為例，圖為原理示意。結構與受力依 <a href="https://web.physics.ucsb.edu/~lecturedemonstrations/Composer/Pages/68.54.html">UCSB 剖開喇叭示範</a>核對。直流段為概念比較，不是接線實作。</p><p class="foot">生活中的電與磁：<a href="../Ch04-2_電磁爐/電磁爐.html">電磁爐</a> · <a href="../Ch04-3_微波爐/微波爐.html">微波爐</a> · <a href="../Ch04-1_馬達/馬達.html">馬達</a> · <a href="../Ch04-2_發電機/發電機.html">發電機</a> · <a href="../Ch04-2_變壓器/變壓器.html">變壓器</a>｜<a href="../Ch04_生活中的電與磁/index.html">系列入口</a></p></main>
-<script>document.querySelectorAll('[data-i]').forEach(b=>b.onclick=()=>{const rev=b.dataset.i==='1';document.querySelectorAll('[data-i]').forEach(x=>x.setAttribute('aria-pressed',x===b));document.getElementById('upper').textContent=rev?'⊙':'⊗';document.getElementById('lower').textContent=rev?'⊗':'⊙';document.getElementById('forces').setAttribute('transform',rev?'translate(830 0) scale(-1 1)':'');document.getElementById('result').textContent=rev?'兩段都受到向左的力':'兩段都受到向右的力';document.getElementById('forceNote').textContent=rev?'只反轉音圈電流，固定磁場保持原方向；上、下兩段的磁力都改向左。':'上段：電流入紙面，磁場朝上，磁力向右。下段：電流出紙面，磁場朝下，磁力也向右。';});</script></html>
+
+<script>
+(() => {
+'use strict';
+const $ = id => document.getElementById(id);
+const NS = 'http://www.w3.org/2000/svg';
+const make = (tag, attrs, parent) => { const node=document.createElementNS(NS,tag); for(const [k,v] of Object.entries(attrs))node.setAttribute(k,v); if(parent)parent.append(node); return node; };
+const setText = (id, value) => { if($(id).textContent!==value)$(id).textContent=value; };
+// 一處維護的教學模型：m*x'' + b*x' + k*x = K*I；數值為正規化設定，非實機參數。
+// +x 向右（向喇叭前方）；+I：上段入紙面、下段出紙面。磁隙上 B↑、下 B↓，故磁力皆向右。
+const MODEL = Object.freeze({dt:1/120,mass:1,damping:4,stiffness:16,drive:16,omega:2.5,pixels:22,waveSpeed:180,historySize:2400});
+let mode='ac',view='shape',playing=false,speed=1,t=0,x=0,v=0,current=0,stepIndex=0,modeStart=0,accumulator=0,lastFrame=0,raf=0;
+const history=new Float64Array(MODEL.historySize);
+const drive = time => mode==='ac' ? Math.sin(MODEL.omega*time) : mode==='positive' ? 1 : mode==='negative' ? -1 : 0;
+const symbolParts=[];
+for(const id of ['cut-upper','cut-lower']) {
+ const group=$(id);make('circle',{r:14,fill:'white',stroke:'#b56720','stroke-width':2.2},group);
+ const dot=make('circle',{r:4,fill:'#b56720',stroke:'none'},group);
+ const cross=make('path',{d:'M-6 -6L6 6M-6 6L6 -6',fill:'none',stroke:'#b56720','stroke-width':2.2},group);
+ symbolParts.push({dot,cross});
+}
+for(let i=0;i<7;i++)make('ellipse',{cx:253+i*9,cy:210,rx:17,ry:44},$('coil-windings'));
+const columns=41,rows=6,spacing=18.5,first=130,air=[],bands=[];
+for(let c=0;c<columns;c++) {
+ const q=first+c*spacing;
+ if(c<columns-1)bands.push(make('rect',{x:q,y:96,width:spacing,height:202,fill:'#287fb3','fill-opacity':0},$('density-bands')));
+ const dots=[];for(let r=0;r<rows;r++)dots.push(make('circle',{cx:q,cy:118+r*31,r:3.2,fill:'#5c7e90'},$('air-particles')));
+ air.push({q,dots});
+}
+const tracked=18,origin=air[tracked].q,trackedY=118+3*31;
+$('particle-origin').setAttribute('d',`M${origin} 185V244`);
+function past(delay){
+ const index=stepIndex-delay/MODEL.dt;
+ if(index<0)return 0;
+ const lo=Math.floor(index),hi=Math.ceil(index),f=index-lo;
+ return history[lo%MODEL.historySize]*(1-f)+history[Math.min(hi,stepIndex)%MODEL.historySize]*f;
+}
+function advance(dt){
+ // RK4：穩定地保留慣性、懸吊回復力與阻尼；切換輸入時不跳接位移或速度。
+ const accel=(time,pos,vel)=>(MODEL.drive*drive(time)-MODEL.damping*vel-MODEL.stiffness*pos)/MODEL.mass;
+ const a1=accel(t,x,v),v2=v+a1*dt/2,x2=x+v*dt/2;
+ const a2=accel(t+dt/2,x2,v2),v3=v+a2*dt/2,x3=x+v2*dt/2;
+ const a3=accel(t+dt/2,x3,v3),v4=v+a3*dt,x4=x+v3*dt;
+ const a4=accel(t+dt,x4,v4);
+ x+=dt*(v+2*v2+2*v3+v4)/6;v+=dt*(a1+2*a2+2*a3+a4)/6;t+=dt;
+ current=drive(t);stepIndex++;history[stepIndex%MODEL.historySize]=x;
+}
+function meter(id,value){const e=$(id),w=Math.min(Math.abs(value),1.5)*32;e.style.width=w+'%';e.style.left=(value<0?50-w:50)+'%';}
+function draw(){
+ current=drive(t);const dx=MODEL.pixels*x,sign=Math.abs(current)<.025?0:Math.sign(current);
+ $('shape-moving').setAttribute('transform',`translate(${dx} 0)`);
+ $('cut-moving').setAttribute('transform',`translate(${dx} 0)`);
+ $('air-membrane').setAttribute('d',`M${90+dx} 96V298`);
+ symbolParts.forEach((parts,i)=>{parts.dot.style.display=sign!==0&&sign===(i===0?-1:1)?'':'none';parts.cross.style.display=sign!==0&&sign===(i===0?1:-1)?'':'none';});
+ $('cut-forces').style.visibility=sign?'visible':'hidden';
+ const forceLength=16+65*Math.abs(current),start=sign>0?327+dx:268+dx;
+ [...$('cut-forces').children].forEach((path,i)=>path.setAttribute('d',`M${start} ${i===0?165:255}h${sign*forceLength}`));
+ const moving=Math.abs(v)>.035,motion=moving?(v>0?'向右移動 →':'← 向左移動'):(Math.abs(x)<.025?'靜止於原位':'暫時靜止');
+ setText('shape-motion',motion);setText('motion-readout',motion);
+ const vx=762,length=Math.min(Math.abs(v)*24,65),end=vx+Math.sign(v)*length;
+ $('shape-velocity').setAttribute('d',moving?`M${vx} 245H${end}m${-Math.sign(v)*10} -7L${end} 245l${-Math.sign(v)*10} 7`:'');
+ setText('current-readout',sign===0?(mode==='off'?'0（斷電）':'接近 0'):(sign>0?'＋ 方向':'− 方向'));
+ setText('force-readout',sign===0?(mode==='off'?'無磁力':'接近 0'):(sign>0?'向右 →':'← 向左'));
+ meter('current-meter',current);meter('force-meter',current);meter('position-meter',x);
+ // 平面行波示意 u(q,t)=x(t-(q-q0)/c)：每顆粒子有固定原位，位移以延遲傳播。
+ const positions=air.map(({q,dots})=>{const pos=q+MODEL.pixels*past((q-90)/MODEL.waveSpeed);for(const dot of dots)dot.setAttribute('cx',pos);return pos;});
+ for(let c=0;c<bands.length;c++){
+  const ratio=spacing/(positions[c+1]-positions[c]);
+  bands[c].setAttribute('x',positions[c]);bands[c].setAttribute('width',positions[c+1]-positions[c]+.3);
+  bands[c].setAttribute('fill-opacity',Math.max(0,Math.min(.27,(ratio-1)*.65)));
+ }
+ $('tracked-particle').setAttribute('cx',positions[tracked]);$('tracked-particle').setAttribute('cy',trackedY);
+ updateExplanation();
+}
+let lastExplanation='';
+function updateExplanation(){
+ let note='';
+ if(!playing&&stepIndex===0)note='按播放，觀察電流、磁力與振膜的變化。';
+ else if(mode==='ac')note='電流反向時，磁力一起反向；振膜還有慣性，移動方向不一定立刻改變。';
+ else if(mode==='off')note=Math.abs(x)<.015&&Math.abs(v)<.025?'關閉電流後，振動逐漸消退，振膜回到原位。':'電流為零，磁力消失；懸吊與慣性仍讓振膜暫時來回動。';
+ else note=t-modeStart>3&&Math.abs(v)<.025&&Math.abs(x-drive(t))<.02?'固定電流持續存在，振膜停在偏移位置；懸吊回復力與磁力平衡，不再持續發聲。':'固定電流提供固定方向的磁力；振膜先移動、短暫振動，再停在偏移位置。';
+ if(note!==lastExplanation){$('simulation-note').textContent=note;lastExplanation=note;}
+}
+const viewNotes={shape:'先認得繞線的音圈，再切換剖面，看它如何放在磁隙裡。橙箭頭表示此刻的移動方向。',force:'藍箭頭是固定磁場。⊗ 電流進紙面、⊙ 出紙面；上下電流相反，磁場也相反，磁力同向。',air:'觀察橙色粒子與虛線原位：粒子沒有一路向右跑，向外傳的是疏密變化。'};
+function showView(name,focus=false){
+ view=name;
+ for(const tab of document.querySelectorAll('[data-view]')){const selected=tab.dataset.view===view;tab.setAttribute('aria-selected',selected);tab.tabIndex=selected?0:-1;$('panel-'+tab.dataset.view).hidden=!selected;}
+ $('view-note').textContent=viewNotes[view];if(focus)$('tab-'+view).focus();draw();
+}
+function schedule(){if(playing&&!document.hidden&&!raf)raf=requestAnimationFrame(frame);}
+function frame(now){
+ raf=0;if(!playing||document.hidden)return;
+ if(lastFrame)accumulator+=Math.min((now-lastFrame)/1000,.1)*speed;lastFrame=now;
+ while(accumulator>=MODEL.dt){advance(MODEL.dt);accumulator-=MODEL.dt;}
+ draw();schedule();
+}
+function setPlaying(value){playing=value;lastFrame=0;accumulator=0;if(raf)cancelAnimationFrame(raf);raf=0;$('play').textContent=playing?'Ⅱ 暫停動畫':'▶ 播放動畫';schedule();updateExplanation();}
+function step(){setPlaying(false);for(let i=0;i<12;i++)advance(MODEL.dt);draw();}
+function restart(){t=x=v=stepIndex=modeStart=0;current=drive(0);history.fill(0);lastExplanation='';draw();setPlaying(true);}
+function changeMode(next){mode=next;modeStart=t;for(const b of document.querySelectorAll('[data-mode]'))b.setAttribute('aria-pressed',b.dataset.mode===mode);draw();}
+for(const tab of document.querySelectorAll('[data-view]')){
+ tab.onclick=()=>showView(tab.dataset.view);
+ tab.onkeydown=event=>{const names=Object.keys(viewNotes);let i=names.indexOf(view);if(event.key==='ArrowRight')i=(i+1)%names.length;else if(event.key==='ArrowLeft')i=(i+names.length-1)%names.length;else if(event.key==='Home')i=0;else if(event.key==='End')i=2;else return;event.preventDefault();event.stopPropagation();showView(names[i],true);};
+}
+for(const b of document.querySelectorAll('[data-mode]'))b.onclick=()=>changeMode(b.dataset.mode);
+for(const b of document.querySelectorAll('[data-view-target]'))b.onclick=()=>{showView(b.dataset.viewTarget);$('animation').scrollIntoView({block:'start'});$('tab-'+view).focus({preventScroll:true});};
+$('play').onclick=()=>setPlaying(!playing);$('step').onclick=step;$('restart').onclick=restart;$('speed').onchange=()=>{speed=+$('speed').value;};
+function expandFallback(){const expanded=$('animation').classList.toggle('expanded');document.body.style.overflow=expanded?'hidden':'';setText('fullscreen',expanded?'離開放大':'放大投影');}
+$('fullscreen').onclick=async()=>{if($('animation').classList.contains('expanded')){expandFallback();return;}try{if(document.fullscreenElement)await document.exitFullscreen();else if($('animation').requestFullscreen)await $('animation').requestFullscreen();else expandFallback();}catch{expandFallback();}};
+document.addEventListener('keydown',event=>{if(event.key==='Escape'&&$('animation').classList.contains('expanded'))expandFallback();});
+document.addEventListener('fullscreenchange',()=>setText('fullscreen',document.fullscreenElement?'離開放大':'放大投影'));
+document.addEventListener('visibilitychange',()=>{lastFrame=0;accumulator=0;if(document.hidden){if(raf)cancelAnimationFrame(raf);raf=0;}else schedule();});
+$('animation').addEventListener('keydown',event=>{
+ if(['BUTTON','SELECT','INPUT','A'].includes(event.target.tagName))return;
+ if(event.code==='Space'){event.preventDefault();setPlaying(!playing);}else if(event.key==='ArrowRight'){event.preventDefault();step();}else if(event.key.toLowerCase()==='r'){event.preventDefault();restart();}
+});
+$('animation').tabIndex=0;
+// 文章區亦可用空白鍵；表單與連結保留原生鍵盤操作。
+document.addEventListener('keydown',event=>{if(event.defaultPrevented||event.ctrlKey||event.metaKey||event.altKey||event.target!==document.body)return;if(event.code==='Space'){event.preventDefault();setPlaying(!playing);}else if(event.key==='ArrowRight'){event.preventDefault();step();}else if(event.key.toLowerCase()==='r'){event.preventDefault();restart();}});
+showView('shape');draw();
+})();
+</script>
+<nav aria-label="第四章導覽" style="box-sizing:border-box;width:min(100%,70rem);margin:1.5rem auto;padding:0.5rem 1rem;font:600 1rem/1.6 system-ui,sans-serif"><a href="../ch04/" style="color:#174ba9;background:#fff;text-underline-offset:.2em">第四章延伸總覽</a></nav>
+</html>

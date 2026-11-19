@@ -1,0 +1,287 @@
+<!doctype html><html lang="zh-Hant"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>都卜勒效應的機制</title>
+<style>html{color-scheme:light}*{box-sizing:border-box}body{margin:0;background:#ffffff;color:#202a32;font:22px/1.8 "PingFang TC","Microsoft JhengHei",sans-serif}header,main{max-width:1060px;margin:auto;padding:30px 28px}header{padding-bottom:0}small{color:#9b521e;font-size:16px}h1{font-size:clamp(30px,5vw,48px);line-height:1.4;margin:14px 0}h2{font-size:29px;line-height:1.5;margin:0 0 20px}p{margin:16px 0}section{margin:28px 0 56px}figure{margin:24px 0;background:white;border:1px solid #d5d9da;border-radius:12px;padding:18px;overflow:auto}svg{display:block;width:100%;min-width:680px}svg text{font-family:inherit;fill:#24333b}figcaption{font-size:17px;color:#56646d;line-height:1.6;margin-top:12px}.key{border-left:5px solid #b66a30;padding:12px 20px;background:#eeeae0}table.cmp{border-collapse:collapse;width:100%;font-size:19px;margin:18px 0}table.cmp th,table.cmp td{border:1px solid #d5d9da;padding:10px 14px;text-align:left;vertical-align:top}table.cmp th{background:#f3f1ec}table.cmp td.hl{background:#fff7ec;font-weight:700}
+.controls{display:flex;gap:10px;flex-wrap:wrap;align-items:center;margin-top:14px;font-size:18px}
+.controls button{font-size:17px;padding:6px 14px;border-radius:8px;border:1px solid #9fb0b6;background:#f4f7f8;cursor:pointer}
+.controls button:active{background:#e3eaec}
+input[type=range]{width:min(420px,66vw);accent-color:#317799}
+.readout{font-size:18px;background:#f4f7f8;border-radius:10px;padding:10px 16px;margin-top:12px;line-height:1.7}
+.readout b{color:#1f6fb4}
+.t{font-size:13px;border:1px solid currentColor;border-radius:6px;padding:0 5px;margin:0 3px;white-space:nowrap;vertical-align:2px}
+.t.ref{color:#1f6fb4}.t.est{color:#8a5a00}
+details{margin:14px 0;background:white;border:1px dashed #b9c4c6;border-radius:10px;padding:8px 18px}
+summary{cursor:pointer;color:#286d8c;font-weight:700}
+.foot{font-size:16px;color:#647079}
+a{color:#286d8c}
+@media(max-width:650px){body{font-size:19px}header,main{padding:20px 16px}h2{font-size:24px}figure{padding:10px}section{margin-bottom:40px}table.cmp{font-size:16px}}
+</style>
+<header><small>延伸｜4-5 都卜勒效應</small><h1>音調變了，<br>到底是什麼在變？</h1>
+<p>救護車對著你開過來，警笛聽起來比較刺耳（音調較高）；開走以後，聽起來比較低沈（音調較低）。課本說這是都卜勒效應（p.132）。但「音調變」背後，其實是<b>兩種完全不同的情況</b>：一種是<b>聲源自己在動</b>（像開過來的救護車），一種是<b>觀察者自己在動</b>（像你自己朝一個不動的聲源跑過去）。這篇把兩種情況分開講，各用一組動畫讓你實際數數看，最後再對照兩者「變的東西」哪裡不一樣。</p></header>
+<main>
+
+<section><h2>情況一：聲源自己在動——為什麼前方音調變高、後方變低？</h2>
+<p>想像聲源一邊固定頻率發出聲音，一邊往右移動。它每發出一個波前，當下所在的位置就是那個波前的圓心；因為聲源一直在往前移動，<b>每一個波前的圓心都不一樣</b>，不再是同一個點。右邊（聲源前進的方向）的波前因此被擠在一起，左邊被拉開。拖下面的滑桿調聲源速度，播放動畫，比較前方、後方兩個固定位置「收到幾個波前」的計數器。</p>
+
+<figure><svg id="fig1" viewBox="0 0 900 460" role="img" aria-label="聲源沿水平線往右移動並持續發出波前，每個波前以自己發出時的位置為圓心向外擴散；前方與後方各有一個固定觀察點，分別計數被波前掃過的次數"></svg>
+<div class="controls">
+ <button id="play1">播放／暫停</button>
+ <button id="step1">前進一格</button>
+ <button id="reset1">重新開始</button>
+ <button id="slow1">慢動作：關</button>
+ <label for="vs" style="margin-left:8px">聲源速度</label>
+ <input id="vs" type="range" min="0" max="60" value="0" step="5">
+ <b id="vsv"></b>
+</div>
+<div class="controls">
+ <button data-pre1="0">靜止（0）</button>
+ <button data-pre1="30">中速（0.3）</button>
+ <button data-pre1="50">快速（0.5）</button>
+</div>
+<div class="readout" id="ro1"></div>
+<figcaption>橘點：前方固定觀察點；藍點：後方固定觀察點。灰色圓：聲源移動中持續發出的波前，每個圓心是它發出當時聲源的位置（聲源靜止時圓心重疊，恢復成等間距同心圓）。下方時間軸把兩側「接收時刻」分別往上、往下排：上排（橘）愈密＝前方接收愈快，下排（藍）愈密＝後方接收愈快。鍵盤：空白鍵播放／暫停，←→ 前進一小步。</figcaption>
+</figure>
+
+<p>播放幾次就會看到：聲源速度愈快，前方波前擠得愈密、計數器跳得愈快，後方波前拉得愈開、計數器跳得愈慢；聲源靜止時兩邊一樣密。波速本身沒有變，變的是<b>波前的間距（波長）</b>——前方間距變短、後方間距變長，波速除以間距得到的頻率因此一邊變高、一邊變低。</p>
+<p>用具體數字算一次：波速 <i>v</i>＝1 格/秒，聲源每秒發出一次波前（<span class="t est">設定</span>）。聲源以 0.3 格/秒往前移動時，每隔 1 秒發一個波前，這 1 秒內聲源自己也往前多走了 0.3 格，所以前方量到的間距是 1－0.3＝0.7 格；後方的上一個波前被聲源往前拉走後留下的距離是 1＋0.3＝1.3 格。波速仍是每秒 1 格不變，接收率＝波速÷間距：前方 1÷0.7≈1.43 個/秒（比原來 1 個高），後方 1÷1.3≈0.77 個/秒（比原來低）。聲源速度愈快，前後間距差得愈多，兩邊的頻率差也愈明顯。</p>
+</section>
+
+<section><h2>情況二：觀察者自己在動——聲源不動，波長根本沒變</h2>
+<p>上一節是聲源自己動；這一節反過來，<b>聲源完全不動</b>，波前永遠是等間距的同心圓。如果這次換成<b>你自己</b>朝它跑過去，或是跑開，聽到的音調會不會變？如果會，波前的間距（波長）又沒有變，到底是什麼東西在變？</p>
+
+<h3 style="font-size:22px;margin:30px 0 14px">先確定一件事：聲源不動，波長真的不會變</h3>
+<p>聲源每秒發出一次波前（頻率 <span class="t est">設定</span> 1 個/秒），波前以波速 <i>v</i>（由介質決定，4-4 已教）向外跑。因為聲源<b>固定在原地</b>，每一個波前都是以同一個點為圓心的圓，相鄰兩個波前的間距永遠是 <i>v</i>×（發波間隔），不會因為你站著不動、朝它跑或是跑開而改變——<b>波長是聲源和介質決定的，和你怎麼動無關。</b>下面的圖會一直畫出等間距的同心圓，不論你把觀察者調成哪種速度，圓與圓的間距都一樣。</p>
+
+<h3 style="font-size:22px;margin:30px 0 14px">那頻率為什麼還是會變？——自己動，等於改變了「追上波前的快慢」</h3>
+<p>答案不是波長變了，而是<b>你和波前之間靠近的速度</b>變了。拖下面的滑桿選觀察者的速度，按播放，數一數藍點被幾個波前掃過、間隔有沒有變密或變疏。</p>
+
+<figure><svg id="fig2" viewBox="0 0 900 460" role="img" aria-label="聲源固定在左側，持續發出等間距的同心圓波前；一個觀察者沿水平線以可調速度移動，動畫播放時可看到波前掃過觀察者的頻率隨速度改變"></svg>
+<div class="controls">
+ <button id="play2">播放／暫停</button>
+ <button id="step2">前進一格</button>
+ <button id="reset2">重新開始</button>
+ <button id="slow2">慢動作：關</button>
+ <label for="vo" style="margin-left:8px">觀察者速度</label>
+ <input id="vo" type="range" min="-60" max="60" value="0" step="5">
+ <b id="vov"></b>
+</div>
+<div class="controls">
+ <button data-pre2="-50">遠離（−0.5）</button>
+ <button data-pre2="0">靜止（0）</button>
+ <button data-pre2="50">接近（+0.5）</button>
+</div>
+<div class="readout" id="ro2"></div>
+<figcaption>灰色圓：固定聲源持續發出、間距一致的波前（波長 <i>v</i>×1 秒 <span class="t est">設定</span> 1 格，不隨觀察者速度改變）。藍點：觀察者，正值表示朝聲源前進、負值表示遠離。藍點被圓掃過的瞬間會閃一下並計數。下方時間軸把最近 12 秒內的「接收時刻」排出來，橘色刻度愈密代表接收愈快。鍵盤：空白鍵播放／暫停，←→ 前進／倒退一小步。</figcaption>
+</figure>
+
+<p>播放幾次就會看到：觀察者設成「接近」時，刻度一格一格擠在一起，接收頻率比原來的 1 個/秒高；設成「遠離」時，刻度被拉開，接收頻率變低；設成「靜止」則間隔不變。但整段過程中，<b>灰色圓的間距從頭到尾都一樣</b>——這就是關鍵：<b>波長沒變，變的是觀察者自己迎向或逃離波前的速度，也就是「視波速」</b>。</p>
+<p>用具體數字算一次：波速 <i>v</i>＝1 格/秒，波長 1 格。觀察者以 0.5 格/秒朝聲源前進時，他和下一個波前之間每秒縮短的距離，是「波前自己跑的 1 格」加上「他自己前進的 0.5 格」，合計每秒縮短 1.5 格。間距是 1 格，所以 1 秒內會遇到 1.5 個波前——接收頻率變成每秒 1.5 個，比原來的 1 個高。反過來，遠離時每秒只縮短 1－0.5＝0.5 格，1 秒只遇到 0.5 個，頻率變成每秒 0.5 個，比原來低。接近或遠離的速度愈快，縮短或拉開的距離愈多，頻率變化也愈明顯——拖滑桿到 0.6 格/秒附近再播放一次，比對計數器跳動的快慢。</p>
+</section>
+
+<section><h2>兩種情況放在一起看：頻率都會變，但變的東西不一樣</h2>
+<p>情況一是聲源自己動，波前被它拖著跑，所以不同方向的波前間距本身就不一樣（前方擠、後方疏），觀察者不動，純粹因為「單位時間內遇到的間距不同」而測到不同頻率。情況二剛好相反：間距從頭到尾一樣，變的是觀察者自己的速度。兩種情況最後都是「接近變高、遠離變低」，容易被當成同一件事，但背後改變的量不同：</p>
+<table class="cmp">
+<tr><th></th><th>波長（波前間距）</th><th>波速／視波速</th><th>接收頻率＝（視）波速 ÷ 波長</th></tr>
+<tr><td><b>情況一：聲源移動</b></td><td class="hl">改變（前密後疏）</td><td>不變</td><td>因間距變而變</td></tr>
+<tr><td><b>情況二：觀察者移動</b></td><td>不變</td><td class="hl">改變（視波速＝波速±觀察者速度）</td><td>因視波速變而變</td></tr>
+</table>
+<p>課本〈重點整理〉4-5 的第 2、3 條（印 139）就是分開寫這兩種情形；p.132 圖 4-20 把兩種畫在一起，這篇把「為什麼」分開補上。如果班上也做過〈都卜勒圓圈〉探究（透明片建構前密後疏的波前），那份探究就是情況一的手動版，可以互相對照。</p>
+</section>
+
+<section><h2>想一想</h2>
+<p>如果聲源和觀察者<b>同時</b>動——救護車開過來，你也正好朝它跑過去——音調會變得更高還是更低？兩種效果要怎麼放進同一個情況裡？（提示：想想「波前間距」和「視波速」是不是可以分開、各自判斷再合起來看。這一步不要求算出確切的頻率，高一不處理兩者同時動的計算。）</p>
+<details><summary>想好了再打開</summary><p>兩種效果同方向疊加：聲源朝你靠近會讓前方間距變短（情況一），你自己再朝聲源前進又會讓視波速變大（情況二）；兩者都讓接收頻率變高，疊在一起比單獨一種效果更高。方向相反時（例如聲源靠近、但你反而在後退）則兩種效果互相抵銷一部分，要看哪個效果比較強，但那已經是算式的範圍，這裡只要能說出「兩個效果各自成立、再疊起來看」就足夠。</p></details>
+</section>
+
+<p class="foot">模型設定：波速 1 格/秒、聲源每秒發出一次波前，取方便計算的整數。情況一的聲源速度上限設在波速的 0.6 倍以內；情況二的觀察者速度上限也設在波速的 0.6 倍以內，讓遠離時波前仍能在這段動畫看得到的時間內追上觀察者——如果遠離得比波本身還快，波就真的永遠追不上，那是另一種情形，這裡不處理。動畫呈現的都是模型推論，不是實測波形。</p>
+</main>
+<script>
+// 情況一：聲源移動
+(function(){
+const NS='http://www.w3.org/2000/svg';
+const svg=document.getElementById('fig1');
+const V=1, T=1;             // 波速、發波間隔（模型設定）
+const D=4;                   // 前、後固定觀察點到起點的距離（格）
+const UNIT=70, CX=380, CY=150;    // 幾何：1 格 = 70px；CX 是聲源起點（畫面中央偏左，留右側空間）
+let vs=0, playing=false, slow=false, t=0, lastFrame=null;
+let crossedF=new Set(), crossedB=new Set(), crossTimesF=[], crossTimesB=[], firstF=null, firstB=null, flashF=-1, flashB=-1;
+const TL_Y=360, TL_X0=130, TL_W=680, TL_WIN=12;
+
+function el(tag,attrs,text){const e=document.createElementNS(NS,tag);for(const k in attrs)e.setAttribute(k,attrs[k]);if(text!=null)e.textContent=text;return e}
+function resetSim(){t=0;crossedF=new Set();crossedB=new Set();crossTimesF=[];crossTimesB=[];firstF=null;firstB=null;flashF=-1;flashB=-1}
+function srcX(time){return vs*time}
+
+function step(dt){
+ t+=dt;
+ const sx=srcX(t);
+ if(sx>=D-0.5 || t>=14){ resetSim(); return; }
+ const kmax=Math.floor(t/T)+1;
+ for(let k=0;k<=kmax;k++){
+  const emit=k*T; if(t<emit) continue;
+  const e=vs*emit, r=V*(t-emit);
+  if(!crossedF.has(k) && r>=(D-e)){ crossedF.add(k); crossTimesF.push(t); if(firstF===null) firstF=t; flashF=t+0.25; }
+  if(!crossedB.has(k) && r>=(D+e)){ crossedB.add(k); crossTimesB.push(t); if(firstB===null) firstB=t; flashB=t+0.25; }
+ }
+ crossTimesF=crossTimesF.filter(ct=>ct>=t-TL_WIN);
+ crossTimesB=crossTimesB.filter(ct=>ct>=t-TL_WIN);
+}
+
+function draw(){
+ svg.innerHTML='';
+ for(let g=-4;g<=5;g++){
+  svg.appendChild(el('line',{x1:CX+g*UNIT,y1:CY-UNIT*0.15,x2:CX+g*UNIT,y2:CY+UNIT*0.15,stroke:'#dfe4e5','stroke-width':1}));
+ }
+ svg.appendChild(el('line',{x1:40,y1:CY,x2:860,y2:CY,stroke:'#c9d0d2','stroke-width':1.5}));
+ const kmax=Math.floor(t/T)+1;
+ for(let k=kmax;k>=0;k--){
+  const emit=k*T; if(t<emit) continue;
+  const e=vs*emit, r=V*(t-emit); if(r>9.5) continue;
+  const op=Math.max(0.12,1-r/9.5);
+  svg.appendChild(el('circle',{cx:CX+e*UNIT,cy:CY,r:r*UNIT,fill:'none',stroke:'#7fa6b8','stroke-width':2,'stroke-opacity':op}));
+ }
+ // 聲源
+ const sx=srcX(t);
+ svg.appendChild(el('circle',{cx:CX+sx*UNIT,cy:CY,r:7,fill:'#b66a30'}));
+ svg.appendChild(el('text',{x:CX+sx*UNIT,y:CY+26,'text-anchor':'middle','font-size':15,style:'fill:#8a5120'},'聲源'));
+ // 前、後固定觀察點
+ const fx=CX+D*UNIT, bx=CX-D*UNIT;
+ const ff=t<flashF, fb=t<flashB;
+ svg.appendChild(el('circle',{cx:fx,cy:CY,r:ff?13:8,fill:ff?'#e8973a':'#c8631f','stroke':'#fff','stroke-width':2}));
+ svg.appendChild(el('text',{x:fx,y:CY-20,'text-anchor':'middle','font-size':15,style:'fill:#c8631f'},'前方觀察點'));
+ svg.appendChild(el('circle',{cx:bx,cy:CY,r:fb?13:8,fill:fb?'#5aa0e0':'#1f6fb4','stroke':'#fff','stroke-width':2}));
+ svg.appendChild(el('text',{x:bx,y:CY-20,'text-anchor':'middle','font-size':15,style:'fill:#1f6fb4'},'後方觀察點'));
+ // 時間軸（上排橘＝前方，下排藍＝後方）
+ svg.appendChild(el('text',{x:TL_X0,y:TL_Y-24,'font-size':15,style:'fill:#56646d'},'最近 '+TL_WIN+' 秒內的接收時刻：上排橘＝前方、下排藍＝後方（愈密＝接收愈快）'));
+ svg.appendChild(el('line',{x1:TL_X0,y1:TL_Y,x2:TL_X0+TL_W,y2:TL_Y,stroke:'#c9d0d2','stroke-width':1.5}));
+ const winStart=Math.max(0,t-TL_WIN);
+ for(let g=Math.ceil(winStart);g<=t+0.001;g++){
+  const gx=TL_X0+(g-winStart)/TL_WIN*TL_W;
+  svg.appendChild(el('line',{x1:gx,y1:TL_Y-22,x2:gx,y2:TL_Y+22,stroke:'#e3e7e8','stroke-width':1}));
+ }
+ crossTimesF.forEach(ct=>{const cx=TL_X0+(ct-winStart)/TL_WIN*TL_W; svg.appendChild(el('line',{x1:cx,y1:TL_Y-20,x2:cx,y2:TL_Y,stroke:'#e8973a','stroke-width':3}))});
+ crossTimesB.forEach(ct=>{const cx=TL_X0+(ct-winStart)/TL_WIN*TL_W; svg.appendChild(el('line',{x1:cx,y1:TL_Y,x2:cx,y2:TL_Y+20,stroke:'#1f6fb4','stroke-width':3}))});
+ // 讀數
+ const ro=document.getElementById('ro1');
+ const rF=(firstF!==null && t>firstF)?(crossedF.size/(t-firstF)).toFixed(2)+' 個/秒':'—';
+ const rB=(firstB!==null && t>firstB)?(crossedB.size/(t-firstB)).toFixed(2)+' 個/秒':'—';
+ ro.innerHTML='模擬時間：<b>'+t.toFixed(1)+'</b> 秒　｜　前方已接收：<b>'+crossedF.size+'</b> 個（平均 <b>'+rF+'</b>）　｜　後方已接收：<b>'+crossedB.size+'</b> 個（平均 <b>'+rB+'</b>）';
+}
+
+function vsLabel(){document.getElementById('vsv').textContent=vs.toFixed(2)+' 格/秒'}
+function frame(ts){
+ if(!playing){lastFrame=null;return}
+ if(lastFrame==null) lastFrame=ts;
+ let dt=(ts-lastFrame)/1000; lastFrame=ts;
+ dt=Math.min(dt,0.05)*(slow?0.35:1);
+ step(dt); draw();
+ requestAnimationFrame(frame);
+}
+document.getElementById('play1').onclick=()=>{playing=!playing; if(playing) requestAnimationFrame(frame)};
+document.getElementById('step1').onclick=()=>{step(0.2); draw()};
+document.getElementById('reset1').onclick=()=>{resetSim(); draw()};
+document.getElementById('slow1').onclick=(e)=>{slow=!slow; e.target.textContent='慢動作：'+(slow?'開':'關')};
+document.getElementById('vs').oninput=(e)=>{vs=(+e.target.value)/100; vsLabel(); resetSim(); draw()};
+document.querySelectorAll('[data-pre1]').forEach(b=>b.onclick=()=>{vs=(+b.dataset.pre1)/100; document.getElementById('vs').value=b.dataset.pre1; vsLabel(); resetSim(); draw()});
+svg.tabIndex=0;
+svg.addEventListener('keydown',(e)=>{
+ if(e.key===' '){e.preventDefault(); playing=!playing; if(playing) requestAnimationFrame(frame)}
+ else if(e.key==='ArrowRight'||e.key==='ArrowLeft'){step(0.2); draw()}
+});
+vsLabel(); draw();
+})();
+
+// 情況二：觀察者移動
+(function(){
+const NS='http://www.w3.org/2000/svg';
+const svg=document.getElementById('fig2');
+const V=1, T=1;
+const X0=4;
+const UNIT=70, CX=130, CY=150;
+const TL_Y=360, TL_X0=130, TL_W=680, TL_WIN=12;
+let vo=0, playing=false, slow=false, t=0, lastFrame=null;
+let crossed=new Set(), crossTimes=[], firstCrossT=null, flashUntil=-1;
+
+function el(tag,attrs,text){const e=document.createElementNS(NS,tag);for(const k in attrs)e.setAttribute(k,attrs[k]);if(text!=null)e.textContent=text;return e}
+function resetSim(){ t=0; crossed=new Set(); crossTimes=[]; firstCrossT=null; flashUntil=-1; }
+function xo(time){return X0 - vo*time}
+
+function step(dt){
+ t+=dt;
+ const x=xo(t);
+ if(x<=0.3 || t>=16){ resetSim(); return; }
+ const kmax=Math.floor(t/T)+1;
+ for(let k=0;k<=kmax;k++){
+  if(crossed.has(k)) continue;
+  const emit=k*T;
+  if(t<emit) continue;
+  const r=V*(t-emit);
+  if(r>=x){ crossed.add(k); crossTimes.push(t); if(firstCrossT===null) firstCrossT=t; flashUntil=t+0.25; }
+ }
+ crossTimes=crossTimes.filter(ct=>ct>=t-TL_WIN);
+}
+
+function draw(){
+ svg.innerHTML='';
+ for(let g=1;g<=9;g++){
+  svg.appendChild(el('line',{x1:CX+g*UNIT,y1:CY-UNIT*0.15,x2:CX+g*UNIT,y2:CY+UNIT*0.15,stroke:'#dfe4e5','stroke-width':1}));
+ }
+ svg.appendChild(el('line',{x1:40,y1:CY,x2:860,y2:CY,stroke:'#c9d0d2','stroke-width':1.5}));
+ const kmax=Math.floor(t/T)+1;
+ for(let k=kmax;k>=0;k--){
+  const emit=k*T; if(t<emit) continue;
+  const r=V*(t-emit); if(r>9.2) continue;
+  const op=Math.max(0.12,1-r/9.2);
+  svg.appendChild(el('circle',{cx:CX,cy:CY,r:r*UNIT,fill:'none',stroke:'#7fa6b8','stroke-width':2,'stroke-opacity':op}));
+  if(k<=5){
+   svg.appendChild(el('text',{x:CX,y:CY-r*UNIT-8,'text-anchor':'middle','font-size':14,style:`fill:#4c7f94;opacity:${op}`},'第'+k+'秒發出'));
+  }
+ }
+ svg.appendChild(el('circle',{cx:CX,cy:CY,r:7,fill:'#b66a30'}));
+ svg.appendChild(el('text',{x:CX,y:CY+26,'text-anchor':'middle','font-size':15,style:'fill:#8a5120'},'聲源（固定）'));
+ const ox=CX+xo(t)*UNIT;
+ const flashing=t<flashUntil;
+ svg.appendChild(el('circle',{cx:ox,cy:CY,r:flashing?13:8,fill:flashing?'#e8973a':'#1f6fb4','stroke':'#fff','stroke-width':2}));
+ const arrow=vo>0?'→ 朝聲源前進':(vo<0?'← 遠離聲源':'（靜止）');
+ svg.appendChild(el('text',{x:ox,y:CY-20,'text-anchor':'middle','font-size':15,style:'fill:#1f6fb4'},'觀察者 '+arrow));
+ svg.appendChild(el('text',{x:ox,y:CY+28,'text-anchor':'middle','font-size':14,style:'fill:#56646d'},'距聲源 '+xo(t).toFixed(1)+' 格'));
+ svg.appendChild(el('text',{x:TL_X0,y:TL_Y-18,'font-size':15,style:'fill:#56646d'},'最近 '+TL_WIN+' 秒內接收到波前的時刻（橘色刻度愈密＝接收愈快；淡灰直線每 1 秒一條，方便比對間隔）'));
+ svg.appendChild(el('line',{x1:TL_X0,y1:TL_Y,x2:TL_X0+TL_W,y2:TL_Y,stroke:'#c9d0d2','stroke-width':1.5}));
+ const winStart=Math.max(0,t-TL_WIN);
+ for(let g=Math.ceil(winStart);g<=t+0.001;g++){
+  const gx=TL_X0+(g-winStart)/TL_WIN*TL_W;
+  svg.appendChild(el('line',{x1:gx,y1:TL_Y-10,x2:gx,y2:TL_Y+10,stroke:'#e3e7e8','stroke-width':1}));
+ }
+ crossTimes.forEach(ct=>{
+  const cx=TL_X0+(ct-winStart)/TL_WIN*TL_W;
+  svg.appendChild(el('line',{x1:cx,y1:TL_Y-16,x2:cx,y2:TL_Y+16,stroke:'#e8973a','stroke-width':3}));
+ });
+ const ro=document.getElementById('ro2');
+ const totalN=crossed.size;
+ let rateTxt='—';
+ if(firstCrossT!==null && t>firstCrossT){ rateTxt=(totalN/(t-firstCrossT)).toFixed(2)+' 個/秒'; }
+ ro.innerHTML='模擬時間：<b>'+t.toFixed(1)+'</b> 秒　｜　已接收波前：<b>'+totalN+'</b> 個　｜　平均接收率：<b>'+rateTxt+'</b>（聲源原頻率：1 個/秒）';
+}
+
+function voLabel(){const val=vo.toFixed(2);const dir=vo>0.001?'朝聲源前進':(vo<-0.001?'遠離聲源':'靜止');document.getElementById('vov').textContent=val+' 格/秒（'+dir+'）'}
+function frame(ts){
+ if(!playing){lastFrame=null;return}
+ if(lastFrame==null) lastFrame=ts;
+ let dt=(ts-lastFrame)/1000; lastFrame=ts;
+ dt=Math.min(dt,0.05)*(slow?0.35:1);
+ step(dt); draw();
+ requestAnimationFrame(frame);
+}
+document.getElementById('play2').onclick=()=>{playing=!playing; if(playing) requestAnimationFrame(frame)};
+document.getElementById('step2').onclick=()=>{step(0.2); draw()};
+document.getElementById('reset2').onclick=()=>{resetSim(); draw()};
+document.getElementById('slow2').onclick=(e)=>{slow=!slow; e.target.textContent='慢動作：'+(slow?'開':'關')};
+document.getElementById('vo').oninput=(e)=>{vo=(+e.target.value)/100; voLabel(); draw()};
+document.querySelectorAll('[data-pre2]').forEach(b=>b.onclick=()=>{vo=(+b.dataset.pre2)/100; document.getElementById('vo').value=b.dataset.pre2; voLabel(); resetSim(); draw()});
+svg.tabIndex=0;
+svg.addEventListener('keydown',(e)=>{
+ if(e.key===' '){e.preventDefault(); playing=!playing; if(playing) requestAnimationFrame(frame)}
+ else if(e.key==='ArrowRight'||e.key==='ArrowLeft'){step(0.2); draw()}
+});
+voLabel(); draw();
+})();
+</script>
+<nav aria-label="第四章導覽" style="box-sizing:border-box;width:min(100%,70rem);margin:1.5rem auto;padding:0.5rem 1rem;font:600 1rem/1.6 system-ui,sans-serif"><a href="../ch04/" style="color:#174ba9;background:#fff;text-underline-offset:.2em">第四章延伸總覽</a></nav>
+</html>

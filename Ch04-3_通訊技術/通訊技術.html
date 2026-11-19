@@ -1,0 +1,217 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>同一個基地臺，怎麼分辨不同手機的訊號？</title>
+<style>
+  :root { color-scheme: light; --ink:#202a32; --muted:#4c5d6a; --line:#cbd5da; --soft:#f2f6f7; --accent:#236181; }
+  * { box-sizing:border-box; }
+  body { margin:0; background:#fff; color:var(--ink); font:clamp(18px,2vw,22px)/1.7 "PingFang TC","Microsoft JhengHei",sans-serif; }
+  header,main { max-width:1080px; margin:auto; padding:30px clamp(16px,4vw,36px); }
+  header { padding-bottom:0; }
+  main { padding-top:0; }
+  h1 { margin:.2em 0 .4em; font-size:clamp(34px,5vw,54px); line-height:1.24; }
+  h2 { font-size:clamp(26px,3vw,34px); line-height:1.35; margin:0 0 .6em; }
+  h3 { font-size:1.05em; margin:0 0 .2em; }
+  p { margin:.65em 0; }
+  section { margin:2.4em 0; }
+  .label { color:#8c481e; font-weight:700; font-size:.8em; }
+  .caption { color:var(--muted); font-size:.83em; }
+  .cards { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:14px; }
+  .card, .panel { border:1px solid var(--line); border-radius:14px; padding:clamp(12px,2vw,22px); }
+  .card { background:var(--soft); }
+  .card p { font-size:.87em; }
+  .card p:last-child { margin-bottom:0; }
+  svg { display:block; width:100%; max-width:380px; margin:.4em auto; }
+  svg text { fill:var(--ink); font:600 15px system-ui,sans-serif; }
+  .controls { display:flex; flex-wrap:wrap; align-items:center; gap:8px; margin:0 0 .65em; }
+  button { background:#fff; color:inherit; border:1px solid #8298a5; border-radius:8px; cursor:pointer; font:inherit; font-size:.86em; min-height:44px; padding:4px 12px; }
+  button[aria-pressed=true] { background:#e1f0f7; border-color:var(--accent); box-shadow:inset 0 0 0 1px var(--accent); font-weight:700; }
+  :focus-visible { outline:3px solid var(--accent); outline-offset:3px; }
+  table { width:100%; border-collapse:collapse; table-layout:fixed; margin:.55em 0; font-variant-numeric:tabular-nums; }
+  th,td { padding:.35em .2em; text-align:center; border-bottom:1px solid var(--line); }
+  th:first-child { text-align:left; width:44%; }
+  .emphasis { background:#e8f2f8; font-weight:700; }
+  .a { color:#1c6486; } .b { color:#914510; } .c { color:#216648; }
+  summary { cursor:pointer; font-weight:700; color:#1d5572; }
+  .result { font-weight:700; color:#1d5572; }
+  @media(max-width:720px) { .cards { grid-template-columns:1fr; } }
+  @media(max-width:500px) {
+    .controls strong { width:100%; }
+    thead th:not(:first-child) { font-size:.78em; white-space:nowrap; }
+    th:first-child { width:37%; }
+  }
+</style>
+</head>
+<body>
+<header>
+  <span class="label">4-3 電與磁的統整 · 延伸</span>
+  <h1>同一個基地臺，<br>怎麼分辨不同手機的訊號？</h1>
+  <p>你和同學站在一起，各自用手機傳資料。你們手機發出的無線電波都能到達同一座基地臺。基地臺憑什麼知道哪一段資料是誰傳的？</p>
+</header>
+<main>
+  <section aria-labelledby="access-title">
+    <h2 id="access-title">分頻、分時、分碼</h2>
+    <div class="cards">
+      <article class="card">
+        <h3>FDMA｜分頻</h3>
+        <svg id="fdma" viewBox="0 0 268 145" role="img" aria-label="時間往右，頻率往上。A、B、C 同時傳送，各占不同頻帶。"></svg>
+        <p>像分到不同包廂。A、B、C 同時傳，各用自己的頻帶。接收器挑選相應的頻帶，就像去指定的包廂聽。</p>
+        <p class="caption">例：1G 的 AMPS</p>
+      </article>
+      <article class="card">
+        <h3>TDMA｜分時</h3>
+        <svg id="tdma" viewBox="0 0 268 145" role="img" aria-label="時間往右，頻率往上。A、B、C 在同一頻帶依序輪流傳送。"></svg>
+        <p>像在同一個包廂輪流講話。A、B、C 共用同一個頻道，各自在分到的短時槽傳送。</p>
+        <p class="caption">例：2G 的 GSM 先分頻，再把每個載波分成時槽。</p>
+      </article>
+      <article class="card">
+        <h3>CDMA｜分碼</h3>
+        <svg id="cdma" viewBox="0 0 268 145" role="img" aria-label="時間往右，頻率往上。A、B、C 的訊號同時占用同一頻帶，疊在一起。"></svg>
+        <p>像在同一個包廂同時說話。A、B、C 可在同一時間使用同一頻帶，各自用不同的碼把資料變成訊號。</p>
+        <p class="caption">例：3G 的 W-CDMA</p>
+      </article>
+    </div>
+    <p class="caption">橫軸是時間，縱軸是頻率。色塊表示使用的時間與頻帶，為示意，時長與頻寬未按比例。</p>
+    <p>把不同的碼想成中文、英文、日文，可以想像同時說話還是有機會分辨。但如果其他人講得夠大聲，即使聽不懂，也可能蓋過你想聽的人。在下面的理想情況，基地臺拿指定的碼去比對收到的訊號，其他碼的貢獻就會在加總時互相抵消。</p>
+  </section>
+
+  <section aria-labelledby="encode-title">
+    <h2 id="encode-title">同一個位元，用不同的碼送出</h2>
+    <p>先看一個簡化模型。每支手機有一組四格的碼，每格是正 1 或負 1。送 <b>1</b> 時照原碼送，送 <b>0</b> 時四格都反號。表格用正負數表示接收端解調後的訊號值，也就是從無線電波取回、用來判讀資料的數字。</p>
+    <div class="panel">
+      <div class="controls" role="group" aria-label="切換各手機傳出的位元">
+        <strong>各手機傳出的位元</strong>
+        <button type="button" data-user="0" class="a">A 送 1</button>
+        <button type="button" data-user="1" class="b">B 送 0</button>
+        <button type="button" data-user="2" class="c">C 送 1</button>
+      </div>
+      <table id="signals">
+        <thead><tr><th scope="col">送到基地臺</th><th scope="col">格 1</th><th scope="col">格 2</th><th scope="col">格 3</th><th scope="col">格 4</th></tr></thead>
+        <tbody></tbody>
+      </table>
+      <p class="caption">數字是教學設定。假設三支手機的訊號到達時逐格對齊、強度相同，並忽略雜訊。</p>
+    </div>
+    <p>A、B、C 的電波同時到達，在天線處疊加。表中前三列讓我們看到各自的貢獻，<b>接收器手上只有逐格相加後的那一列</b>。</p>
+  </section>
+
+  <section aria-labelledby="decode-title">
+    <h2 id="decode-title">用誰的碼，就取回誰的資料</h2>
+    <p>要讀 A 的資料，就把混合訊號和 <b>A 的原碼</b>同一格的數字相乘，再把四格的乘積加起來。乘正 1 會保留那格的正負，乘負 1 會翻轉那格的正負。</p>
+    <div class="panel">
+      <div class="controls" role="group" aria-label="選擇接收器用哪一組碼">
+        <strong>接收器使用的碼</strong>
+        <button type="button" data-code="0" class="a" aria-pressed="true">A 的碼</button>
+        <button type="button" data-code="1" class="b" aria-pressed="false">B 的碼</button>
+        <button type="button" data-code="2" class="c" aria-pressed="false">C 的碼</button>
+      </div>
+      <table id="decode">
+        <thead><tr><th scope="col">接收器的計算</th><th scope="col">格 1</th><th scope="col">格 2</th><th scope="col">格 3</th><th scope="col">格 4</th></tr></thead>
+        <tbody></tbody>
+      </table>
+      <p id="result" class="result" aria-live="polite"></p>
+      <details id="why">
+        <summary>拆開看，其他人的訊號為什麼抵消？</summary>
+        <p>混合值是三列訊號的和。根據分配律，整列乘碼後再相加，等同於先把每人的訊號各自乘碼並加總，再把三人的結果加起來。</p>
+        <table id="contributions">
+          <thead><tr><th scope="col">各人的貢獻</th><th scope="col">格 1</th><th scope="col">格 2</th><th scope="col">格 3</th><th scope="col">格 4</th><th scope="col">合計</th></tr></thead>
+          <tbody></tbody>
+        </table>
+        <p id="reason"></p>
+      </details>
+    </div>
+    <p>以 A 為例，A 送 1 時，四格都是用自己的碼乘自己，所以每格得到正 1，總和是正 4。A 送 0 時，送出的每格已反號，乘回原碼後每格都得負 1，總和是負 4。B、C 與 A 的碼各有兩格相同、兩格相反，所以不管 B、C 送 1 或 0，用 A 的碼來算都會各自得到兩正、兩負，總和為 0。兩組碼逐格相乘後加總為 0，就稱這兩組碼<b>彼此正交</b>。</p>
+    <p>實際上，各手機的訊號可能沒有對齊，也可能因反射而以不同的延遲到達，其他人的貢獻就可能留下殘值。基地臺可以調節手機的發射功率，減少強訊號的殘值蓋過弱訊號的情況。</p>
+    <details>
+      <summary>想一想：用 A 的碼接收時，把 B 送的 0 改成 1，什麼會變？</summary>
+      <p>混合訊號會變，因為 B 的四格全部反號。A 的判讀維持原值，因為 B 的貢獻逐格乘上 A 碼之後，仍是兩正、兩負，加總仍為 0。</p>
+    </details>
+  </section>
+</main>
+<script>
+  const users = ['A', 'B', 'C'];
+  const codes = [
+    [1, 1, 1, 1],
+    [1, 1, -1, -1],
+    [1, -1, 1, -1]
+  ];
+  const bits = [1, 0, 1];
+  const colors = ['#bbdfef', '#f6d6b5', '#c1e4d4'];
+  let selected = 0;
+
+  const plot = {x:44, y:29, w:194, h:74, gap:4};
+  function band(x, y, w, h, fill, label) {
+    return '<rect x="' + x + '" y="' + y + '" width="' + w + '" height="' + h +
+      '" rx="4" fill="' + fill + '"/><text x="' + (x + w / 2) + '" y="' +
+      (y + h / 2) + '" text-anchor="middle" dominant-baseline="central">' + label + '</text>';
+  }
+  function drawAccess() {
+    const {x,y,w,h,gap} = plot;
+    const axes = '<path d="M36 22V112H245m-5-4 5 4-5 4M32 27l4-5 4 5" fill="none" stroke="#586a75" stroke-width="1.5"/>' +
+      '<text x="3" y="16">頻率</text><text x="218" y="138">時間</text>';
+    const bandHeight = (h - 2 * gap) / 3;
+    const slotWidth = (w - 2 * gap) / 3;
+    const diagrams = {
+      fdma: users.map((user,i) => band(x,y+i*(bandHeight+gap),w,bandHeight,colors[i],user)).join(''),
+      tdma: users.map((user,i) => band(x+i*(slotWidth+gap),y+(h-bandHeight)/2,slotWidth,bandHeight,colors[i],user)).join(''),
+      cdma: band(x,y,w,h,'#dedbf3','A + B + C')
+    };
+    for (const [id, blocks] of Object.entries(diagrams)) {
+      document.getElementById(id).innerHTML = axes + blocks;
+    }
+  }
+
+  const signed = n => n > 0 ? '+' + n : String(n).replace('-', '−');
+  const sum = values => values.reduce((total,n) => total + n, 0);
+  const multiply = (values, code) => values.map((n,i) => n * code[i]);
+
+  function row(label, values, className = '') {
+    return '<tr class="' + className + '"><th scope="row">' + label + '</th>' +
+      values.map(n => '<td>' + signed(n) + '</td>').join('') + '</tr>';
+  }
+  function render() {
+    const labels = users.map((user,i) => user + ' 送 ' + bits[i]);
+    const sent = codes.map((code,i) => code.map(n => bits[i] ? n : -n));
+    const code = codes[selected];
+    const user = users[selected];
+    const others = users.filter((_,i) => i !== selected);
+    const mixed = code.map((_,i) => sum(sent.map(values => values[i])));
+    const products = multiply(mixed, code);
+    const total = sum(products);
+    const recovered = Number(total > 0);
+    document.querySelector('#signals tbody').innerHTML = sent.map((values,i) =>
+      row(labels[i],values,users[i].toLowerCase())).join('') + row('混合訊號',mixed,'emphasis');
+    document.querySelector('#decode tbody').innerHTML =
+      row('混合訊號',mixed) + row(user + ' 的原碼',code,user.toLowerCase()) + row('逐格乘積',products,'emphasis');
+    document.querySelector('#contributions tbody').innerHTML = sent.map((values,i) => {
+      const terms = multiply(values,code);
+      return row(users[i] + ' 乘 ' + user + ' 碼',[...terms,sum(terms)],users[i].toLowerCase());
+    }).join('');
+    document.getElementById('result').textContent = '四格加總 ' + signed(total) + '，讀出 ' + user + ' 送的是 ' + recovered + '。';
+    document.getElementById('reason').textContent = '用 ' + user + ' 的原碼來算，' + user +
+      ' 的四格乘積同號，留下 ' + signed(total) + '。' + others.join('、') +
+      ' 的乘積都是兩正、兩負，各自加總為 0。';
+    document.querySelectorAll('[data-user]').forEach(button => {
+      const i = Number(button.dataset.user);
+      button.textContent = labels[i];
+      button.setAttribute('aria-label', labels[i] + '，按下切換');
+    });
+    document.querySelectorAll('[data-code]').forEach(button =>
+      button.setAttribute('aria-pressed', Number(button.dataset.code) === selected));
+  }
+  document.querySelectorAll('[data-user]').forEach(button => button.addEventListener('click', () => {
+    const i = Number(button.dataset.user);
+    bits[i] = 1 - bits[i];
+    render();
+  }));
+  document.querySelectorAll('[data-code]').forEach(button => button.addEventListener('click', () => {
+    selected = Number(button.dataset.code);
+    render();
+  }));
+  drawAccess();
+  render();
+</script>
+<nav aria-label="第四章導覽" style="box-sizing:border-box;width:min(100%,70rem);margin:1.5rem auto;padding:0.5rem 1rem;font:600 1rem/1.6 system-ui,sans-serif"><a href="../ch04/" style="color:#174ba9;background:#fff;text-underline-offset:.2em">第四章延伸總覽</a></nav>
+</body>
+</html>
